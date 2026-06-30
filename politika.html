@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Политика обработки персональных данных — VIRSTON</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif'],display:['Manrope','sans-serif'],mono:['"JetBrains Mono"','monospace']},colors:{ink:'#0E0E10',paper:'#FAFAF7',card:'#F2F1EC',steel:'#5B5C61',mute:'#8C8D92',brand:{DEFAULT:'#E62B53',deep:'#B81C3F'}}}}};</script>
+<style>
+:root{--brand:#E62B53;--brand-deep:#B81C3F;}
+body{font-family:'Inter',sans-serif;background:#FAFAF7;color:#0E0E10;}
+.display{font-family:'Manrope',sans-serif;letter-spacing:-0.03em;line-height:1;font-weight:700;}
+.mono{font-family:'JetBrains Mono',monospace;}
+.container-x{max-width:1440px;margin-inline:auto;padding-inline:32px;}
+.hairline{border-color:rgba(14,14,16,.12);}
+.brand-bar{background:var(--brand);}
+.brand-text{color:var(--brand);}
+.btn-primary{background:var(--brand);color:white;padding:11px 20px;font-weight:600;font-size:13px;display:inline-flex;align-items:center;gap:8px;border:1px solid var(--brand);}
+.btn-primary:hover{background:var(--brand-deep);}
+.nav-dropdown{position:relative;}
+.nav-dropdown-toggle{display:flex;align-items:center;gap:5px;cursor:pointer;font-weight:500;font-size:14px;color:rgba(14,14,16,0.85);background:none;border:none;padding:0;font-family:inherit;}
+.nav-dropdown-menu{display:none;position:absolute;left:0;top:calc(100% + 12px);z-index:50;background:white;border:0.5px solid rgba(14,14,16,0.12);box-shadow:0 12px 40px -8px rgba(14,14,16,0.18);padding:24px;min-width:460px;grid-template-columns:1fr 1fr;gap:16px 24px;}
+.nav-dropdown:hover .nav-dropdown-menu{display:grid;}
+.nav-dropdown-menu a{display:block;text-decoration:none;}
+.dditem-num{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#8C8D92;}
+.dditem-title{font-weight:600;color:#0E0E10;margin-top:2px;font-size:14px;}
+.dditem-sub{font-size:12px;color:#5B5C61;margin-top:2px;}
+.nav-dropdown-single{position:relative;}
+.nav-dropdown-single-menu{display:none;position:absolute;left:0;top:calc(100% + 12px);z-index:50;background:white;border:0.5px solid rgba(14,14,16,0.12);box-shadow:0 12px 40px -8px rgba(14,14,16,0.18);padding:16px;min-width:260px;}
+.nav-dropdown-single:hover .nav-dropdown-single-menu{display:block;}
+.nav-dropdown-single-menu a{display:block;padding:8px 12px;font-size:14px;color:#0E0E10;text-decoration:none;border-bottom:0.5px solid rgba(14,14,16,0.08);}
+.nav-dropdown-single-menu a:hover{background:#F2F1EC;}
+.prose h2{font-family:'Manrope',sans-serif;font-weight:700;font-size:22px;margin-top:48px;margin-bottom:14px;letter-spacing:-0.02em;color:#0E0E10;}
+.prose h3{font-weight:600;font-size:16px;margin-top:28px;margin-bottom:10px;}
+.prose p{font-size:15px;line-height:1.75;color:#444;margin-bottom:14px;}
+.prose ul{list-style:disc;padding-left:22px;margin-bottom:14px;}
+.prose ul li{font-size:15px;line-height:1.7;color:#444;margin-bottom:6px;}
+.prose a{color:var(--brand);text-decoration:underline;text-underline-offset:3px;}
+.prose strong{color:#0E0E10;}
+
+  /* ── Mobile menu ─────────────────────────────────── */
+  .mob-menu-btn { display:none; flex-direction:column; justify-content:center; gap:5px; width:40px; height:40px; background:none; border:none; cursor:pointer; padding:8px; }
+  .mob-menu-btn span { display:block; width:24px; height:2px; background:#0E0E10; transition:all .25s; border-radius:2px; }
+  .mob-menu-btn.is-open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+  .mob-menu-btn.is-open span:nth-child(2) { opacity:0; }
+  .mob-menu-btn.is-open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+  @media (max-width:1023px) {
+    .mob-menu-btn { display:flex; }
+    .btn-primary-header { display:none !important; }
+  }
+  .mob-menu-overlay {
+    display:none !important; position:fixed; inset:0; top:72px; background:white; z-index:49;
+    flex-direction:column; overflow-y:auto;
+    border-top:1px solid rgba(14,14,16,.12);
+  }
+  .mob-menu-overlay.is-open { display:flex !important; }
+  .mob-menu-overlay a {
+    display:block; padding:16px 24px; font-size:17px; font-weight:500; color:#0E0E10;
+    text-decoration:none; border-bottom:1px solid rgba(14,14,16,.08);
+  }
+  .mob-menu-overlay a:hover { background:#F2F1EC; }
+  .mob-menu-overlay .mob-section {
+    padding:12px 24px 6px; font-family:'JetBrains Mono',monospace;
+    font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#8C8D92;
+  }
+  .mob-menu-overlay .mob-cta {
+    margin:16px 24px; display:block; padding:14px 20px;
+    background:#E62B53; color:white !important; font-weight:600;
+    text-align:center; border-bottom:none !important;
+  }
+  .mob-menu-overlay .mob-cta:hover { background:#B81C3F !important; }
+</style>
+</head>
+<body class="antialiased">
+
+<div class="bg-ink text-white text-[12px]">
+  <div class="container-x flex items-center justify-between py-2.5">
+    <div class="flex items-center gap-6 mono tracking-wider opacity-90"><span>RU · BY · KZ</span><span class="opacity-50">·</span><span>ПН—ПТ · 09:00—18:00 МСК</span></div>
+    <div class="flex items-center gap-5 mono opacity-90"><a href="mailto:info@virston.ru">info@virston.ru</a><span class="opacity-50 hidden md:inline">·</span><a href="tel:+74991100080" class="hidden md:inline">+7 (499) 110-00-80</a></div>
+  </div>
+</div>
+
+<header class="sticky top-0 z-50 bg-paper/95 backdrop-blur border-b hairline">
+  <div class="container-x flex items-center justify-between h-[72px]">
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="assets/shared/logo.png" alt="VIRSTON" class="h-7 w-auto" />
+      <span class="hidden lg:block mono text-[11px] tracking-[0.18em] text-steel uppercase border-l hairline pl-3 ml-1">Системы высокого давления</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-7 text-[14px] font-medium text-ink/85">
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle">Решения <svg width="10" height="10" viewBox="0 0 10 10" class="opacity-60"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></button>
+        <div class="nav-dropdown-menu" style="min-width:560px;grid-template-columns:1fr 1fr;">
+          <a href="pylepodavlenie.html"><div class="dditem-num">01</div><div class="dditem-title">Системы пылеподавления</div><div class="dditem-sub">Форсуночные · пушки до 60 м</div></a>
+          <a href="uvlazhnenie.html"><div class="dditem-num">02</div><div class="dditem-title">Системы увлажнения</div><div class="dditem-sub">70–100 Бар, капля 5 мкм</div></a>
+          <a href="dezbariers.html"><div class="dditem-num">03</div><div class="dditem-title">Дезинфекционные барьеры</div><div class="dditem-sub">Арочные, 16 форсунок</div></a>
+          <a href="ohlazhdenie.html"><div class="dditem-num">04</div><div class="dditem-title">Системы охлаждения для автопрома</div><div class="dditem-sub">Адиабатическое, −5…−15 °C</div></a>
+          <a href="osushenie.html"><div class="dditem-num">05</div><div class="dditem-title">Системы осушения</div><div class="dditem-sub">Контроль влажности воздуха</div></a>
+          <a href="monitoring.html"><div class="dditem-num">06</div><div class="dditem-title">Автоматизированный мониторинг</div><div class="dditem-sub">АСУ ТП, SCADA интеграция</div></a>
+        </div>
+      </div>
+      <a href="proekty.html" class="nav-plain-link">Проекты</a>
+      <a href="o-kompanii.html" class="nav-plain-link">О компании</a>
+      <a href="servis.html" class="nav-plain-link">Сервис</a>
+      <a href="kontakty.html" class="nav-plain-link">Контакты</a>
+    </nav>
+    <a href="index.html#form" class="btn-primary btn-primary-header">Получить расчёт →</a>
+  </div>
+</header>
+
+<!-- Mobile menu overlay -->
+<div id="mobMenuOverlay" class="mob-menu-overlay">
+  <div class="mob-section">Решения</div>
+  <a href="pylepodavlenie.html">Системы пылеподавления</a>
+  <a href="uvlazhnenie.html">Системы увлажнения</a>
+  <a href="dezbariers.html">Дезинфекционные барьеры</a>
+  <a href="ohlazhdenie.html">Системы охлаждения для автопрома</a>
+  <a href="osushenie.html">Системы осушения</a>
+  <a href="monitoring.html">Автоматизированный мониторинг</a>
+  <div class="mob-section">Компания</div>
+  <a href="o-kompanii.html">О компании</a>
+  <a href="proekty.html">Проекты</a>
+  <a href="servis.html">Сервис</a>
+  <a href="kontakty.html">Контакты</a>
+  <a href="index.html#form" class="mob-cta">Получить расчёт →</a>
+</div>
+
+<div class="bg-paper border-b hairline">
+  <div class="container-x py-3 flex items-center gap-2 mono text-[11px] tracking-[.15em] uppercase text-mute">
+    <a href="index.html" class="hover:text-ink">Главная</a><span>›</span><span class="text-ink">Политика обработки данных</span>
+  </div>
+</div>
+
+<section class="py-16 md:py-24">
+  <div class="container-x">
+    <div class="max-w-[820px]">
+      <div class="flex items-center gap-3 mb-6"><span class="brand-bar w-9 h-[3px]"></span><span class="mono text-[11px] tracking-[.2em] uppercase text-steel">Правовые документы</span></div>
+      <h1 class="display text-[36px] md:text-[52px] mb-3">Политика обработки<br/>персональных данных</h1>
+      <p class="text-steel text-[13px] mono mb-12 border-l-2 pl-4" style="border-color:var(--brand)">Редакция от 01.01.2024 · ООО «Инновации и Технологии» · ИНН 6732056193</p>
+
+      <div class="prose">
+        <h2>1. Общие положения</h2>
+        <p>Настоящая Политика определяет порядок обработки и защиты персональных данных физических лиц в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных».</p>
+        <p>Оператор: <strong>ООО «ИННОВАЦИИ И ТЕХНОЛОГИИ»</strong>, ИНН 6732056193, ОГРН 1136733004100, 214020, Россия, г. Смоленск, ул. Шевченко, д. 86, помещ. 5А.</p>
+
+        <h2>2. Состав собираемых данных</h2>
+        <p>При заполнении форм на сайте могут собираться:</p>
+        <ul>
+          <li>Имя, фамилия, должность</li>
+          <li>Наименование организации</li>
+          <li>Номер телефона</li>
+          <li>Адрес электронной почты</li>
+          <li>Описание задачи или объекта — добровольно</li>
+        </ul>
+        <p>Технические данные (IP, cookie, данные браузера) собираются автоматически в целях аналитики.</p>
+
+        <h2>3. Цели обработки</h2>
+        <ul>
+          <li>Обработка входящих заявок и запросов на расчёт системы</li>
+          <li>Подготовка коммерческих предложений и технических решений</li>
+          <li>Связь с пользователем по его запросу</li>
+          <li>Выполнение договорных обязательств</li>
+          <li>Улучшение качества сайта и сервисов</li>
+        </ul>
+
+        <h2>4. Правовые основания</h2>
+        <p>Обработка осуществляется на основании согласия субъекта (ст. 6 ч. 1 п. 1 ФЗ-152), исполнения договора (п. 5) и законных интересов оператора (п. 7).</p>
+
+        <h2>5. Хранение и защита данных</h2>
+        <p>Данные хранятся не дольше, чем необходимо для достижения целей обработки или до отзыва согласия. Оператор принимает организационные и технические меры защиты от несанкционированного доступа.</p>
+        <p>Данные не передаются третьим лицам без согласия пользователя, кроме случаев, предусмотренных законодательством РФ.</p>
+
+        <h2>6. Права субъекта данных</h2>
+        <ul>
+          <li>Получать информацию об обработке своих данных</li>
+          <li>Требовать уточнения, блокирования или удаления</li>
+          <li>Отозвать согласие в любой момент</li>
+          <li>Обжаловать действия оператора в Роскомнадзоре</li>
+        </ul>
+        <p>Запросы направляйте на: <a href="mailto:info@virston.ru">info@virston.ru</a></p>
+
+        <h2>7. Cookie</h2>
+        <p>Сайт использует cookie для работы и сбора анонимной статистики (Яндекс.Метрика, Google Analytics). Отключить cookie можно в настройках браузера.</p>
+
+        <h2>8. Изменения</h2>
+        <p>Оператор вправе вносить изменения в Политику. Актуальная редакция всегда размещена на этой странице.</p>
+
+        <h2>9. Контакты оператора</h2>
+        <ul>
+          <li>Email: <a href="mailto:info@virston.ru">info@virston.ru</a></li>
+          <li>Телефон: <a href="tel:+74991100080">+7 (499) 110-00-80</a></li>
+          <li>Адрес: 214020, Россия, г. Смоленск, ул. Шевченко, д. 86, помещ. 5А</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-ink text-white border-t border-white/10">
+  <div class="container-x py-20">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <img src="assets/shared/logo.png" alt="VIRSTON" class="h-8 w-auto" style="mix-blend-mode:screen" />
+        <p class="text-white/70 text-[14px] mt-6 max-w-[320px] leading-[1.6]">
+          Российский производитель промышленных систем высокого давления. Производство — Минск. Работаем с 2008 года.
+        </p>
+      </div>
+      <div class="md:col-span-2">
+        <div class="mono text-[10px] tracking-[.2em] uppercase text-white/45 mb-4">Решения</div>
+        <ul class="space-y-2.5 text-[14px] text-white/85">
+          <li><a class="hover:text-white" href="pylepodavlenie.html">Пылеподавление</a></li>
+          <li><a class="hover:text-white" href="uvlazhnenie.html">Увлажнение</a></li>
+          <li><a class="hover:text-white" href="ohlazhdenie.html">Охлаждение</a></li>
+          <li><a class="hover:text-white" href="dezbariers.html">Дезбарьеры</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-3">
+        <div class="mono text-[10px] tracking-[.2em] uppercase text-white/45 mb-4">Компания</div>
+        <ul class="space-y-2.5 text-[14px] text-white/85">
+          <li><a class="hover:text-white" href="o-kompanii.html">О компании</a></li>
+          <li><a class="hover:text-white" href="proekty.html">Проекты</a></li>
+          <li><a class="hover:text-white" href="servis.html">Сервис</a></li>
+          <li><a class="hover:text-white" href="kontakty.html">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-3">
+        <div class="mono text-[10px] tracking-[.2em] uppercase text-white/45 mb-4">Контакты — Россия</div>
+        <ul class="space-y-2 text-[14px] text-white/85">
+          <li><a href="tel:+78005000403">+7 (800) 500-04-03</a></li>
+          <li><a href="tel:+74991100080">+7 (499) 110-00-80</a></li>
+          <li><a href="mailto:info@virston.ru" class="underline underline-offset-2">info@virston.ru</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-16 pt-6 border-t border-white/15 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div class="text-white/55 text-[12px] mono tracking-wide">© 2008—2026 VIRSTON · ООО «Инновации и Технологии»</div>
+      <div class="flex items-center gap-5 text-[12px] text-white/55">
+        <a href="politika.html" class="hover:text-white">Политика обработки данных</a>
+        <a href="karta-sayta.html" class="hover:text-white">Карта сайта</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+// Nav dropdown with delay
+(function(){
+  var DELAY = 300;
+  function initDropdown(wrap, menu) {
+    var timer = null;
+    function show() { clearTimeout(timer); menu.classList.add('open'); }
+    function hide() { timer = setTimeout(function(){ menu.classList.remove('open'); }, DELAY); }
+    wrap.addEventListener('mouseenter', show);
+    wrap.addEventListener('mouseleave', hide);
+    menu.addEventListener('mouseenter', show);
+    menu.addEventListener('mouseleave', hide);
+  }
+  document.querySelectorAll('.nav-dropdown').forEach(function(wrap){
+    var menu = wrap.querySelector('.nav-dropdown-menu');
+    if(menu) initDropdown(wrap, menu);
+  });
+  document.querySelectorAll('.nav-dropdown-single').forEach(function(wrap){
+    var menu = wrap.querySelector('.nav-dropdown-single-menu');
+    if(menu) initDropdown(wrap, menu);
+  });
+})();
+</script>
+</body>
+</html>

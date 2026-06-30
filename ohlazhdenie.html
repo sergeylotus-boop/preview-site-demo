@@ -1,0 +1,996 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Системы охлаждения — VIRSTON</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    fontFamily: { sans:['Inter','sans-serif'], display:['Manrope','sans-serif'], mono:['"JetBrains Mono"','monospace'] },
+    colors: { ink:'#0E0E10', paper:'#FAFAF7', card:'#F2F1EC', steel:'#5B5C61', mute:'#8C8D92',
+      brand:{ DEFAULT:'#E62B53', deep:'#B81C3F' } },
+  }}};
+</script>
+<style>
+  :root { --brand:#E62B53; --brand-deep:#B81C3F; --cool:#1F6FB8; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Inter',sans-serif; background:#FAFAF7; color:#0E0E10; }
+  .display { font-family:'Manrope',sans-serif; letter-spacing:-0.03em; line-height:1; font-weight:700; }
+  .mono { font-family:'JetBrains Mono',monospace; }
+  .num { font-feature-settings:"tnum" 1,"lnum" 1; }
+  .grid-12 { display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:24px; }
+  .container-x { max-width:1440px; margin-inline:auto; padding-inline:32px; }
+  @media (max-width:768px){ .container-x{ padding-inline:20px; } }
+  .hairline { border-color:rgba(14,14,16,.12); }
+  .hairline-strong { border-color:rgba(14,14,16,.22); }
+  .label-eyebrow { font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#5B5C61; }
+  .brand-bar { background:var(--brand); }
+  .brand-text { color:var(--brand); }
+  .hero-shadow { background:linear-gradient(180deg, rgba(14,14,16,.45) 0%, rgba(14,14,16,.30) 40%, rgba(14,14,16,.75) 100%); }
+  .hero-grain { background-image: radial-gradient(rgba(255,255,255,.04) 1px, transparent 1px); background-size: 3px 3px; mix-blend-mode: overlay; }
+  section.s { padding-top:120px; padding-bottom:120px; }
+  @media (max-width:900px){ section.s { padding-top:72px; padding-bottom:72px; } }
+  .btn-primary { background:var(--brand); color:white; padding:14px 22px; font-weight:600; font-size:14px; display:inline-flex; align-items:center; gap:10px; border:1px solid var(--brand); }
+  .btn-primary:hover { background:var(--brand-deep); border-color:var(--brand-deep); }
+  .btn-secondary { background:transparent; color:#0E0E10; padding:13px 21px; font-weight:600; font-size:14px; display:inline-flex; align-items:center; gap:10px; border:1px solid rgba(14,14,16,.25); }
+  .btn-secondary:hover { background:#0E0E10; color:white; border-color:#0E0E10; }
+  .btn-on-dark { background:white; color:#0E0E10; padding:13px 21px; font-weight:600; font-size:14px; display:inline-flex; align-items:center; gap:10px; border:1px solid white; }
+  .stickychip { position:fixed; right:24px; bottom:24px; z-index:60; background:var(--brand); color:white; border-radius:999px; padding:12px 18px 12px 14px; font:600 14px Inter; box-shadow:0 12px 30px -10px rgba(230,43,83,.6), 0 2px 6px rgba(0,0,0,.18); display:inline-flex; align-items:center; gap:10px; }
+  .photo-zoom img { transition:transform .8s ease; }
+  .photo-zoom:hover img { transform:scale(1.04); }
+  .dot-rule { background-image:linear-gradient(90deg, rgba(14,14,16,.4) 0 4px, transparent 4px 10px); background-size:10px 1px; height:1px; }
+  details > summary { list-style:none; cursor:pointer; }
+  details > summary::-webkit-details-marker { display:none; }
+  .tape { display:flex; gap:48px; animation:tape 50s linear infinite; }
+  @keyframes tape { from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
+  /* Thermometer gauge */
+  .thermo { position:relative; height:280px; width:48px; }
+  .thermo .col { position:absolute; top:0; left:50%; transform:translateX(-50%); width:14px; background:#E8E5DE; border:1px solid rgba(14,14,16,.22); height:100%; }
+  .thermo .fill { position:absolute; bottom:0; left:0; right:0; background:linear-gradient(180deg, var(--brand-deep), var(--brand)); transition:height .6s ease; }
+  .thermo .bulb { position:absolute; bottom:-12px; left:50%; transform:translateX(-50%); width:32px; height:32px; border-radius:50%; background:var(--brand-deep); border:1px solid rgba(14,14,16,.22); }
+  .thermo .tick { position:absolute; left:calc(50% + 12px); width:10px; height:1px; background:#0E0E10; opacity:.5; }
+  .thermo .tickLabel { position:absolute; left:calc(50% + 26px); font:500 11px 'JetBrains Mono',monospace; color:#5B5C61; transform:translateY(-50%); }
+  /* Delta chart */
+  .deltabar { position:relative; height:34px; background:#F2F1EC; border:1px solid rgba(14,14,16,.18); }
+  .deltabar > .seg-hot { position:absolute; top:0; left:0; bottom:0; background:linear-gradient(90deg, #F2A93B, var(--brand-deep)); }
+  .deltabar > .seg-target { position:absolute; top:0; bottom:0; border-left:1px dashed #0E0E10; border-right:1px dashed #0E0E10; background:rgba(14,14,16,.05); }
+
+  /* ── Nav hover dropdown ─────────────────────────────── */
+  .nav-dropdown { position:relative; }
+  .nav-dropdown-toggle { display:flex; align-items:center; gap:5px; cursor:pointer; font-weight:500; font-size:14px; color:rgba(14,14,16,0.85); background:none; border:none; padding:0; font-family:inherit; position:relative; padding-bottom:2px; }
+  .nav-dropdown-toggle::after { content:''; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--brand,#E62B53); transition:width 0.25s ease; }
+  .nav-dropdown:hover .nav-dropdown-toggle::after { width:100%; }
+  .nav-dropdown-menu { display:none; position:absolute; left:0; top:calc(100% + 8px); z-index:50; background:white; border:0.5px solid rgba(14,14,16,0.12); box-shadow:0 12px 40px -8px rgba(14,14,16,0.18); padding:24px; min-width:460px; grid-template-columns:1fr 1fr; gap:16px 24px; }
+  .nav-dropdown-menu.open { display:grid; }
+  .nav-dropdown-menu a { display:block; text-decoration:none; }
+  .nav-dropdown-menu a:hover .dditem-title { color:var(--brand,#E62B53); }
+  .dditem-num { font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:#8C8D92; }
+  .dditem-title { font-weight:600; color:#0E0E10; margin-top:2px; font-size:14px; }
+  .dditem-sub { font-size:12px; color:#5B5C61; margin-top:2px; }
+  .nav-dropdown-single { position:relative; }
+  .nav-dropdown-single > a { position:relative; padding-bottom:2px; }
+  .nav-dropdown-single > a::after { content:''; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--brand,#E62B53); transition:width 0.25s ease; }
+  .nav-dropdown-single:hover > a::after { width:100%; }
+  .nav-dropdown-single-menu { display:none; position:absolute; left:0; top:calc(100% + 8px); z-index:50; background:white; border:0.5px solid rgba(14,14,16,0.12); box-shadow:0 12px 40px -8px rgba(14,14,16,0.18); padding:16px; min-width:300px; }
+  .nav-dropdown-single-menu.open { display:block; }
+  .nav-dropdown-single-menu a { display:flex; align-items:flex-start; gap:12px; padding:10px 12px; font-size:14px; color:#0E0E10; text-decoration:none; border-bottom:0.5px solid rgba(14,14,16,0.08); }
+  .nav-dropdown-single-menu a:last-child { border-bottom:none; }
+  .nav-dropdown-single-menu a:hover { background:#F2F1EC; }
+  .nav-dropdown-single-menu .ddi-num { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.15em; color:#8C8D92; flex-shrink:0; margin-top:2px; }
+  .nav-dropdown-single-menu .ddi-body .ddi-title { font-weight:600; color:#0E0E10; font-size:14px; }
+  .nav-dropdown-single-menu .ddi-body .ddi-sub { font-size:12px; color:#5B5C61; margin-top:1px; }
+  .nav-dropdown-single-menu a:hover .ddi-title { color:var(--brand); }
+  /* plain nav links */
+  .nav-plain-link { position:relative; text-decoration:none; color:rgba(14,14,16,0.85); font-weight:500; font-size:14px; padding-bottom:2px; }
+  .nav-plain-link::after { content:''; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--brand,#E62B53); transition:width 0.25s ease; }
+  .nav-plain-link:hover::after { width:100%; }
+  .nav-plain-link:hover { color:#0E0E10; }
+  .nav-plain-link.active::after { width:100%; }
+  .nav-dropdown-toggle::after { content:''; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--brand,#E62B53); transition:width 0.25s ease; }
+  .nav-dropdown:hover .nav-dropdown-toggle::after { width:100%; }
+  .nav-dropdown-toggle { position:relative; padding-bottom:2px; }
+  .nav-dropdown-single > a { position:relative; padding-bottom:2px; }
+  .nav-dropdown-single > a::after { content:''; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--brand,#E62B53); transition:width 0.25s ease; }
+  .nav-dropdown-single:hover > a::after { width:100%; }
+
+  /* ── Mobile menu ─────────────────────────────────── */
+  .mob-menu-btn { display:none; flex-direction:column; justify-content:center; gap:5px; width:40px; height:40px; background:none; border:none; cursor:pointer; padding:8px; }
+  .mob-menu-btn span { display:block; width:24px; height:2px; background:#0E0E10; transition:all .25s; border-radius:2px; }
+  .mob-menu-btn.is-open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+  .mob-menu-btn.is-open span:nth-child(2) { opacity:0; }
+  .mob-menu-btn.is-open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+  @media (max-width:1023px) {
+    .mob-menu-btn { display:flex; }
+    .btn-primary-header { display:none !important; }
+  }
+  .mob-menu-overlay {
+    display:none !important; position:fixed; inset:0; top:72px; background:white; z-index:49;
+    flex-direction:column; overflow-y:auto;
+    border-top:1px solid rgba(14,14,16,.12);
+  }
+  .mob-menu-overlay.is-open { display:flex !important; }
+  .mob-menu-overlay a {
+    display:block; padding:16px 24px; font-size:17px; font-weight:500; color:#0E0E10;
+    text-decoration:none; border-bottom:1px solid rgba(14,14,16,.08);
+  }
+  .mob-menu-overlay a:hover { background:#F2F1EC; }
+  .mob-menu-overlay .mob-section {
+    padding:12px 24px 6px; font-family:'JetBrains Mono',monospace;
+    font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#8C8D92;
+  }
+  .mob-menu-overlay .mob-cta {
+    margin:16px 24px; display:block; padding:14px 20px;
+    background:#E62B53; color:white !important; font-weight:600;
+    text-align:center; border-bottom:none !important;
+  }
+  .mob-menu-overlay .mob-cta:hover { background:#B81C3F !important; }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- Top utility -->
+<div class="bg-ink text-white text-[12px]">
+  <div class="container-x flex items-center justify-between py-2.5">
+    <div class="flex items-center gap-6 mono tracking-wider opacity-90">
+      <span class="hidden md:inline">RU · BY · KZ</span>
+      <span class="hidden md:inline">·</span>
+      <span>ПН—ПТ · 09:00—18:00 МСК</span>
+    </div>
+    <div class="flex items-center gap-5 mono opacity-90">
+      <a href="mailto:info@virston.ru">info@virston.ru</a>
+      <span class="hidden md:inline opacity-50">·</span>
+      <a href="tel:+74991100080" class="hidden md:inline">+7 (499) 110-00-80</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-paper/95 backdrop-blur border-b hairline">
+  <div class="container-x flex items-center justify-between h-[72px]">
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="assets/shared/logo.png" alt="VIRSTON" class="h-7 w-auto" />
+      <span class="hidden lg:block mono text-[11px] tracking-[0.18em] text-steel uppercase border-l hairline pl-3 ml-1">Системы высокого давления</span>
+    </a>
+        <nav class="hidden lg:flex items-center gap-7 text-[14px] font-medium text-ink/85">
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle">Решения <svg width="10" height="10" viewBox="0 0 10 10" class="opacity-60"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></button>
+        <div class="nav-dropdown-menu" style="min-width:560px;grid-template-columns:1fr 1fr;">
+          <a href="pylepodavlenie.html"><div class="dditem-num">01</div><div class="dditem-title">Системы пылеподавления</div><div class="dditem-sub">Форсуночные · пушки до 60 м</div></a>
+          <a href="uvlazhnenie.html"><div class="dditem-num">02</div><div class="dditem-title">Системы увлажнения</div><div class="dditem-sub">70–100 Бар, капля 5 мкм</div></a>
+          <a href="dezbariers.html"><div class="dditem-num">03</div><div class="dditem-title">Дезинфекционные барьеры</div><div class="dditem-sub">Арочные, 16 форсунок</div></a>
+          <a href="ohlazhdenie.html"><div class="dditem-num">04</div><div class="dditem-title">Системы охлаждения для автопрома</div><div class="dditem-sub">Адиабатическое, −5…−15 °C</div></a>
+          <a href="osushenie.html"><div class="dditem-num">05</div><div class="dditem-title">Системы осушения</div><div class="dditem-sub">Контроль влажности воздуха</div></a>
+          <a href="monitoring.html"><div class="dditem-num">06</div><div class="dditem-title">Автоматизированный мониторинг</div><div class="dditem-sub">АСУ ТП, SCADA интеграция</div></a>
+        </div>
+      </div>
+      <a href="proekty.html" class="nav-plain-link">Проекты</a>
+      <a href="o-kompanii.html" class="nav-plain-link">О компании</a>
+      <a href="servis.html" class="nav-plain-link">Сервис</a>
+      <a href="kontakty.html" class="nav-plain-link">Контакты</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      
+      <a href="index.html#form" class="btn-primary btn-primary-header text-[13px] !py-2.5 !px-4 btn-primary-header">
+        Получить расчёт
+        <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 6h8M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+      </a>
+    </div>
+    <!-- Hamburger button — mobile only -->
+    <button id="mobMenuBtn" class="mob-menu-btn lg:hidden" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu overlay -->
+<div id="mobMenuOverlay" class="mob-menu-overlay">
+  <div class="mob-section">Решения</div>
+  <a href="pylepodavlenie.html">Системы пылеподавления</a>
+  <a href="uvlazhnenie.html">Системы увлажнения</a>
+  <a href="dezbariers.html">Дезинфекционные барьеры</a>
+  <a href="ohlazhdenie.html">Системы охлаждения для автопрома</a>
+  <a href="osushenie.html">Системы осушения</a>
+  <a href="monitoring.html">Автоматизированный мониторинг</a>
+  <div class="mob-section">Компания</div>
+  <a href="o-kompanii.html">О компании</a>
+  <a href="proekty.html">Проекты</a>
+  <a href="servis.html">Сервис</a>
+  <a href="kontakty.html">Контакты</a>
+  <a href="index.html#form" class="mob-cta">Получить расчёт →</a>
+</div>
+
+<div class="bg-paper border-b hairline">
+  <div class="container-x py-3 flex items-center gap-2 mono text-[11px] tracking-[.15em] uppercase text-mute">
+    <a href="index.html" class="hover:text-ink">Главная</a>
+    <span>›</span>
+    <details class="relative group">
+        <summary class="flex items-center gap-1.5 cursor-pointer hover:text-ink font-medium text-[14px] text-ink/85">Решения <svg width="10" height="10" viewBox="0 0 10 10" class="opacity-60"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></summary>
+        <div class="absolute left-0 top-[34px] w-[460px] bg-white border hairline shadow-xl p-6 grid grid-cols-2 gap-x-6 gap-y-4 z-50">
+          <a href="pylepodavlenie.html"><div class="text-[12px] mono uppercase tracking-wider text-mute">01</div><div class="font-semibold text-ink mt-0.5">Пылеподавление</div><div class="text-[12px] text-steel mt-0.5">Форсуночные · пушки до 60 м</div></a>
+          <a href="uvlazhnenie.html"><div class="text-[12px] mono uppercase tracking-wider text-mute">02</div><div class="font-semibold text-ink mt-0.5">Увлажнение</div><div class="text-[12px] text-steel mt-0.5">70–100 Бар, капля 5 мкм</div></a>
+          <a href="ohlazhdenie.html"><div class="text-[12px] mono uppercase tracking-wider text-mute">03</div><div class="font-semibold text-ink mt-0.5">Охлаждение</div><div class="text-[12px] text-steel mt-0.5">Адиабатическое, −5…−15 °C</div></a>
+          <a href="dezbariers.html"><div class="text-[12px] mono uppercase tracking-wider text-mute">04</div><div class="font-semibold text-ink mt-0.5">Дезбарьеры</div><div class="text-[12px] text-steel mt-0.5">Арочные, 16 форсунок</div></a>
+        </div>
+      </details>
+    <span>›</span>
+    <span class="text-ink">Охлаждение</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="relative bg-ink text-white overflow-hidden">
+  <div class="absolute inset-0">
+    <img src="assets/index/auto-paint.png" class="w-full h-full object-cover object-center" style="opacity:0.4;" alt="" />
+    
+  </div>
+
+  <div class="relative container-x pt-8 pb-3 flex items-center justify-between text-white/70 mono text-[11px] tracking-[.2em] uppercase">
+    <span>RU / 04 ⟶ ОХЛАЖДЕНИЕ</span>
+    <span class="hidden md:inline">АДИАБАТИЧЕСКИЙ ПРИНЦИП</span>
+  </div>
+
+  <div class="relative container-x pt-16 pb-24 md:pt-24 md:pb-36">
+    <div class="grid-12 items-end">
+      <div class="col-span-12 md:col-span-8">
+        <div class="flex items-center gap-3 mb-7">
+          <span class="brand-bar w-9 h-[3px]"></span>
+          <span class="mono text-[11px] tracking-[.2em] uppercase text-white/85">Готовое решение · адиабатика</span>
+        </div>
+        <h1 class="display text-white text-[52px] sm:text-[72px] md:text-[100px] lg:text-[116px]" style="font-size: 76px">
+          Адиабатическое<br/><span class="brand-text">охлаждение</span><br/>воздуха</h1>
+        <p class="mt-8 max-w-[600px] text-[17px] text-white/80 leading-[1.55]">
+          Снижение температуры воздуха на 8—12&nbsp;°C без компрессорного оборудования.
+          Аэрозоль 10—40 мкм испаряется на лету, забирая тепло из окружающей среды.
+          Расход энергии — в 10 раз ниже, чем у промышленных кондиционеров.
+        </p>
+        <div class="mt-10 flex flex-wrap items-center gap-3">
+          <a href="index.html#form" class="btn-primary !text-[14px]">
+            Запросить расчёт
+            <svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7h10M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.7" fill="none"/></svg>
+          </a>
+          <a href="#cases" class="btn-on-dark">Где применяется →</a>
+        </div>
+      </div>
+      <div class="col-span-12 md:col-span-4 hidden md:block">
+        <div class="border border-white/15 bg-white/[.04] backdrop-blur-sm p-6">
+          <div class="mono text-[10px] uppercase tracking-[.2em] text-white/55 mb-4">Где работает</div>
+          <ul class="text-[13px] space-y-3 text-white/80">
+            <li class="flex items-start gap-3"><span class="brand-text mono text-[11px] mt-0.5">01</span> Покрасочные камеры и сушильные линии</li>
+            <li class="flex items-start gap-3"><span class="brand-text mono text-[11px] mt-0.5">02</span> Литейные и кузнечные цеха</li>
+            <li class="flex items-start gap-3"><span class="brand-text mono text-[11px] mt-0.5">03</span> Стекольное и керамическое производство</li>
+            <li class="flex items-start gap-3"><span class="brand-text mono text-[11px] mt-0.5">04</span> Открытые террасы кафе и ресторанов</li>
+            <li class="flex items-start gap-3"><span class="brand-text mono text-[11px] mt-0.5">05</span> Стадионы и спортивные площадки</li>
+            <li class="flex items-start gap-3"><span class="brand-text mono text-[11px] mt-0.5">06</span> Птицефермы и теплицы</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KPI strip -->
+  <div class="relative border-t border-white/15 bg-ink/85 backdrop-blur-sm">
+    <div class="container-x grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
+      <div class="py-5 md:py-7 pr-6">
+        <div class="mono text-[10px] uppercase tracking-[.2em] text-white/55">[01] ΔT</div>
+        <div class="display num text-[44px] md:text-[56px] mt-1 leading-none">−8…12<span class="brand-text text-[22px] align-top ml-1">°C</span></div>
+        <div class="text-[12px] text-white/65 mt-1">от температуры воздуха</div>
+      </div>
+      <div class="py-5 md:py-7 px-6">
+        <div class="mono text-[10px] uppercase tracking-[.2em] text-white/55">[02] Энергия</div>
+        <div class="display num text-[44px] md:text-[56px] mt-1 leading-none">в 10×<span class="text-[20px] text-white/65 ml-2">ниже</span></div>
+        <div class="text-[12px] text-white/65 mt-1">vs компрессорные системы</div>
+      </div>
+      <div class="py-5 md:py-7 px-6">
+        <div class="mono text-[10px] uppercase tracking-[.2em] text-white/55">[03] Капля</div>
+        <div class="display num text-[44px] md:text-[56px] mt-1 leading-none">10—40<span class="text-[20px] text-white/65 ml-2">мкм</span></div>
+        <div class="text-[12px] text-white/65 mt-1">испаряется на лету</div>
+      </div>
+      <div class="py-5 md:py-7 px-6">
+        <div class="mono text-[10px] uppercase tracking-[.2em] text-white/55">[04] Окупаемость</div>
+        <div class="display num text-[44px] md:text-[56px] mt-1 leading-none">1—2<span class="text-[18px] text-white/65 ml-2">сезона</span></div>
+        <div class="text-[12px] text-white/65 mt-1">по факту объектов</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROBLEM ===== -->
+<section class="s bg-paper">
+  <div class="container-x">
+    <div class="grid-12 mb-14">
+      <div class="col-span-12 md:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">№ 01 / Что решает система</span>
+        </div>
+        <h2 class="display text-[44px] md:text-[64px] tracking-tighter">+34&nbsp;°C в цеху —<br/>это не норма</h2>
+      </div>
+      <div class="col-span-12 md:col-span-6 md:col-start-7 self-end">
+        <p class="text-[17px] text-steel leading-[1.55] max-w-[540px]">
+          Перегрев — это брак на покраске и сушке, потеря производительности персонала, простой оборудования по тепловой защите и риск штрафа по ст.&nbsp;212&nbsp;ТК&nbsp;РФ. Кондиционеры дорогие в эксплуатации и не справляются с большими открытыми объёмами.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 border hairline-strong divide-y md:divide-y-0 md:divide-x divide-[rgba(14,14,16,0.18)] bg-white">
+      <div class="p-8">
+        <div class="flex items-start justify-between mb-12">
+          <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">01</span>
+          <span class="display num text-[40px] brand-text">+34°</span>
+        </div>
+        <h3 class="display text-[24px] tracking-tighter">Брак и переделка</h3>
+        <p class="text-[14px] text-steel mt-3 leading-[1.6]">На покраске и лаке температура воздуха выше 30°C — это «шагрень», подтёки и непрозрачные слои. На сушильных линиях — нестабильный график полимеризации и переделка партий.</p>
+      </div>
+      <div class="p-8">
+        <div class="flex items-start justify-between mb-12">
+          <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">02</span>
+          <span class="display num text-[40px] brand-text">−30%</span>
+        </div>
+        <h3 class="display text-[24px] tracking-tighter">Производительность</h3>
+        <p class="text-[14px] text-steel mt-3 leading-[1.6]">При температуре в цеху выше 28°C производительность ручного труда падает на 20—30% — данные ВОЗ и Минтруда. Длительные перерывы по СанПиН становятся обязательными.</p>
+      </div>
+      <div class="p-8">
+        <div class="flex items-start justify-between mb-12">
+          <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">03</span>
+          <span class="display num text-[40px] brand-text">×10</span>
+        </div>
+        <h3 class="display text-[24px] tracking-tighter">Затраты на кондиционирование</h3>
+        <p class="text-[14px] text-steel mt-3 leading-[1.6]">Промышленный кондиционер на цех 5000 м³ — это 80—120 кВт установленной мощности и счёт за электричество, который растёт каждый летний сезон. Адиабатика снижает его в 10 раз.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRINCIPLE ===== -->
+<section class="s bg-card border-y hairline">
+  <div class="container-x">
+    <div class="grid-12 mb-14">
+      <div class="col-span-12 md:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">№ 02 / Принцип работы</span>
+        </div>
+        <h2 class="display text-[44px] md:text-[64px] tracking-tighter">Вода превращается<br/>в холод</h2>
+      </div>
+      <div class="col-span-12 md:col-span-6 md:col-start-7 self-end">
+        <p class="text-[17px] text-steel leading-[1.55] max-w-[540px]">
+          Адиабатический процесс — испарение воды без подвода тепла извне. Энергия фазового перехода забирается у воздуха в зоне распыла. На каждый литр воды — 2257 кДж тепла из помещения.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <!-- thermo diagram -->
+      <div class="lg:col-span-7 bg-white border hairline-strong p-8 md:p-12">
+        <div class="grid grid-cols-12 gap-6 items-center">
+          <div class="col-span-12 md:col-span-3 flex items-end justify-center md:justify-start gap-6">
+            <div class="thermo">
+              <div class="col"><div class="fill" style="height:80%"></div></div>
+              <div class="bulb"></div>
+              <div class="tick" style="top:10%"></div><div class="tickLabel" style="top:10%">40°</div>
+              <div class="tick" style="top:30%"></div><div class="tickLabel" style="top:30%">32°</div>
+              <div class="tick" style="top:50%"></div><div class="tickLabel" style="top:50%">24°</div>
+              <div class="tick" style="top:70%"></div><div class="tickLabel" style="top:70%">16°</div>
+            </div>
+            <div class="text-center">
+              <div class="mono text-[10px] uppercase tracking-[.18em] text-mute">До</div>
+              <div class="display num text-[36px] mt-1">34°C</div>
+              <div class="text-[12px] text-steel mt-1">воздух</div>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-6">
+            <div class="space-y-5">
+              <div>
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="mono text-[10px] uppercase tracking-[.18em] text-mute">01 / Распыл аэрозоля</span>
+                  <span class="mono text-[11px] text-steel">10—40 мкм</span>
+                </div>
+                <div class="deltabar"><div class="seg-hot" style="width:100%"></div></div>
+              </div>
+              <div>
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="mono text-[10px] uppercase tracking-[.18em] text-mute">02 / Испарение</span>
+                  <span class="mono text-[11px] text-steel">2257 кДж/л</span>
+                </div>
+                <div class="deltabar"><div class="seg-hot" style="width:80%"></div></div>
+              </div>
+              <div>
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="mono text-[10px] uppercase tracking-[.18em] text-mute">03 / Тепло уходит в фазовый переход</span>
+                  <span class="mono text-[11px] text-steel">Δh</span>
+                </div>
+                <div class="deltabar"><div class="seg-hot" style="width:55%"></div><div class="seg-target" style="left:55%; width:25%"></div></div>
+              </div>
+              <div>
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="mono text-[10px] uppercase tracking-[.18em] text-mute">04 / Воздух охлаждается</span>
+                  <span class="brand-text mono text-[11px]">−10°C</span>
+                </div>
+                <div class="deltabar"><div class="seg-hot" style="width:30%"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-3 flex items-end justify-center md:justify-start gap-6">
+            <div class="thermo">
+              <div class="col"><div class="fill" style="height:40%; background:linear-gradient(180deg, #5BA0DF, #1F6FB8)"></div></div>
+              <div class="bulb" style="background:#1F6FB8"></div>
+              <div class="tick" style="top:10%"></div><div class="tickLabel" style="top:10%">40°</div>
+              <div class="tick" style="top:30%"></div><div class="tickLabel" style="top:30%">32°</div>
+              <div class="tick" style="top:50%"></div><div class="tickLabel" style="top:50%">24°</div>
+              <div class="tick" style="top:70%"></div><div class="tickLabel" style="top:70%">16°</div>
+            </div>
+            <div class="text-center">
+              <div class="mono text-[10px] uppercase tracking-[.18em] text-mute">После</div>
+              <div class="display num text-[36px] mt-1">24°C</div>
+              <div class="text-[12px] text-steel mt-1">воздух</div>
+            </div>
+          </div>
+        </div>
+        <div class="dot-rule mt-10 mb-6"></div>
+        <div class="grid grid-cols-3 gap-6 text-[13px]">
+          <div><div class="mono text-[10px] uppercase tracking-[.18em] text-mute">Расход воды</div><div class="display num text-[22px] mt-1">~1.5 л/мин·кВт</div><p class="text-[12px] text-steel mt-1">на тонну охлаждения</p></div>
+          <div><div class="mono text-[10px] uppercase tracking-[.18em] text-mute">Влажность</div><div class="display num text-[22px] mt-1">+15…25% RH</div><p class="text-[12px] text-steel mt-1">в зоне распыла</p></div>
+          <div><div class="mono text-[10px] uppercase tracking-[.18em] text-mute">Эффект</div><div class="display num text-[22px] mt-1">тем суше — тем сильнее</div><p class="text-[12px] text-steel mt-1">обратная зависимость от RH</p></div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 bg-ink text-white p-8 md:p-10 flex flex-col justify-between">
+        <div>
+          <div class="mono text-[10px] uppercase tracking-[.2em] text-white/55 mb-4">Почему именно высокое давление</div>
+          <h3 class="display text-[28px] tracking-tighter leading-[1.1]">Низкое давление — это лужи.<br/><span class="brand-text">Высокое — это пар</span></h3>
+          <p class="text-[14px] text-white/70 mt-5 leading-[1.6]">
+            При 2—5 бар капли крупные и долго падают вниз. Они не успевают испариться, а смачивают поверхность. При 70—100 бар капля 10—40 мкм испаряется за десятые доли секунды — превращается в холодный пар, не достигая пола.
+          </p>
+        </div>
+        <ul class="mt-8 space-y-3 text-[13px]">
+          <li class="flex items-start gap-3"><span class="brand-text mono">·</span><span class="text-white/85">Никаких луж и подтёков на полу</span></li>
+          <li class="flex items-start gap-3"><span class="brand-text mono">·</span><span class="text-white/85">Не смачивает оборудование, столы, продукт</span></li>
+          <li class="flex items-start gap-3"><span class="brand-text mono">·</span><span class="text-white/85">Работает в открытых пространствах — терраса, цех, стадион</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TWO TYPES ===== -->
+<section class="s bg-paper">
+  <div class="container-x">
+    <div class="grid-12 mb-12">
+      <div class="col-span-12 md:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">№ 03 / Где применяется</span>
+        </div>
+        <h2 class="display text-[44px] md:text-[64px] tracking-tighter">Промышленность<br/>и открытые<br/>пространства</h2>
+      </div>
+      <div class="col-span-12 md:col-span-6 md:col-start-7 self-end">
+        <p class="text-[17px] text-steel leading-[1.55] max-w-[520px]">
+          Принцип один — реализация подбирается под объект. Для цеха — туман над рабочей зоной, для террасы — линейный контур по периметру, для стадиона — мобильные пушки в режиме осцилляции.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <article class="bg-white border hairline-strong photo-zoom">
+        <div class="aspect-[4/3] overflow-hidden bg-card">
+          <img src="assets/index/auto-paint.png" class="w-full h-full object-cover" alt="" />
+        </div>
+        <div class="p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">A · Производство</span>
+            <span class="text-[11px] mono text-steel">Закрытые цеха</span>
+          </div>
+          <h3 class="display text-[30px] tracking-tighter">Цеха, литьё,<br/>покраска, сушка</h3>
+          <p class="text-[14px] text-steel mt-3 leading-[1.6]">
+            Туманообразующая магистраль над рабочей зоной либо вдоль линии конвейера. Зонирование по электромагнитным клапанам — независимый режим для каждой смены и участка. Управление по датчикам температуры и влажности.
+          </p>
+          <div class="grid grid-cols-3 gap-4 mt-6 pt-6 border-t hairline">
+            <div><div class="mono text-[10px] uppercase tracking-wider text-mute">ΔT</div><div class="display num text-[20px] mt-1">8—10°C</div></div>
+            <div><div class="mono text-[10px] uppercase tracking-wider text-mute">Площадь</div><div class="display num text-[20px] mt-1">от 200 м²</div></div>
+            <div><div class="mono text-[10px] uppercase tracking-wider text-mute">Зон</div><div class="display num text-[20px] mt-1">до 16</div></div>
+          </div>
+        </div>
+      </article>
+      <article class="bg-white border hairline-strong photo-zoom">
+        <div class="aspect-[4/3] overflow-hidden bg-card">
+          <img src="assets/ohlazhdenie/kafe.png" class="w-full h-full object-cover" alt="" />
+        </div>
+        <div class="p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">B · Открытые пространства</span>
+            <span class="text-[11px] mono text-steel">HoReCa · спорт</span>
+          </div>
+          <h3 class="display text-[30px] tracking-tighter">Террасы, стадионы,<br/>летние веранды</h3>
+          <p class="text-[14px] text-steel mt-3 leading-[1.6]">
+            Линейная магистраль по периметру террасы или контура трибуны. Никаких труб над головой — компактные форсунки врезаются в существующий навес или мачту освещения. Управление с пульта барной стойки.
+          </p>
+          <div class="grid grid-cols-3 gap-4 mt-6 pt-6 border-t hairline">
+            <div><div class="mono text-[10px] uppercase tracking-wider text-mute">ΔT</div><div class="display num text-[20px] mt-1">до 12°C</div></div>
+            <div><div class="mono text-[10px] uppercase tracking-wider text-mute">Шум</div><div class="display num text-[20px] mt-1">&lt;45 дБ</div></div>
+            <div><div class="mono text-[10px] uppercase tracking-wider text-mute">Питание</div><div class="display num text-[20px] mt-1">220В</div></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INDUSTRIES TAPE ===== -->
+<section class="bg-card border-y hairline">
+  <div class="py-7">
+    <div class="container-x flex items-center gap-6 mb-4">
+      <span class="brand-bar w-6 h-[2px]"></span>
+      <span class="mono text-[11px] tracking-[.2em] uppercase text-steel">Где работает</span>
+    </div>
+    <div class="overflow-hidden relative">
+      <div class="tape whitespace-nowrap text-[20px] md:text-[26px] display tracking-tighter text-ink/85">
+        <span>Покрасочные камеры</span><span class="brand-text">●</span>
+        <span>Литейные цеха</span><span class="brand-text">●</span>
+        <span>Стекольное производство</span><span class="brand-text">●</span>
+        <span>Кузница и термообработка</span><span class="brand-text">●</span>
+        <span>Полиграфия</span><span class="brand-text">●</span>
+        <span>Открытые террасы</span><span class="brand-text">●</span>
+        <span>Стадионы</span><span class="brand-text">●</span>
+        <span>Зоопарки</span><span class="brand-text">●</span>
+        <span>Птицефермы</span><span class="brand-text">●</span>
+        <span>Теплицы</span><span class="brand-text">●</span>
+        <span>Серверные и ЦОД</span><span class="brand-text">●</span>
+        <span>Покрасочные камеры</span><span class="brand-text">●</span>
+        <span>Литейные цеха</span><span class="brand-text">●</span>
+        <span>Стекольное производство</span><span class="brand-text">●</span>
+        <span>Кузница и термообработка</span><span class="brand-text">●</span>
+        <span>Полиграфия</span><span class="brand-text">●</span>
+        <span>Открытые террасы</span><span class="brand-text">●</span>
+        <span>Стадионы</span><span class="brand-text">●</span>
+        <span>Зоопарки</span><span class="brand-text">●</span>
+        <span>Птицефермы</span><span class="brand-text">●</span>
+        <span>Теплицы</span><span class="brand-text">●</span>
+        <span>Серверные и ЦОД</span><span class="brand-text">●</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SYSTEM COMPOSITION ===== -->
+<section class="s bg-paper">
+  <div class="container-x">
+    <div class="grid-12 mb-14">
+      <div class="col-span-12 md:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">№ 04 / Состав системы</span>
+        </div>
+        <h2 class="display text-[44px] md:text-[64px] tracking-tighter">Что входит<br/>в систему</h2>
+      </div>
+      <div class="col-span-12 md:col-span-6 md:col-start-7 self-end">
+        <p class="text-[17px] text-steel leading-[1.55] max-w-[520px]">
+          Полный комплекс — насос, шкаф, магистраль, форсунки, датчики. Поставка одной коробкой с готовой схемой подключения. Шеф-монтаж и пусконаладка — нашими специалистами.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[rgba(14,14,16,0.12)] border hairline-strong">
+      <article class="bg-white p-6">
+        <div class="aspect-[5/4] mb-5 bg-card overflow-hidden"><img src="assets/index/pumps-workshop.png" class="w-full h-full object-cover"/></div>
+        <div class="mono text-[10px] uppercase tracking-[.18em] text-mute">01 / Насосная установка</div>
+        <h4 class="display text-[20px] tracking-tighter mt-1.5">VIRSTON Duplex / Basic</h4>
+        <p class="text-[13px] text-steel mt-2 leading-[1.55]">70—100 бар. Насосы Speroni / Pratissoli, двигатели Siemens / ABB. Двойная установка с резервированием по аварии.</p>
+      </article>
+      <article class="bg-white p-6">
+        <div class="aspect-[5/4] mb-5 bg-card overflow-hidden"><img src="assets/ohlazhdenie/cabinet-control.jpg" class="w-full h-full object-cover"/></div>
+        <div class="mono text-[10px] uppercase tracking-[.18em] text-mute">02 / Шкаф управления</div>
+        <h4 class="display text-[20px] tracking-tighter mt-1.5">Сенсорная HMI · Modbus</h4>
+        <p class="text-[13px] text-steel mt-2 leading-[1.55]">Зональное управление, расписание, журнал событий. Прямая интеграция с АСУ ТП цеха или системой автоматизации здания.</p>
+      </article>
+      <article class="bg-white p-6">
+        <div class="aspect-[5/4] mb-5 bg-card overflow-hidden"><img src="assets/pylepodavlenie/nozzle-virston.png" class="w-full h-full object-cover"/></div>
+        <div class="mono text-[10px] uppercase tracking-[.18em] text-mute">03 / Форсунки</div>
+        <h4 class="display text-[20px] tracking-tighter mt-1.5">Туманообразующие · 70—100 бар</h4>
+        <p class="text-[13px] text-steel mt-2 leading-[1.55]">Капля 10—40 мкм. Бронзовый или керамический корпус, антикапельный клапан — не капает при отключении системы.</p>
+      </article>
+      <article class="bg-white p-6">
+        <div class="aspect-[5/4] mb-5 bg-card overflow-hidden"><img src="assets/pylepodavlenie/fittings.png" class="w-full h-full object-cover"/></div>
+        <div class="mono text-[10px] uppercase tracking-[.18em] text-mute">04 / Магистраль</div>
+        <h4 class="display text-[20px] tracking-tighter mt-1.5">Нейлон · нержавейка</h4>
+        <p class="text-[13px] text-steel mt-2 leading-[1.55]">Гибкая трубка для скрытого монтажа на террасе. Нержавеющая магистраль для агрессивных промышленных сред.</p>
+      </article>
+      <article class="bg-white p-6">
+        <div class="aspect-[5/4] mb-5 bg-card overflow-hidden"><img src="assets/pylepodavlenie/datchiki.png" class="w-full h-full object-cover"/></div>
+                <div class="mono text-[10px] uppercase tracking-[.18em] text-mute">05 / Датчики</div>
+        <h4 class="display text-[20px] tracking-tighter mt-1.5">Температура · RH · CO₂</h4>
+        <p class="text-[13px] text-steel mt-2 leading-[1.55]">PID-управление по уставкам T и RH. Защита от перенасыщения по верхней границе влажности. Журнал событий 30 дней.</p>
+      </article>
+      <article class="bg-white p-6">
+        <div class="aspect-[5/4] mb-5 bg-card overflow-hidden"><img src="assets/dezbariers/container.png" class="w-full h-full object-cover"/></div>
+        <div class="mono text-[10px] uppercase tracking-[.18em] text-mute">06 / Водоподготовка</div>
+        <h4 class="display text-[20px] tracking-tighter mt-1.5">Обратный осмос · фильтры</h4>
+        <p class="text-[13px] text-steel mt-2 leading-[1.55]">Для систем над оборудованием и над людьми — обязательная деминерализация: исключает белый налёт от солей жёсткости.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CASES ===== -->
+<section id="cases" class="s bg-paper border-t hairline">
+  <div class="container-x">
+    <div class="grid-12 mb-12">
+      <div class="col-span-12 md:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">№ 05 / Кейсы</span>
+        </div>
+        <h2 class="display text-[44px] md:text-[64px] tracking-tighter">Где это работает<br/>прямо сейчас</h2>
+      </div>
+      <div class="col-span-12 md:col-span-6 md:col-start-7 self-end">
+        <p class="text-[17px] text-steel leading-[1.55] max-w-[520px]">
+          Подборка объектов с системами охлаждения VIRSTON — от автозаводов до открытых HoReCa. Полный список — в разделе «Проекты».
+        </p>
+      </div>
+    </div>
+
+    <!-- Featured -->
+    <a href="#" class="block bg-ink text-white relative overflow-hidden mb-6 photo-zoom">
+      <div class="grid grid-cols-12">
+        <div class="col-span-12 md:col-span-7 relative">
+          <div class="aspect-[16/10] md:aspect-auto md:h-[520px] overflow-hidden">
+            <img src="assets/index/auto-paint.png" class="w-full h-full object-cover"/>
+          </div>
+          <div class="absolute top-5 left-5 flex items-center gap-2">
+            <span class="brand-bar text-white px-2.5 py-1 mono text-[10px] tracking-[.18em] uppercase">2014 · Якорный кейс</span>
+          </div>
+        </div>
+        <div class="col-span-12 md:col-span-5 p-8 md:p-12 flex flex-col justify-between">
+          <div>
+            <div class="mono text-[11px] tracking-[.2em] uppercase text-white/55 mb-6">Volkswagen · Грабцево / Калуга</div>
+            <h3 class="display text-[32px] md:text-[42px] tracking-tighter leading-[1.05]">Покрасочный участок автозавода.<br/>Адиабатика и контроль RH</h3>
+            <p class="text-[15px] text-white/70 mt-5 leading-[1.6]">
+              Система адиабатического охлаждения и поддержания влажности на участке покраски. Удержание ΔT&nbsp;~10°C в летний период и стабильного RH&nbsp;55±5% круглый год. Интеграция в АСУ&nbsp;ТП цеха через Modbus&nbsp;TCP.
+            </p>
+            <div class="grid grid-cols-3 gap-4 mt-8">
+              <div><div class="mono text-[10px] uppercase tracking-wider text-white/55">ΔT</div><div class="display num text-[24px] mt-1">−10°C</div></div>
+              <div><div class="mono text-[10px] uppercase tracking-wider text-white/55">RH</div><div class="display num text-[24px] mt-1">55±5%</div></div>
+              <div><div class="mono text-[10px] uppercase tracking-wider text-white/55">Брак</div><div class="display num text-[24px] mt-1">−40%</div></div>
+            </div>
+          </div>
+          <div class="mt-10 flex items-center justify-between border-t border-white/15 pt-5">
+            <span class="text-white/55 text-[12px] mono">АВТОПРОМ · РОССИЯ</span>
+            <span class="inline-flex items-center gap-2 text-[13px] font-semibold">Подробнее →</span>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <article class="bg-white border hairline group photo-zoom">
+        <div class="aspect-[4/3] overflow-hidden"><img src="assets/index/warehouse.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"/></div>
+        <div class="p-6">
+          <div class="flex items-center justify-between text-[11px] mono tracking-wider text-mute uppercase mb-3"><span>2019 · Тверь</span><span class="brand-text">Стекло</span></div>
+          <h4 class="display text-[20px] tracking-tighter">«Светотехника» · стекольный цех</h4>
+          <p class="text-[13px] text-steel mt-2 leading-[1.55]">Охлаждение рабочих зон возле печей отжига. Снижение температуры с +42°C до +30°C на постах оператора.</p>
+        </div>
+      </article>
+      <article class="bg-white border hairline group photo-zoom">
+        <div class="aspect-[4/3] overflow-hidden"><img src="assets/ohlazhdenie/kafe.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"/></div>
+        <div class="p-6">
+          <div class="flex items-center justify-between text-[11px] mono tracking-wider text-mute uppercase mb-3"><span>2021 · Краснодар</span><span class="brand-text">HoReCa</span></div>
+          <h4 class="display text-[20px] tracking-tighter">Сеть летних веранд</h4>
+          <p class="text-[13px] text-steel mt-2 leading-[1.55]">Линейные системы по периметру 18 веранд. Уровень шума &lt;45 дБ, управление с барной стойки.</p>
+        </div>
+      </article>
+      <article class="bg-white border hairline group photo-zoom">
+        <div class="aspect-[4/3] overflow-hidden"><img src="assets/ohlazhdenie/ptitsa.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"/></div>
+        <div class="p-6">
+          <div class="flex items-center justify-between text-[11px] mono tracking-wider text-mute uppercase mb-3"><span>2022 · Ростов</span><span class="brand-text">Птицефабрика</span></div>
+          <h4 class="display text-[20px] tracking-tighter">«Ростовский бройлер»</h4>
+          <p class="text-[13px] text-steel mt-2 leading-[1.55]">Охлаждение птичников. Снижение температуры на 8°C, падёж в жару — снижен в 2,5 раза.</p>
+        </div>
+      </article>
+      <article class="bg-white border hairline group photo-zoom">
+        <div class="aspect-[4/3] overflow-hidden"><img src="assets/ohlazhdenie/litejnyj.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"/></div>
+        <div class="p-6">
+          <div class="flex items-center justify-between text-[11px] mono tracking-wider text-mute uppercase mb-3"><span>2020 · Минск, BY</span><span class="brand-text">Литьё</span></div>
+          <h4 class="display text-[20px] tracking-tighter">МАЗ · литейный цех</h4>
+          <p class="text-[13px] text-steel mt-2 leading-[1.55]">Локальное охлаждение постов формовщиков. Удержание +28°C при наружных +34°C.</p>
+        </div>
+      </article>
+      <article class="bg-white border hairline group photo-zoom">
+        <div class="aspect-[4/3] overflow-hidden"><img src="assets/ohlazhdenie/orang.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"/></div>
+        <div class="p-6">
+          <div class="flex items-center justify-between text-[11px] mono tracking-wider text-mute uppercase mb-3"><span>2023 · Сочи</span><span class="brand-text">Зоопарк</span></div>
+          <h4 class="display text-[20px] tracking-tighter">Тропический павильон</h4>
+          <p class="text-[13px] text-steel mt-2 leading-[1.55]">Поддержание +26°C / RH 70% круглый год. Контур по периметру вольера, скрытый монтаж.</p>
+        </div>
+      </article>
+      <article class="bg-white border hairline group photo-zoom">
+        <div class="aspect-[4/3] overflow-hidden"><img src="assets/ohlazhdenie/chiller.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"/></div>
+        <div class="p-6">
+          <div class="flex items-center justify-between text-[11px] mono tracking-wider text-mute uppercase mb-3"><span>2024 · Алматы</span><span class="brand-text">Серверная</span></div>
+          <h4 class="display text-[20px] tracking-tighter">ЦОД «Транс-Азия»</h4>
+          <p class="text-[13px] text-steel mt-2 leading-[1.55]">Предохлаждение наружного воздуха перед чиллерами. PUE-снижение, экономия на электричестве.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="mt-10 flex items-center justify-between border-t hairline pt-6">
+      <span class="text-steel text-[14px]">Подберём релевантный кейс под вашу отрасль и климатическую зону.</span>
+      <a href="proekty.html" class="btn-secondary">Все проекты →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPARE ===== -->
+<section class="s bg-ink text-white">
+  <div class="container-x">
+    <div class="grid-12 mb-14">
+      <div class="col-span-12 md:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="mono text-[11px] tracking-[.2em] uppercase text-white/55">№ 06 / Сравнение</span>
+        </div>
+        <h2 class="display text-[44px] md:text-[64px] tracking-tighter text-white">Адиабатика<br/>vs кондиционер</h2>
+      </div>
+      <div class="col-span-12 md:col-span-6 md:col-start-7 self-end">
+        <p class="text-[17px] text-white/70 leading-[1.55] max-w-[520px]">
+          Не пытаемся заменить кондиционер в офисе. В цеху 5000 м³ или на открытой террасе он не справится — а если справится, обойдётся в 10 раз дороже.
+        </p>
+      </div>
+    </div>
+
+    <div class="border border-white/15">
+      <div class="grid grid-cols-3 text-[12px] mono uppercase tracking-[.18em] text-white/55 bg-white/[.04] border-b border-white/15">
+        <div class="p-5">Параметр</div>
+        <div class="p-5 border-l border-white/15">Адиабатика VIRSTON</div>
+        <div class="p-5 border-l border-white/15">Промышленный кондиционер</div>
+      </div>
+      <div class="divide-y divide-white/10">
+        <div class="grid grid-cols-3"><div class="p-5 text-white/70">Эффект</div><div class="p-5 border-l border-white/15"><span class="display num text-[20px]">−8…12°C</span></div><div class="p-5 border-l border-white/15"><span class="display num text-[20px] text-white/70">−6…8°C</span></div></div>
+        <div class="grid grid-cols-3"><div class="p-5 text-white/70">Потребление энергии</div><div class="p-5 border-l border-white/15"><span class="display num text-[20px] brand-text">~8 кВт</span> <span class="text-white/55 text-[12px]">на 1000 м²</span></div><div class="p-5 border-l border-white/15"><span class="display num text-[20px] text-white/70">~80 кВт</span></div></div>
+        <div class="grid grid-cols-3"><div class="p-5 text-white/70">Открытые площадки</div><div class="p-5 border-l border-white/15"><span class="brand-text">да</span></div><div class="p-5 border-l border-white/15"><span class="text-white/55">нет</span></div></div>
+        <div class="grid grid-cols-3"><div class="p-5 text-white/70">Установленная мощность</div><div class="p-5 border-l border-white/15">5—15 кВт</div><div class="p-5 border-l border-white/15">от 80 кВт</div></div>
+        <div class="grid grid-cols-3"><div class="p-5 text-white/70">Озон / фреон</div><div class="p-5 border-l border-white/15"><span class="brand-text">нет</span> <span class="text-white/55 text-[12px]">только вода</span></div><div class="p-5 border-l border-white/15">R410A · R32</div></div>
+        <div class="grid grid-cols-3"><div class="p-5 text-white/70">Капремонт</div><div class="p-5 border-l border-white/15">форсунки, фильтры</div><div class="p-5 border-l border-white/15">компрессор, заправка</div></div>
+        <div class="grid grid-cols-3"><div class="p-5 text-white/70">Окупаемость</div><div class="p-5 border-l border-white/15"><span class="display num text-[20px]">1—2 сезона</span></div><div class="p-5 border-l border-white/15">не окупается</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="s bg-paper">
+  <div class="container-x">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-4">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">№ 07 / Частые вопросы</span>
+        </div>
+        <h2 class="display text-[40px] md:text-[56px] tracking-tighter">Что обычно<br/>спрашивают</h2>
+      </div>
+      <div class="lg:col-span-8">
+        <div class="border-t hairline-strong">
+          <details class="group border-b hairline-strong" open>
+            <summary class="flex items-center justify-between py-6">
+              <span class="display text-[20px] tracking-tighter pr-4">Будет ли мокрый пол и потолок?</span>
+              <span class="mono text-[20px] text-steel group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="text-[15px] text-steel pb-6 max-w-[640px] leading-[1.65]">
+              При правильно подобранной системе — нет. Капля 10—40 мкм испаряется в воздухе за десятые доли секунды; до пола и поверхностей не долетает. Если объект мокрый — значит, неправильно подобрано давление, расстояние или производительность. Расчёт делается под конкретный объём и RH.
+            </p>
+          </details>
+          <details class="group border-b hairline-strong">
+            <summary class="flex items-center justify-between py-6">
+              <span class="display text-[20px] tracking-tighter pr-4">Работает ли при высокой влажности?</span>
+              <span class="mono text-[20px] text-steel group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="text-[15px] text-steel pb-6 max-w-[640px] leading-[1.65]">
+              Эффективность адиабатики обратно пропорциональна влажности. При RH&nbsp;80% эффект охлаждения близок к нулю; при RH&nbsp;40% — максимальный (до 12°C). Для зон с постоянной высокой влажностью — обычно комбинируется с приточной вентиляцией.
+            </p>
+          </details>
+          <details class="group border-b hairline-strong">
+            <summary class="flex items-center justify-between py-6">
+              <span class="display text-[20px] tracking-tighter pr-4">Какие требования к воде?</span>
+              <span class="mono text-[20px] text-steel group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="text-[15px] text-steel pb-6 max-w-[640px] leading-[1.65]">
+              Для распыла над оборудованием и людьми — обязательна деминерализованная вода. Поставляем установку обратного осмоса в составе системы. Без водоподготовки на форсунках и поверхностях остаётся белый налёт от солей жёсткости.
+            </p>
+          </details>
+          <details class="group border-b hairline-strong">
+            <summary class="flex items-center justify-between py-6">
+              <span class="display text-[20px] tracking-tighter pr-4">Можно ли управлять с телефона?</span>
+              <span class="mono text-[20px] text-steel group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="text-[15px] text-steel pb-6 max-w-[640px] leading-[1.65]">
+              Да. Шкаф управления подключается к локальной сети по Ethernet, доступ к веб-интерфейсу — с любого устройства внутри сети. Для удалённого мониторинга поставляем VPN-модуль с защищённым каналом до сервера VIRSTON.
+            </p>
+          </details>
+          <details class="group border-b hairline-strong">
+            <summary class="flex items-center justify-between py-6">
+              <span class="display text-[20px] tracking-tighter pr-4">Сколько занимает монтаж?</span>
+              <span class="mono text-[20px] text-steel group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="text-[15px] text-steel pb-6 max-w-[640px] leading-[1.65]">
+              Терраса до 200 м² — 2—3 дня вместе с пусконаладкой. Цех 2000 м² — 1—2 недели. Покрасочный участок с интеграцией в АСУ ТП — от 3 недель. Сроки фиксируются в договоре и привязываются к графику остановок производства.
+            </p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FORM ===== -->
+<section id="form" class="s bg-ink text-white">
+  <div class="container-x">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="mono text-[11px] tracking-[.2em] uppercase text-white/55">№ 08 / Заявка</span>
+        </div>
+        <h2 class="display text-[40px] md:text-[56px] tracking-tighter">Расчёт системы<br/>охлаждения</h2>
+        <p class="text-[16px] text-white/70 mt-6 max-w-[440px] leading-[1.55]">
+          Опишите объект — выезд на обследование, ТЗ и предварительный расчёт бесплатно. Готовое предложение в течение одного рабочего дня.
+        </p>
+        <div class="mt-10 border-t border-white/15 pt-6">
+          <div class="mono text-[11px] tracking-[.2em] uppercase text-white/55 mb-3">Или напрямую</div>
+          <a href="tel:+74991100080" class="display text-[28px] tracking-tighter block">+7 (499) 110-00-80</a>
+          <a href="mailto:info@virston.ru" class="text-[14px] text-white/85 mt-2 inline-block underline underline-offset-4">info@virston.ru</a>
+        </div>
+      </div>
+      <div class="lg:col-span-7">
+        <form class="bg-white text-ink p-8 border-l-4" style="border-left-color:var(--brand)" id="quickForm">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div class="md:col-span-2">
+              <label class="block text-[12px] mono uppercase tracking-wider text-mute mb-2">Тип объекта</label>
+              <select class="w-full p-3.5 border hairline-strong">
+                <option>Производственный цех (литьё, стекло, термообработка)</option>
+                <option>Покрасочный участок / сушильная камера</option>
+                <option>Открытая терраса · веранда · HoReCa</option>
+                <option>Птицеферма / теплица / зоопарк</option>
+                <option>Стадион · спортивная площадка</option>
+                <option>Не уверен — поможете определить</option>
+              </select>
+            </div>
+            <div class="md:col-span-2">
+              <label class="block text-[12px] mono uppercase tracking-wider text-mute mb-2">Объём и текущая температура</label>
+              <textarea rows="3" class="w-full p-3.5 border hairline-strong" placeholder="Цех 3000 м³, в летний день +34°C, нужно до +26°C. Конвейерная линия с покраской."></textarea>
+            </div>
+            <div>
+              <label class="block text-[12px] mono uppercase tracking-wider text-mute mb-2">Имя</label>
+              <input type="text" class="w-full p-3.5 border hairline-strong" placeholder="Иван Петров"/>
+            </div>
+            <div>
+              <label class="block text-[12px] mono uppercase tracking-wider text-mute mb-2">Компания</label>
+              <input type="text" class="w-full p-3.5 border hairline-strong" placeholder="ООО «…»"/>
+            </div>
+            <div>
+              <label class="block text-[12px] mono uppercase tracking-wider text-mute mb-2">Телефон *</label>
+              <input type="tel" required class="w-full p-3.5 border hairline-strong" placeholder="+7 (___) ___-__-__"/>
+            </div>
+            <div>
+              <label class="block text-[12px] mono uppercase tracking-wider text-mute mb-2">E-mail</label>
+              <input type="email" class="w-full p-3.5 border hairline-strong" placeholder="i.petrov@company.ru"/>
+            </div>
+          </div>
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mt-7 pt-6 border-t hairline">
+            <p class="text-[12px] text-mute leading-[1.55] max-w-[420px]">Нажимая «Отправить», вы соглашаетесь с политикой обработки персональных данных.</p>
+            <button type="submit" class="btn-primary self-start md:self-auto">Отправить заявку →</button>
+          </div>
+          <div id="thanks" class="hidden mt-5 p-4 bg-ink text-white">
+            <div class="display text-[18px] tracking-tighter">Принято. Спасибо.</div>
+            <p class="text-[13px] text-white/70 mt-1">Связь в течение рабочего дня.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-ink text-white border-t border-white/10">
+  <div class="container-x py-20">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <img src="assets/shared/logo.png" alt="VIRSTON" class="h-8 w-auto" style="mix-blend-mode:screen" />
+        <p class="text-white/70 text-[14px] mt-6 max-w-[320px] leading-[1.6]">
+          Российский производитель промышленных систем высокого давления. Производство — Минск. Работаем с 2008 года.
+        </p>
+      </div>
+      <div class="md:col-span-2">
+        <div class="mono text-[10px] tracking-[.2em] uppercase text-white/45 mb-4">Решения</div>
+        <ul class="space-y-2.5 text-[14px] text-white/85">
+          <li><a class="hover:text-white" href="pylepodavlenie.html">Пылеподавление</a></li>
+          <li><a class="hover:text-white" href="uvlazhnenie.html">Увлажнение</a></li>
+          <li><a class="brand-text" href="ohlazhdenie.html">Охлаждение</a></li>
+          <li><a class="hover:text-white" href="dezbariers.html">Дезбарьеры</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-3">
+        <div class="mono text-[10px] tracking-[.2em] uppercase text-white/45 mb-4">Компания</div>
+        <ul class="space-y-2.5 text-[14px] text-white/85">
+          <li><a class="hover:text-white" href="o-kompanii.html">О компании</a></li>
+          <li><a class="hover:text-white" href="proekty.html">Проекты</a></li>
+          <li><a class="hover:text-white" href="servis.html">Сервис</a></li>
+          <li><a class="hover:text-white" href="kontakty.html">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-3">
+        <div class="mono text-[10px] tracking-[.2em] uppercase text-white/45 mb-4">Контакты — Россия</div>
+        <ul class="space-y-2 text-[14px] text-white/85">
+          <li><a href="tel:+78005000403">+7 (800) 500-04-03</a></li>
+          <li><a href="tel:+74991100080">+7 (499) 110-00-80</a></li>
+          <li><a href="mailto:info@virston.ru" class="underline underline-offset-2">info@virston.ru</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-16 pt-6 border-t border-white/15 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div class="text-white/55 text-[12px] mono tracking-wide">© 2008—2026 VIRSTON · ООО «Инновации и Технологии»</div>
+      <div class="flex items-center gap-5 text-[12px] text-white/55">
+        <a href="politika.html" class="hover:text-white">Политика обработки данных</a>
+        <a href="karta-sayta.html" class="hover:text-white">Карта сайта</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script>
+  document.getElementById('quickForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    document.getElementById('thanks').classList.remove('hidden');
+  });
+</script>
+
+<script>
+// Nav dropdown with delay
+(function(){
+  var DELAY = 300;
+  function initDropdown(wrap, menu) {
+    var timer = null;
+    function show() { clearTimeout(timer); menu.classList.add('open'); }
+    function hide() { timer = setTimeout(function(){ menu.classList.remove('open'); }, DELAY); }
+    wrap.addEventListener('mouseenter', show);
+    wrap.addEventListener('mouseleave', hide);
+    menu.addEventListener('mouseenter', show);
+    menu.addEventListener('mouseleave', hide);
+  }
+  document.querySelectorAll('.nav-dropdown').forEach(function(wrap){
+    var menu = wrap.querySelector('.nav-dropdown-menu');
+    if(menu) initDropdown(wrap, menu);
+  });
+  document.querySelectorAll('.nav-dropdown-single').forEach(function(wrap){
+    var menu = wrap.querySelector('.nav-dropdown-single-menu');
+    if(menu) initDropdown(wrap, menu);
+  });
+})();
+</script>
+<script>
+// Mobile menu
+(function(){
+  var btn = document.getElementById('mobMenuBtn');
+  var overlay = document.getElementById('mobMenuOverlay');
+  if (!btn || !overlay) return;
+  btn.addEventListener('click', function(){
+    btn.classList.toggle('is-open');
+    overlay.classList.toggle('is-open');
+    document.body.style.overflow = overlay.classList.contains('is-open') ? 'hidden' : '';
+  });
+  overlay.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      btn.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+</script>
+</body>
+</html>

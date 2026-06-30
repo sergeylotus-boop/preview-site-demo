@@ -1,0 +1,1234 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Системы пылеподавления — VIRSTON</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter','-apple-system','sans-serif'],
+          display: ['Manrope','Inter','sans-serif'],
+          mono: ['"JetBrains Mono"','ui-monospace','monospace'],
+        },
+        colors: {
+          ink: '#0E0E10', paper: '#FAFAF7', card: '#F2F1EC',
+          line: '#1F1F22', steel: '#5B5C61', mute: '#8C8D92',
+          brand: { DEFAULT: '#E62B53', deep: '#B81C3F' },
+        },
+      },
+    },
+  };
+</script>
+<style>
+  :root { --brand:#E62B53; --brand-deep:#B81C3F; color-scheme: light; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background:#FAFAF7; color:#0E0E10; }
+  .display { font-family:'Manrope',sans-serif; letter-spacing:-0.03em; line-height:1; font-weight:700; }
+  .mono { font-family:'JetBrains Mono', ui-monospace, monospace; }
+  .num { font-feature-settings:"tnum" 1, "lnum" 1; }
+  .grid-12 { display:grid; grid-template-columns: repeat(12, minmax(0,1fr)); gap:24px; }
+  .container-x { max-width:1440px; margin-inline:auto; padding-inline:32px; }
+  @media (max-width:768px){ .container-x{ padding-inline:20px; } }
+  .hairline { border-color: rgba(14,14,16,.12); }
+  .hairline-strong { border-color: rgba(14,14,16,.22); }
+  .label-eyebrow { font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#5B5C61; }
+  .brand-bar { background: var(--brand); }
+  .brand-text { color: var(--brand); }
+  .hero-shadow { background: linear-gradient(180deg, rgba(14,14,16,.55) 0%, rgba(14,14,16,.35) 40%, rgba(14,14,16,.6) 100%); }
+  .hero-grain { background-image: radial-gradient(rgba(255,255,255,.04) 1px, transparent 1px); background-size: 3px 3px; mix-blend-mode: overlay; }
+  section.s { padding-top: 120px; padding-bottom: 120px; }
+  @media (max-width:900px){ section.s { padding-top:72px; padding-bottom:72px; } }
+  .btn-primary { background: var(--brand); color:white; padding:14px 22px; font-weight:600; font-size:14px; display:inline-flex; align-items:center; gap:10px; border:1px solid var(--brand); transition:background .15s; }
+  .btn-primary:hover { background: var(--brand-deep); border-color: var(--brand-deep); }
+  .btn-secondary { background:transparent; color:#0E0E10; padding:13px 21px; font-weight:600; font-size:14px; display:inline-flex; align-items:center; gap:10px; border:1px solid rgba(14,14,16,.25); }
+  .btn-secondary:hover { background:#0E0E10; color:white; border-color:#0E0E10; }
+  .btn-on-dark { background:white; color:#0E0E10; padding:13px 21px; font-weight:600; font-size:14px; display:inline-flex; align-items:center; gap:10px; border:1px solid white; }
+  .stickychip { position:fixed; right:24px; bottom:24px; z-index:60; background:var(--brand); color:white; border-radius:999px; padding:12px 18px 12px 14px; font:600 14px Inter; box-shadow: 0 12px 30px -10px rgba(230,43,83,.6), 0 2px 6px rgba(0,0,0,.18); display:inline-flex; align-items:center; gap:10px; }
+  .photo-zoom img { transition: transform .8s ease; }
+  .photo-zoom:hover img { transform: scale(1.04); }
+  details > summary { list-style:none; cursor:pointer; }
+  details > summary::-webkit-details-marker { display:none; }
+  /* dotted spec rule */
+  .dot-rule { background-image: linear-gradient(90deg, rgba(14,14,16,.4) 0 4px, transparent 4px 10px); background-repeat: repeat-x; background-size: 10px 1px; height:1px; }
+  /* tape */
+  .tape { display:flex; gap:56px; animation: tape 60s linear infinite; }
+  @keyframes tape { from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
+  /* tab */
+  .seg-tab { padding:10px 16px; font:600 13px Inter; border:1px solid rgba(14,14,16,.18); }
+  .seg-tab.is-active { background:#0E0E10; color:white; border-color:#0E0E10; }
+  /* model card */
+  .model-card { background:white; border:1px solid rgba(14,14,16,.12); }
+  .model-card.is-active { border-color:#0E0E10; box-shadow: 0 0 0 1px #0E0E10 inset; }
+  /* form */
+  .field input, .field select, .field textarea { width:100%; padding:14px 16px; background:white; border:1px solid rgba(14,14,16,.18); font:400 15px Inter; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline:none; border-color:#0E0E10; }
+  .field label { font:500 12px Inter; letter-spacing:.04em; text-transform:uppercase; color:#5B5C61; display:block; margin-bottom:8px; }
+
+  /* ── Nav hover dropdown ─────────────────────────────── */
+  .nav-dropdown { position:relative; }
+  .nav-dropdown-toggle { display:flex; align-items:center; gap:5px; cursor:pointer; font-weight:500; font-size:14px; color:rgba(14,14,16,0.85); background:none; border:none; padding:0; font-family:inherit; position:relative; padding-bottom:2px; }
+  .nav-dropdown-toggle::after { content:''; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--brand,#E62B53); transition:width 0.25s ease; }
+  .nav-dropdown:hover .nav-dropdown-toggle::after { width:100%; }
+  .nav-dropdown-menu { display:none; position:absolute; left:0; top:calc(100% + 8px); z-index:50; background:white; border:0.5px solid rgba(14,14,16,0.12); box-shadow:0 12px 40px -8px rgba(14,14,16,0.18); padding:24px; min-width:460px; grid-template-columns:1fr 1fr; gap:16px 24px; }
+  .nav-dropdown-menu.open { display:grid; }
+  .nav-dropdown-menu a { display:block; text-decoration:none; }
+  .nav-dropdown-menu a:hover .dditem-title { color:var(--brand,#E62B53); }
+  .dditem-num { font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:#8C8D92; }
+  .dditem-title { font-weight:600; color:#0E0E10; margin-top:2px; font-size:14px; }
+  .dditem-sub { font-size:12px; color:#5B5C61; margin-top:2px; }
+  .nav-dropdown-single { position:relative; }
+  .nav-dropdown-single > a { position:relative; padding-bottom:2px; }
+  .nav-dropdown-single > a::after { content:''; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--brand,#E62B53); transition:width 0.25s ease; }
+  .nav-dropdown-single:hover > a::after { width:100%; }
+  .nav-dropdown-single-menu { display:none; position:absolute; left:0; top:calc(100% + 8px); z-index:50; background:white; border:0.5px solid rgba(14,14,16,0.12); box-shadow:0 12px 40px -8px rgba(14,14,16,0.18); padding:16px; min-width:300px; }
+  .nav-dropdown-single-menu.open { display:block; }
+  .nav-dropdown-single-menu a { display:flex; align-items:flex-start; gap:12px; padding:10px 12px; font-size:14px; color:#0E0E10; text-decoration:none; border-bottom:0.5px solid rgba(14,14,16,0.08); }
+  .nav-dropdown-single-menu a:last-child { border-bottom:none; }
+  .nav-dropdown-single-menu a:hover { background:#F2F1EC; }
+  .nav-dropdown-single-menu .ddi-num { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.15em; color:#8C8D92; flex-shrink:0; margin-top:2px; }
+  .nav-dropdown-single-menu .ddi-body .ddi-title { font-weight:600; color:#0E0E10; font-size:14px; }
+  .nav-dropdown-single-menu .ddi-body .ddi-sub { font-size:12px; color:#5B5C61; margin-top:1px; }
+  .nav-dropdown-single-menu a:hover .ddi-title { color:var(--brand); }
+  /* plain nav links */
+  .nav-plain-link { position:relative; text-decoration:none; color:rgba(14,14,16,0.85); font-weight:500; font-size:14px; padding-bottom:2px; }
+  .nav-plain-link::after { content:''; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--brand,#E62B53); transition:width 0.25s ease; }
+  .nav-plain-link:hover::after { width:100%; }
+  .nav-plain-link:hover { color:#0E0E10; }
+  .nav-plain-link.active::after { width:100%; }
+  .nav-dropdown-toggle::after { content:''; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--brand,#E62B53); transition:width 0.25s ease; }
+  .nav-dropdown:hover .nav-dropdown-toggle::after { width:100%; }
+  .nav-dropdown-toggle { position:relative; padding-bottom:2px; }
+  .nav-dropdown-single > a { position:relative; padding-bottom:2px; }
+  .nav-dropdown-single > a::after { content:''; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--brand,#E62B53); transition:width 0.25s ease; }
+  .nav-dropdown-single:hover > a::after { width:100%; }
+
+  /* ── Mobile menu ─────────────────────────────────── */
+  .mob-menu-btn { display:none; flex-direction:column; justify-content:center; gap:5px; width:40px; height:40px; background:none; border:none; cursor:pointer; padding:8px; }
+  .mob-menu-btn span { display:block; width:24px; height:2px; background:#0E0E10; transition:all .25s; border-radius:2px; }
+  .mob-menu-btn.is-open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+  .mob-menu-btn.is-open span:nth-child(2) { opacity:0; }
+  .mob-menu-btn.is-open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+  @media (max-width:1023px) {
+    .mob-menu-btn { display:flex; }
+    .btn-primary-header { display:none !important; }
+  }
+  .mob-menu-overlay {
+    display:none !important; position:fixed; inset:0; top:72px; background:white; z-index:49;
+    flex-direction:column; overflow-y:auto;
+    border-top:1px solid rgba(14,14,16,.12);
+  }
+  .mob-menu-overlay.is-open { display:flex !important; }
+  .mob-menu-overlay a {
+    display:block; padding:16px 24px; font-size:17px; font-weight:500; color:#0E0E10;
+    text-decoration:none; border-bottom:1px solid rgba(14,14,16,.08);
+  }
+  .mob-menu-overlay a:hover { background:#F2F1EC; }
+  .mob-menu-overlay .mob-section {
+    padding:12px 24px 6px; font-family:'JetBrains Mono',monospace;
+    font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#8C8D92;
+  }
+  .mob-menu-overlay .mob-cta {
+    margin:16px 24px; display:block; padding:14px 20px;
+    background:#E62B53; color:white !important; font-weight:600;
+    text-align:center; border-bottom:none !important;
+  }
+  .mob-menu-overlay .mob-cta:hover { background:#B81C3F !important; }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- Top utility -->
+<div class="bg-ink text-white text-[12px]">
+  <div class="container-x flex items-center justify-between py-2.5">
+    <div class="flex items-center gap-6 mono tracking-wider opacity-90">
+      <span class="hidden md:inline">RU · BY · KZ</span>
+      <span class="hidden md:inline">·</span>
+      <span>ПН—ПТ · 09:00—18:00 МСК</span>
+    </div>
+    <div class="flex items-center gap-5 mono opacity-90">
+      <a href="mailto:info@virston.ru">info@virston.ru</a>
+      <span class="hidden md:inline opacity-50">·</span>
+      <a href="tel:+74991100080" class="hidden md:inline">+7 (499) 110-00-80</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-paper/95 backdrop-blur border-b hairline">
+  <div class="container-x flex items-center justify-between h-[72px]">
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="assets/shared/logo.png" alt="VIRSTON" class="h-7 w-auto" />
+      <span class="hidden lg:block mono text-[11px] tracking-[0.18em] text-steel uppercase border-l hairline pl-3 ml-1">Системы высокого давления</span>
+    </a>
+        <nav class="hidden lg:flex items-center gap-7 text-[14px] font-medium text-ink/85">
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle">Решения <svg width="10" height="10" viewBox="0 0 10 10" class="opacity-60"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></button>
+        <div class="nav-dropdown-menu" style="min-width:560px;grid-template-columns:1fr 1fr;">
+          <a href="pylepodavlenie.html"><div class="dditem-num">01</div><div class="dditem-title">Системы пылеподавления</div><div class="dditem-sub">Форсуночные · пушки до 60 м</div></a>
+          <a href="uvlazhnenie.html"><div class="dditem-num">02</div><div class="dditem-title">Системы увлажнения</div><div class="dditem-sub">70–100 Бар, капля 5 мкм</div></a>
+          <a href="dezbariers.html"><div class="dditem-num">03</div><div class="dditem-title">Дезинфекционные барьеры</div><div class="dditem-sub">Арочные, 16 форсунок</div></a>
+          <a href="ohlazhdenie.html"><div class="dditem-num">04</div><div class="dditem-title">Системы охлаждения для автопрома</div><div class="dditem-sub">Адиабатическое, −5…−15 °C</div></a>
+          <a href="osushenie.html"><div class="dditem-num">05</div><div class="dditem-title">Системы осушения</div><div class="dditem-sub">Контроль влажности воздуха</div></a>
+          <a href="monitoring.html"><div class="dditem-num">06</div><div class="dditem-title">Автоматизированный мониторинг</div><div class="dditem-sub">АСУ ТП, SCADA интеграция</div></a>
+        </div>
+      </div>
+      <a href="proekty.html" class="nav-plain-link">Проекты</a>
+      <a href="o-kompanii.html" class="nav-plain-link">О компании</a>
+      <a href="servis.html" class="nav-plain-link">Сервис</a>
+      <a href="kontakty.html" class="nav-plain-link">Контакты</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      
+      <a href="index.html#form" class="btn-primary btn-primary-header text-[13px] !py-2.5 !px-4 btn-primary-header">
+        Получить расчёт
+        <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 6h8M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+      </a>
+    </div>
+    <!-- Hamburger button — mobile only -->
+    <button id="mobMenuBtn" class="mob-menu-btn lg:hidden" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu overlay -->
+<div id="mobMenuOverlay" class="mob-menu-overlay">
+  <div class="mob-section">Решения</div>
+  <a href="pylepodavlenie.html">Системы пылеподавления</a>
+  <a href="uvlazhnenie.html">Системы увлажнения</a>
+  <a href="dezbariers.html">Дезинфекционные барьеры</a>
+  <a href="ohlazhdenie.html">Системы охлаждения для автопрома</a>
+  <a href="osushenie.html">Системы осушения</a>
+  <a href="monitoring.html">Автоматизированный мониторинг</a>
+  <div class="mob-section">Компания</div>
+  <a href="o-kompanii.html">О компании</a>
+  <a href="proekty.html">Проекты</a>
+  <a href="servis.html">Сервис</a>
+  <a href="kontakty.html">Контакты</a>
+  <a href="index.html#form" class="mob-cta">Получить расчёт →</a>
+</div>
+
+<div class="bg-paper border-b hairline">
+  <div class="container-x py-3 flex items-center gap-2 mono text-[11px] tracking-[.15em] uppercase text-mute">
+    <a href="index.html" class="hover:text-ink">Главная</a>
+    <span>›</span>
+    <a href="index.html#solutions" class="hover:text-ink">Готовые решения</a>
+    <span>›</span>
+    <span class="text-ink">Пылеподавление</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="relative bg-ink text-white overflow-hidden">
+  <div class="absolute inset-0">
+    <img src="assets/index/pushka-karier.png" alt="Пылеподавление" class="w-full h-full object-cover object-center" style="opacity:0.4;" />
+  </div>
+
+  <div class="relative container-x pt-8 pb-3 flex items-center justify-between text-white/70 mono text-[11px] tracking-[.2em] uppercase">
+    <span>RU / 03 ⟶ ПЫЛЕПОДАВЛЕНИЕ</span>
+    <span class="hidden md:inline">P0 · ПРИОРИТЕТНОЕ НАПРАВЛЕНИЕ</span>
+  </div>
+
+  <div class="relative container-x pt-16 pb-24 md:pt-24 md:pb-36">
+    <div class="grid-12 items-end">
+      <div class="col-span-12 md:col-span-8">
+        <div class="flex items-center gap-3 mb-7">
+          <span class="brand-bar w-9 h-[3px]"></span>
+          <span class="mono text-[11px] tracking-[.2em] uppercase text-white/85">Готовое решение · от 2019</span>
+        </div>
+        <h1 class="display text-white text-[52px] sm:text-[72px] md:text-[100px] lg:text-[120px]" style="font-size: 76px">
+          Системы<br/>промышленного<br/><span class="brand-text">пылеподавления.</span>
+        </h1>
+        <p class="mt-8 max-w-[580px] text-[17px] text-white/80 leading-[1.55]">
+          Снижение запылённости до 80—90% методом аэрозольной агломерации.
+          Форсуночные системы для закрытых цехов и пушки TM&nbsp;VIRSTON с радиусом до 60 м для открытых площадок.
+        </p>
+        <div class="mt-10 flex flex-wrap items-center gap-3">
+          <a href="index.html#form" class="btn-primary !text-[14px]">
+            Запросить расчёт
+            <svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7h10M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.7" fill="none"/></svg>
+          </a>
+          <a href="#cases" class="btn-on-dark">Кейсы 14 объектов</a>
+        </div>
+      </div>
+      <div class="col-span-12 md:col-span-4 hidden md:block">
+        <div class="border border-white/15 bg-white/[.04] backdrop-blur-sm p-6">
+          <div class="mono text-[10px] uppercase tracking-[.2em] text-white/55 mb-4">Применимость</div>
+          <ul class="text-[13px] space-y-3 text-white/80">
+            <li class="flex items-start gap-3"><span class="brand-text mono text-[11px] mt-0.5">01</span> Угольные склады, торф</li>
+            <li class="flex items-start gap-3"><span class="brand-text mono text-[11px] mt-0.5">02</span> Цемзаводы, ГОК, металлургия</li>
+            <li class="flex items-start gap-3"><span class="brand-text mono text-[11px] mt-0.5">03</span> Конвейеры, перегрузка</li>
+            <li class="flex items-start gap-3"><span class="brand-text mono text-[11px] mt-0.5">04</span> Деревообработка, текстиль</li>
+            <li class="flex items-start gap-3"><span class="brand-text mono text-[11px] mt-0.5">05</span> Вагоноопрокидыватели</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KPI strip -->
+  <div class="relative border-t border-white/15 bg-ink/85 backdrop-blur-sm">
+    <div class="container-x grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
+      <div class="py-5 md:py-7 pr-6">
+        <div class="mono text-[10px] uppercase tracking-[.2em] text-white/55">[01] Снижение пыли</div>
+        <div class="display num text-[44px] md:text-[56px] mt-1 leading-none">80<span class="text-white/55">—</span>90<span class="brand-text text-[22px] align-top ml-1">%</span></div>
+        <div class="text-[12px] text-white/65 mt-1">метод агломерации</div>
+      </div>
+      <div class="py-5 md:py-7 px-6">
+        <div class="mono text-[10px] uppercase tracking-[.2em] text-white/55">[02] Радиус пушек</div>
+        <div class="display num text-[44px] md:text-[56px] mt-1 leading-none">до 60<span class="text-[20px] text-white/65 ml-2">м</span></div>
+        <div class="text-[12px] text-white/65 mt-1">VIRSTON T60 · S60 · S30</div>
+      </div>
+      <div class="py-5 md:py-7 px-6">
+        <div class="mono text-[10px] uppercase tracking-[.2em] text-white/55">[03] Объекты</div>
+        <div class="display num text-[44px] md:text-[56px] mt-1 leading-none">35<span class="brand-text text-[22px] align-top ml-1">+</span></div>
+        <div class="text-[12px] text-white/65 mt-1">в трёх странах</div>
+      </div>
+      <div class="py-5 md:py-7 px-6">
+        <div class="mono text-[10px] uppercase tracking-[.2em] text-white/55">[04] Гарантия</div>
+        <div class="display num text-[44px] md:text-[56px] mt-1 leading-none">18<span class="text-[18px] text-white/65 ml-2">мес.</span></div>
+        <div class="text-[12px] text-white/65 mt-1">оборудование TM VIRSTON</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROBLEM ===== -->
+<section class="s bg-paper">
+  <div class="container-x">
+    <div class="grid-12 mb-14">
+      <div class="col-span-12 md:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">№ 01 / Что решает система</span>
+        </div>
+        <h2 class="display text-[44px] md:text-[64px] tracking-tighter">Пыль — это<br/>не косметика</h2>
+      </div>
+      <div class="col-span-12 md:col-span-6 md:col-start-7 self-end">
+        <p class="text-[17px] text-steel leading-[1.55] max-w-[540px]">
+          На производственных и открытых площадках пыль создаёт сразу три класса проблем — нормативный, технологический и пожарный. Системы пылеподавления VIRSTON закрывают каждый из них.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 border hairline-strong divide-y md:divide-y-0 md:divide-x divide-[rgba(14,14,16,0.18)] bg-white">
+      <div class="p-8">
+        <div class="flex items-start justify-between mb-12">
+          <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">01</span>
+          <span class="display num text-[40px] brand-text">ПДК</span>
+        </div>
+        <h3 class="display text-[24px] tracking-tighter">Нормативы рабочих мест</h3>
+        <p class="text-[14px] text-steel mt-3 leading-[1.6]">ГОСТ 12.1.005, СанПиН 1.2.3685-21. Превышение ПДК на участке — штрафы Роспотребнадзора и Ростехнадзора, остановка производства, аттестация рабочих мест с отрицательным заключением.</p>
+      </div>
+      <div class="p-8">
+        <div class="flex items-start justify-between mb-12">
+          <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">02</span>
+          <span class="display num text-[40px] brand-text">Кл.&nbsp;Б</span>
+        </div>
+        <h3 class="display text-[24px] tracking-tighter">Пожар и взрыв</h3>
+        <p class="text-[14px] text-steel mt-3 leading-[1.6]">Угольная, мучная, древесная и металлическая пыль образуют взрывоопасные пылевоздушные смеси (класс Б). Требования ФЗ-123 и ПУЭ — обязательное пылеподавление и контроль концентрации.</p>
+      </div>
+      <div class="p-8">
+        <div class="flex items-start justify-between mb-12">
+          <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">03</span>
+          <span class="display num text-[40px] brand-text">−15%</span>
+        </div>
+        <h3 class="display text-[24px] tracking-tighter">Брак и износ</h3>
+        <p class="text-[14px] text-steel mt-3 leading-[1.6]">Пыль на оптике сенсоров, в подшипниках, на полировке и лаке — это брак, простой и преждевременный износ. Снижение запылённости на 80% увеличивает MTBF оборудования по факту.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRINCIPLE ===== -->
+<section class="s bg-card border-y hairline">
+  <div class="container-x">
+    <div class="grid-12 mb-14">
+      <div class="col-span-12 md:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">№ 02 / Принцип работы</span>
+        </div>
+        <h2 class="display text-[44px] md:text-[64px] tracking-tighter">Аэрозольная<br/>агломерация</h2>
+      </div>
+      <div class="col-span-12 md:col-span-6 md:col-start-7 self-end">
+        <p class="text-[17px] text-steel leading-[1.55] max-w-[540px]">
+          Капля аэрозоля размером, сопоставимым с пылевой частицей, при столкновении связывает её и осаждает на поверхность. Не «промывка» воздуха, а физика поверхностного натяжения.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div class="lg:col-span-7 bg-white border hairline-strong p-8 md:p-10 relative">
+        <div class="grid grid-cols-4 gap-4 mb-8">
+          <div class="text-center">
+            <div class="aspect-square bg-card rounded-full flex items-center justify-center mx-auto" style="max-width:120px">
+              <svg width="40" height="40" viewBox="0 0 40 40"><circle cx="20" cy="20" r="3" fill="#0E0E10"/><circle cx="10" cy="14" r="2" fill="#0E0E10"/><circle cx="28" cy="10" r="2" fill="#0E0E10"/><circle cx="32" cy="24" r="2" fill="#0E0E10"/><circle cx="14" cy="30" r="2" fill="#0E0E10"/><circle cx="6" cy="22" r="1.5" fill="#0E0E10"/></svg>
+            </div>
+            <div class="mono text-[10px] uppercase tracking-[.18em] text-mute mt-3">01 Пыль</div>
+            <div class="text-[12px] text-steel mt-1">5—50 мкм</div>
+          </div>
+          <div class="text-center">
+            <div class="aspect-square bg-card rounded-full flex items-center justify-center mx-auto" style="max-width:120px">
+              <svg width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="4" fill="none" stroke="var(--brand)" stroke-width="1.4"/><circle cx="12" cy="14" r="3" fill="none" stroke="var(--brand)" stroke-width="1.4"/><circle cx="32" cy="12" r="3" fill="none" stroke="var(--brand)" stroke-width="1.4"/><circle cx="34" cy="28" r="3.5" fill="none" stroke="var(--brand)" stroke-width="1.4"/><circle cx="14" cy="32" r="3" fill="none" stroke="var(--brand)" stroke-width="1.4"/></svg>
+            </div>
+            <div class="mono text-[10px] uppercase tracking-[.18em] text-mute mt-3">02 Аэрозоль</div>
+            <div class="text-[12px] text-steel mt-1">10—50 мкм · 70—100 бар</div>
+          </div>
+          <div class="text-center">
+            <div class="aspect-square bg-card rounded-full flex items-center justify-center mx-auto" style="max-width:120px">
+              <svg width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="5" fill="var(--brand)" opacity=".25"/><circle cx="22" cy="22" r="2.5" fill="#0E0E10"/><circle cx="14" cy="14" r="3.5" fill="var(--brand)" opacity=".25"/><circle cx="14" cy="14" r="2" fill="#0E0E10"/><circle cx="32" cy="14" r="3.5" fill="var(--brand)" opacity=".25"/><circle cx="32" cy="14" r="2" fill="#0E0E10"/><circle cx="32" cy="30" r="4" fill="var(--brand)" opacity=".25"/><circle cx="32" cy="30" r="2.2" fill="#0E0E10"/></svg>
+            </div>
+            <div class="mono text-[10px] uppercase tracking-[.18em] text-mute mt-3">03 Слипание</div>
+            <div class="text-[12px] text-steel mt-1">когезия, адгезия</div>
+          </div>
+          <div class="text-center">
+            <div class="aspect-square bg-card rounded-full flex items-center justify-center mx-auto" style="max-width:120px">
+              <svg width="44" height="44" viewBox="0 0 44 44"><line x1="6" y1="36" x2="38" y2="36" stroke="#0E0E10" stroke-width="1.5"/><circle cx="14" cy="33" r="2.4" fill="#0E0E10"/><circle cx="22" cy="33" r="3" fill="#0E0E10"/><circle cx="32" cy="34" r="2" fill="#0E0E10"/><path d="M22 12v14M18 18l4 8 4-8" stroke="var(--brand)" stroke-width="1.4" fill="none"/></svg>
+            </div>
+            <div class="mono text-[10px] uppercase tracking-[.18em] text-mute mt-3">04 Осаждение</div>
+            <div class="text-[12px] text-steel mt-1">на поверхность</div>
+          </div>
+        </div>
+        <div class="dot-rule"></div>
+        <div class="mt-8 grid grid-cols-2 gap-6">
+          <div>
+            <div class="mono text-[10px] uppercase tracking-[.18em] text-mute mb-1">Капля</div>
+            <div class="display num text-[28px]">10—50 мкм</div>
+            <p class="text-[12px] text-steel mt-1">Сопоставимо с пылевой частицей — это критично</p>
+          </div>
+          <div>
+            <div class="mono text-[10px] uppercase tracking-[.18em] text-mute mb-1">Расход воды</div>
+            <div class="display num text-[28px]">от 0.1 л/м³</div>
+            <p class="text-[12px] text-steel mt-1">В 5—10 раз ниже, чем у систем низкого давления</p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-5 bg-ink text-white p-8 md:p-10 flex flex-col justify-between">
+        <div>
+          <div class="mono text-[10px] uppercase tracking-[.2em] text-white/55 mb-4">Почему высокое давление</div>
+          <h3 class="display text-[28px] tracking-tighter leading-[1.1]">Низкое давление поливает.<br/><span class="brand-text">Высокое — связывает</span></h3>
+          <p class="text-[14px] text-white/70 mt-5 leading-[1.6]">
+            На 2—5 бар капли крупные (200—500 мкм) — они проходят мимо пыли и оседают на полу. На 70—100 бар капли соразмерны частицам — каждое столкновение фиксирует пылинку.
+          </p>
+        </div>
+        <ul class="mt-8 space-y-3 text-[13px]">
+          <li class="flex items-start gap-3"><span class="brand-text mono">·</span><span class="text-white/85">Влажность не растёт — капли испаряются после связывания</span></li>
+          <li class="flex items-start gap-3"><span class="brand-text mono">·</span><span class="text-white/85">Без луж и подтёков на полу цеха</span></li>
+          <li class="flex items-start gap-3"><span class="brand-text mono">·</span><span class="text-white/85">Эффективность не зависит от RH в помещении</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TWO TYPES ===== -->
+<section class="s bg-paper">
+  <div class="container-x">
+    <div class="grid-12 mb-12">
+      <div class="col-span-12 md:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">№ 03 / Два типа систем</span>
+        </div>
+        <h2 class="display text-[44px] md:text-[64px] tracking-tighter">Под закрытый цех<br/>или открытую площадку</h2>
+      </div>
+      <div class="col-span-12 md:col-span-6 md:col-start-7 self-end">
+        <p class="text-[17px] text-steel leading-[1.55] max-w-[520px]">
+          Принцип один — реализация разная. Конвейер в цехе требует точечной форсуночной системы. Угольный склад на 4 га — пушки с дальнобойной струёй и автоматикой по датчикам ветра.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <a href="#" class="bg-white border hairline-strong photo-zoom group block">
+        <div class="aspect-[4/3] overflow-hidden bg-card">
+          <img src="assets/index/spray-mine.png" class="w-full h-full object-cover" alt="" />
+        </div>
+        <div class="p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">A · Стационарные форсуночные</span>
+            <span class="text-[11px] mono text-steel">Закрытые помещения</span>
+          </div>
+          <h3 class="display text-[30px] tracking-tighter">Конвейеры, перегрузка,<br/>цеха</h3>
+          <p class="text-[14px] text-steel mt-3 leading-[1.6]">
+            Магистраль из нержавеющей трубы или нейлона по периметру зоны. Туманообразующие форсунки на узлах перегрузки, над конвейерами, у вагоноопрокидывателей. Зонирование через электромагнитные клапаны и шкаф управления.
+          </p>
+          <div class="grid grid-cols-3 gap-4 mt-6 pt-6 border-t hairline">
+            <div><div class="mono text-[10px] uppercase tracking-wider text-mute">Давление</div><div class="display num text-[20px] mt-1">70—100 бар</div></div>
+            <div><div class="mono text-[10px] uppercase tracking-wider text-mute">Зон</div><div class="display num text-[20px] mt-1">до 16</div></div>
+            <div><div class="mono text-[10px] uppercase tracking-wider text-mute">Капля</div><div class="display num text-[20px] mt-1">10—40 мкм</div></div>
+          </div>
+        </div>
+      </a>
+      <a href="#" class="bg-white border hairline-strong photo-zoom group block">
+        <div class="aspect-[4/3] overflow-hidden bg-card">
+          <img src="assets/index/cannon-spray-1.png" class="w-full h-full object-cover" alt="" />
+        </div>
+        <div class="p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">B · Пушки VIRSTON</span>
+            <span class="text-[11px] mono text-steel">Открытые площадки</span>
+          </div>
+          <h3 class="display text-[30px] tracking-tighter">Уголь, цемент,<br/>отсыпка, ГОК</h3>
+          <p class="text-[14px] text-steel mt-3 leading-[1.6]">
+            Дальнобойная аэрозольная струя 30, 40 или 60 м. Поворот 340°, наклон ±45°, режим осцилляции. Стационарное, прицепное и контейнерное исполнение. Опция дозирования ПАВ для угольных и торфяных складов.
+          </p>
+          <div class="grid grid-cols-3 gap-4 mt-6 pt-6 border-t hairline">
+            <div><div class="mono text-[10px] uppercase tracking-wider text-mute">Дальность</div><div class="display num text-[20px] mt-1">до 60 м</div></div>
+            <div><div class="mono text-[10px] uppercase tracking-wider text-mute">Поворот</div><div class="display num text-[20px] mt-1">340°</div></div>
+            <div><div class="mono text-[10px] uppercase tracking-wider text-mute">Серия</div><div class="display num text-[20px] mt-1">S30/60·T60</div></div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CANNONS RANGE ===== -->
+<section class="s bg-ink text-white relative overflow-hidden">
+  <div class="absolute top-0 right-0 brand-bar w-[200px] h-[6px]"></div>
+  <div class="container-x">
+    <div class="grid-12 mb-14">
+      <div class="col-span-12 md:col-span-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="mono text-[11px] tracking-[.2em] uppercase text-white/55">№ 04 / Модельный ряд пушек</span>
+        </div>
+        <h2 class="display text-[44px] md:text-[64px] tracking-tighter text-white">Пушки VIRSTON.<br/>S30 · S60 · T60</h2>
+      </div>
+      <div class="col-span-12 md:col-span-5 md:col-start-8 self-end">
+        <p class="text-[17px] text-white/70 leading-[1.55] max-w-[460px]">
+          Собственная разработка с 2019 года. Стальной корпус, мотор-редуктор поворота, кольцо распыла из 30 форсунок. Шкаф управления с сенсорной панелью и режимами по датчикам.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+      <!-- big preview -->
+      <div class="lg:col-span-7 relative">
+        <div class="aspect-[4/3] bg-white/[.04] border border-white/15 overflow-hidden">
+          <img id="cannonPreview" src="assets/produktsiya-pushki/cannon-t60.png" alt="" class="w-full h-full object-contain p-8" />
+        </div>
+        <div class="absolute left-4 top-4 mono text-[10px] uppercase tracking-[.2em] text-white/65">SPEC SHEET / <span id="cannonId">T60</span></div>
+      </div>
+
+      <!-- spec block -->
+      <div class="lg:col-span-5 space-y-3">
+        <div class="model-card is-active p-5 cursor-pointer" data-model="S30" data-img="assets/cannons-mounted.png">
+          <div class="flex items-center justify-between">
+            <div>
+              <div class="mono text-[10px] uppercase tracking-[.2em] text-mute">Стационарная</div>
+              <div class="display text-[26px] tracking-tighter mt-1 text-ink">VIRSTON S30</div>
+            </div>
+            <div class="text-right">
+              <div class="display num text-[28px] text-ink">30 м</div>
+              <div class="mono text-[10px] uppercase text-mute">дальность</div>
+            </div>
+          </div>
+          <div class="dot-rule my-4 opacity-30"></div>
+          <div class="grid grid-cols-3 gap-3 text-[12px] text-steel">
+            <div><div class="text-mute">Расход</div><div class="text-ink num">~30 л/мин</div></div>
+            <div><div class="text-mute">Поворот</div><div class="text-ink num">340° · ±45°</div></div>
+            <div><div class="text-mute">Питание</div><div class="text-ink num">380В · 3,5кВт</div></div>
+          </div>
+        </div>
+        <div class="model-card p-5 cursor-pointer" data-model="S60" data-img="assets/cannons-workshop.png">
+          <div class="flex items-center justify-between">
+            <div>
+              <div class="mono text-[10px] uppercase tracking-[.2em] text-mute">Стационарная</div>
+              <div class="display text-[26px] tracking-tighter mt-1 text-ink">VIRSTON S60</div>
+            </div>
+            <div class="text-right">
+              <div class="display num text-[28px] text-ink">60 м</div>
+              <div class="mono text-[10px] uppercase text-mute">дальность</div>
+            </div>
+          </div>
+          <div class="dot-rule my-4 opacity-30"></div>
+          <div class="grid grid-cols-3 gap-3 text-[12px] text-steel">
+            <div><div class="text-mute">Расход</div><div class="text-ink num">~60 л/мин</div></div>
+            <div><div class="text-mute">Поворот</div><div class="text-ink num">340° · ±45°</div></div>
+            <div><div class="text-mute">Питание</div><div class="text-ink num">380В · 7,5кВт</div></div>
+          </div>
+        </div>
+        <div class="model-card p-5 cursor-pointer" data-model="T60" data-img="assets/cannon-t60.png">
+          <div class="flex items-center justify-between">
+            <div>
+              <div class="mono text-[10px] uppercase tracking-[.2em] text-mute">Прицепная · мобильная</div>
+              <div class="display text-[26px] tracking-tighter mt-1 text-ink">VIRSTON T60</div>
+            </div>
+            <div class="text-right">
+              <div class="display num text-[28px] text-ink">60 м</div>
+              <div class="mono text-[10px] uppercase text-mute">дальность</div>
+            </div>
+          </div>
+          <div class="dot-rule my-4 opacity-30"></div>
+          <div class="grid grid-cols-3 gap-3 text-[12px] text-steel">
+            <div><div class="text-mute">Шасси</div><div class="text-ink">прицеп 750 кг</div></div>
+            <div><div class="text-mute">ДГУ</div><div class="text-ink">опция</div></div>
+            <div><div class="text-mute">ПАВ-дозатор</div><div class="text-ink">опция</div></div>
+          </div>
+        </div>
+
+        <p class="text-[12px] text-white/55 mt-4 leading-[1.55]">
+          Полные характеристики, паспорта и сертификаты — по запросу. Возможны нестандартные исполнения: морозостойкое, во взрывозащищённом исполнении, с интеграцией в SCADA по Modbus TCP.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SYSTEM COMPOSITION ===== -->
+<section class="s bg-paper">
+  <div class="container-x">
+    <div class="grid-12 mb-14">
+      <div class="col-span-12 md:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">№ 05 / Состав системы</span>
+        </div>
+        <h2 class="display text-[44px] md:text-[64px] tracking-tighter">Что входит<br/>в систему</h2>
+      </div>
+      <div class="col-span-12 md:col-span-6 md:col-start-7 self-end">
+        <p class="text-[17px] text-steel leading-[1.55] max-w-[520px]">
+          Поставляется как готовый модульный комплекс — без необходимости подбора компонентов под заказчика. Все элементы согласованы по производительности, давлению и протоколам.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[rgba(14,14,16,0.12)] border hairline-strong">
+      <article class="bg-white p-6">
+        <div class="aspect-[5/4] mb-5 bg-card overflow-hidden"><img src="assets/index/pumps-workshop.png" class="w-full h-full object-cover"/></div>
+        <div class="mono text-[10px] uppercase tracking-[.18em] text-mute">01 / Насосная установка</div>
+        <h4 class="display text-[20px] tracking-tighter mt-1.5">VIRSTON Duplex / Basic</h4>
+        <p class="text-[13px] text-steel mt-2 leading-[1.55]">Speroni · Pratissoli. Двигатели Siemens · ABB. Резервируемая компоновка с автозапуском по аварии.</p>
+      </article>
+      <article class="bg-white p-6">
+        <div class="aspect-[5/4] mb-5 bg-card overflow-hidden"><img src="assets/ohlazhdenie/cabinet-control.jpg" class="w-full h-full object-cover"/></div>
+        <div class="mono text-[10px] uppercase tracking-[.18em] text-mute">02 / Шкаф управления</div>
+        <h4 class="display text-[20px] tracking-tighter mt-1.5">Сенсорная HMI · Modbus</h4>
+        <p class="text-[13px] text-steel mt-2 leading-[1.55]">Зональное управление, журнал событий, удалённая диагностика. Готов к подключению к АСУ ТП.</p>
+      </article>
+      <article class="bg-white p-6">
+        <div class="aspect-[5/4] mb-5 bg-card overflow-hidden"><img src="assets/pylepodavlenie/nozzle-virston.png" class="w-full h-full object-cover"/></div>
+        <div class="mono text-[10px] uppercase tracking-[.18em] text-mute">03 / Форсунки</div>
+        <h4 class="display text-[20px] tracking-tighter mt-1.5">Туманообразующие · 70—100 бар</h4>
+        <p class="text-[13px] text-steel mt-2 leading-[1.55]">Импульсные и плоскоструйные. Капля 10—40 мкм. Бронзовый или керамический корпус, антикапельный клапан.</p>
+      </article>
+      <article class="bg-white p-6">
+        <div class="aspect-[5/4] mb-5 bg-card overflow-hidden"><img src="assets/pylepodavlenie/fittings.png" class="w-full h-full object-cover"/></div>
+        <div class="mono text-[10px] uppercase tracking-[.18em] text-mute">04 / Магистраль</div>
+        <h4 class="display text-[20px] tracking-tighter mt-1.5">Нейлон · нержавейка</h4>
+        <p class="text-[13px] text-steel mt-2 leading-[1.55]">Slip-lock или резьбовые фитинги. Возможен монтаж в труднодоступных местах: воздухопроводы, чиллеры, под перекрытиями.</p>
+      </article>
+      <article class="bg-white p-6">
+        <div class="aspect-[5/4] mb-5 bg-card overflow-hidden"><img src="assets/pylepodavlenie/datchiki.png" class="w-full h-full object-cover"/></div>
+        <div class="mono text-[10px] uppercase tracking-[.18em] text-mute">05 / Датчики</div>
+        <h4 class="display text-[20px] tracking-tighter mt-1.5">Запылённость · ветер · движение</h4>
+        <p class="text-[13px] text-steel mt-2 leading-[1.55]">Запуск по PM2.5/PM10, по датчику движения на конвейере, отключение при штормовом ветре. 24/7 — мониторинг.</p>
+      </article>
+      <article class="bg-white p-6">
+        <div class="aspect-[5/4] mb-5 bg-card overflow-hidden"><img src="assets/dezbariers/container.png" class="w-full h-full object-cover"/></div>
+        <div class="mono text-[10px] uppercase tracking-[.18em] text-mute">06 / Опции</div>
+        <h4 class="display text-[20px] tracking-tighter mt-1.5">ПАВ-дозатор · контейнер · ДГУ</h4>
+        <p class="text-[13px] text-steel mt-2 leading-[1.55]">Дозирование ПАВ для угля и торфа. Контейнерное исполнение для удалённых площадок. Дизель-генератор на удалении от ЛЭП.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATIONARY SYSTEMS VIDEO ===== -->
+<section class="s bg-card border-y hairline">
+  <div class="container-x">
+    <div class="grid-12 mb-10">
+      <div class="col-span-12 md:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">№ 06 / Стационарные системы пылеподавления</span>
+        </div>
+        <h2 class="display text-[44px] md:text-[64px] tracking-tighter">Работа системы<br/>на объекте</h2>
+      </div>
+      <div class="col-span-12 md:col-span-6 md:col-start-7 self-end">
+        <p class="text-[17px] text-steel leading-[1.55] max-w-[520px]">
+          Стационарная форсуночная система пылеподавления в работе — реальный объект, полевые условия.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-white border hairline-strong p-2 md:p-3">
+      <div class="aspect-video w-full overflow-hidden">
+        <iframe
+          class="w-full h-full"
+          src="https://vkvideo.ru/video_ext.php?oid=-239616698&id=456239017&hd=2"
+          title="VIRSTON — стационарная система пылеподавления"
+          frameborder="0"
+          allowfullscreen
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WIND BARRIERS ===== -->
+<section class="s border-t hairline" style="background:#F2F1EC;">
+  <div class="container-x">
+
+    <div class="grid-12 mb-14">
+      <div class="col-span-12 md:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">Дополнительное решение</span>
+        </div>
+        <h2 class="display text-[40px] md:text-[56px] tracking-tighter">Ветро-пылезащитные<br/>экраны</h2>
+      </div>
+      <div class="col-span-12 md:col-span-6 md:col-start-7 self-end">
+        <p class="text-[17px] text-steel leading-[1.55]">
+          Технологичное решение для защиты окружающей среды и снижения потерь сырья на открытых промышленных площадках. Снижает запылённость на границе с жилой застройкой до нормативных значений.
+        </p>
+      </div>
+    </div>
+
+    <!-- 3 фото-карточки — как в блоке №05 Состав системы -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-[rgba(14,14,16,0.12)] border hairline-strong mb-12">
+      <article class="bg-white p-6">
+        <div class="aspect-[5/4] mb-5 bg-card overflow-hidden">
+          <img src="assets/pylepodavlenie/windprotection1.png" class="w-full h-full object-cover" alt="Ветро-пылезащитный экран — порт" />
+        </div>
+        <div class="mono text-[10px] uppercase tracking-[.18em] text-mute">01 / Порты и терминалы</div>
+        <h4 class="display text-[20px] tracking-tighter mt-1.5">Морские и речные порты</h4>
+        <p class="text-[13px] text-steel mt-2 leading-[1.55]">Морские торговые порты и логистические терминалы с интенсивной перевалкой сыпучих грузов.</p>
+      </article>
+      <article class="bg-white p-6">
+        <div class="aspect-[5/4] mb-5 bg-card overflow-hidden">
+          <img src="assets/pylepodavlenie/windprotection2.png" class="w-full h-full object-cover" alt="Ветро-пылезащитный экран — склад" />
+        </div>
+        <div class="mono text-[10px] uppercase tracking-[.18em] text-mute">02 / Склады и перевалка</div>
+        <h4 class="display text-[20px] tracking-tighter mt-1.5">Угольные и рудные склады</h4>
+        <p class="text-[13px] text-steel mt-2 leading-[1.55]">Зоны перевалки сыпучих материалов — уголь, руда, зерно, щебень. Снижение потерь сырья при хранении.</p>
+      </article>
+      <article class="bg-white p-6">
+        <div class="aspect-[5/4] mb-5 bg-card overflow-hidden">
+          <img src="assets/pylepodavlenie/windprotection3.png" class="w-full h-full object-cover" alt="Ветро-пылезащитный экран — завод" />
+        </div>
+        <div class="mono text-[10px] uppercase tracking-[.18em] text-mute">03 / Тяжёлая промышленность</div>
+        <h4 class="display text-[20px] tracking-tighter mt-1.5">Заводы и ТЭЦ</h4>
+        <p class="text-[13px] text-steel mt-2 leading-[1.55]">Цементные, коксохимические, сталелитейные заводы и ТЭЦ с открытыми площадками хранения сырья.</p>
+      </article>
+    </div>
+
+    <!-- Материалы и проектирование -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div>
+        <h3 class="display text-[24px] tracking-tighter mb-4">Материалы и конструкции</h3>
+        <p class="text-[15px] text-steel leading-[1.65] mb-4">Проектируем конструкции на основе полимерных и металлических сеток, а также стальных перфорированных профилированных панелей. Возможно создание комбинированных систем под специфику объекта.</p>
+        <div class="space-y-3 mt-6">
+          <div class="flex items-start gap-3">
+            <span class="brand-bar w-[3px] h-5 mt-0.5 flex-shrink-0"></span>
+            <span class="text-[14px] text-ink">Полимерные и металлические сетки</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="brand-bar w-[3px] h-5 mt-0.5 flex-shrink-0"></span>
+            <span class="text-[14px] text-ink">Стальные перфорированные профилированные панели</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="brand-bar w-[3px] h-5 mt-0.5 flex-shrink-0"></span>
+            <span class="text-[14px] text-ink">Комбинированные системы под специфику объекта</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 class="display text-[24px] tracking-tighter mb-4">Индивидуальное проектирование</h3>
+        <p class="text-[15px] text-steel leading-[1.65] mb-4">Эффективность экрана зависит от высоты, формы листа, типа перфорации и процента ветронепроницаемости. Оптимальный результат — комбинирование панелей разной плотности по периметру.</p>
+        <p class="text-[15px] text-steel leading-[1.65]">Для каждого объекта разрабатывается индивидуальный проект с применением математического моделирования воздушных потоков. Это позволяет рассчитать точную экономическую эффективность и гарантировать соблюдение экологических норм.</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-12 pt-8 border-t hairline flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <div>
+        <div class="display text-[22px] tracking-tighter">Нужен расчёт ветро-пылезащитного экрана?</div>
+        <p class="text-[14px] text-steel mt-1">Опишите объект — подготовим техническое решение бесплатно.</p>
+      </div>
+      <a href="index.html#form" class="btn-primary self-start md:self-auto">Получить расчёт →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== INDUSTRIES TAPE ===== -->
+<section class="bg-card border-y hairline">
+  <div class="py-7">
+    <div class="container-x flex items-center gap-6 mb-4">
+      <span class="brand-bar w-6 h-[2px]"></span>
+      <span class="mono text-[11px] tracking-[.2em] uppercase text-steel">Отрасли</span>
+    </div>
+    <div class="overflow-hidden relative">
+      <div class="tape whitespace-nowrap text-[20px] md:text-[26px] display tracking-tighter text-ink/85">
+        <span>Угольные склады</span><span class="brand-text">●</span>
+        <span>Цементные заводы</span><span class="brand-text">●</span>
+        <span>ГОК · ГОКи</span><span class="brand-text">●</span>
+        <span>Металлургия</span><span class="brand-text">●</span>
+        <span>Деревообработка</span><span class="brand-text">●</span>
+        <span>Текстиль · лён</span><span class="brand-text">●</span>
+        <span>Конвейеры · перегрузка</span><span class="brand-text">●</span>
+        <span>Вагоноопрокидыватели</span><span class="brand-text">●</span>
+        <span>Торфопереработка</span><span class="brand-text">●</span>
+        <span>Порты · терминалы</span><span class="brand-text">●</span>
+        <span>Строительство · отсыпка</span><span class="brand-text">●</span>
+        <!-- duplicate -->
+        <span>Угольные склады</span><span class="brand-text">●</span>
+        <span>Цементные заводы</span><span class="brand-text">●</span>
+        <span>ГОК · ГОКи</span><span class="brand-text">●</span>
+        <span>Металлургия</span><span class="brand-text">●</span>
+        <span>Деревообработка</span><span class="brand-text">●</span>
+        <span>Текстиль · лён</span><span class="brand-text">●</span>
+        <span>Конвейеры · перегрузка</span><span class="brand-text">●</span>
+        <span>Вагоноопрокидыватели</span><span class="brand-text">●</span>
+        <span>Торфопереработка</span><span class="brand-text">●</span>
+        <span>Порты · терминалы</span><span class="brand-text">●</span>
+        <span>Строительство · отсыпка</span><span class="brand-text">●</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ANCHOR CASES ===== -->
+<section id="cases" class="s bg-paper">
+  <div class="container-x">
+    <div class="grid-12 mb-12">
+      <div class="col-span-12 md:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">№ 07 / Якорные кейсы</span>
+        </div>
+        <h2 class="display text-[44px] md:text-[64px] tracking-tighter">Где работает<br/>пылеподавление<br/>VIRSTON</h2>
+      </div>
+      <div class="col-span-12 md:col-span-6 md:col-start-7 self-end">
+        <p class="text-[17px] text-steel leading-[1.55] max-w-[520px]">
+          От Магнитогорского металлургического комбината до угольного терминала ОТЭКО на Тамани. 35+ объектов в России и Беларуси. Подборка ниже — самые показательные.
+        </p>
+      </div>
+    </div>
+
+    <!-- Featured case -->
+    <a href="#" class="block bg-ink text-white relative overflow-hidden mb-6 photo-zoom">
+      <div class="grid grid-cols-12">
+        <div class="col-span-12 md:col-span-7 relative">
+          <div class="aspect-[16/10] md:aspect-auto md:h-[520px] overflow-hidden">
+            <img src="assets/pylepodavlenie/cannon-1.png" class="w-full h-full object-cover"/>
+          </div>
+          <div class="absolute top-5 left-5 flex items-center gap-2">
+            <span class="brand-bar text-white px-2.5 py-1 mono text-[10px] tracking-[.18em] uppercase">2022 · Якорный кейс</span>
+          </div>
+        </div>
+        <div class="col-span-12 md:col-span-5 p-8 md:p-12 flex flex-col justify-between">
+          <div>
+            <div class="mono text-[11px] tracking-[.2em] uppercase text-white/55 mb-6">ММК · Магнитогорск</div>
+            <h3 class="display text-[32px] md:text-[42px] tracking-tighter leading-[1.05]">Металлургический комбинат.<br/>Пушки на участках передела</h3>
+            <p class="text-[15px] text-white/70 mt-5 leading-[1.6]">
+              Системы пушек VIRSTON на участках перегрузки сырья и в зонах выхода металлургической пыли. Запуск в 2022 — открытие нового отраслевого направления компании.
+            </p>
+            <div class="grid grid-cols-3 gap-4 mt-8">
+              <div><div class="mono text-[10px] uppercase tracking-wider text-white/55">Снижение PM10</div><div class="display num text-[24px] mt-1">~85%</div></div>
+              <div><div class="mono text-[10px] uppercase tracking-wider text-white/55">Пушки</div><div class="display num text-[24px] mt-1">S60</div></div>
+              <div><div class="mono text-[10px] uppercase tracking-wider text-white/55">Зоны</div><div class="display num text-[24px] mt-1">3</div></div>
+            </div>
+          </div>
+          <div class="mt-10 flex items-center justify-between border-t border-white/15 pt-5">
+            <span class="text-white/55 text-[12px] mono">МЕТАЛЛУРГИЯ · РОССИЯ</span>
+            <span class="inline-flex items-center gap-2 text-[13px] font-semibold">Подробнее →</span>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Smaller cases grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <article class="bg-white border hairline group photo-zoom">
+        <div class="aspect-[4/3] overflow-hidden"><img src="assets/index/cannon-spray-1.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"/></div>
+        <div class="p-6">
+          <div class="flex items-center justify-between text-[11px] mono tracking-wider text-mute uppercase mb-3">
+            <span>2023 · Тамань</span><span class="brand-text">Сера, перегрузка</span>
+          </div>
+          <h4 class="display text-[20px] tracking-tighter">ОТЭКО-Портсервис</h4>
+          <p class="text-[13px] text-steel mt-2 leading-[1.55]">Стационарные и мобильные пушки S60 на участках перегрузки серы. Контроль концентрации частиц в воздухе.</p>
+        </div>
+      </article>
+      <article class="bg-white border hairline group photo-zoom">
+        <div class="aspect-[4/3] overflow-hidden"><img src="assets/pylepodavlenie/dust-nozzle.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"/></div>
+        <div class="p-6">
+          <div class="flex items-center justify-between text-[11px] mono tracking-wider text-mute uppercase mb-3">
+            <span>· Курская обл.</span><span class="brand-text">ГОК</span>
+          </div>
+          <h4 class="display text-[20px] tracking-tighter">Михайловский ГОК · Металлоинвест</h4>
+          <p class="text-[13px] text-steel mt-2 leading-[1.55]">Две очереди системы пылеподавления на узлах дробления и сортировки руды.</p>
+        </div>
+      </article>
+      <article class="bg-white border hairline group photo-zoom">
+        <div class="aspect-[4/3] overflow-hidden"><img src="assets/produktsiya-pushki/cannon-t60.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"/></div>
+        <div class="p-6">
+          <div class="flex items-center justify-between text-[11px] mono tracking-wider text-mute uppercase mb-3">
+            <span>· Краснодарский край</span><span class="brand-text">Цемент</span>
+          </div>
+          <h4 class="display text-[20px] tracking-tighter">Аккерман Цемент · Верхнебаканский</h4>
+          <p class="text-[13px] text-steel mt-2 leading-[1.55]">Пушки T60 на узлах перегрузки клинкера. Зимнее исполнение, ПАВ-дозатор.</p>
+        </div>
+      </article>
+      <article class="bg-white border hairline group photo-zoom">
+        <div class="aspect-[4/3] overflow-hidden"><img src="assets/pylepodavlenie/skdr.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"/></div>
+        <div class="p-6">
+          <div class="flex items-center justify-between text-[11px] mono tracking-wider text-mute uppercase mb-3">
+            <span>· Газимуро-Заводский район</span><span class="brand-text">Порт</span>
+          </div>
+          <h4 class="display text-[20px] tracking-tighter">СКДР Култуминский ГОК</h4>
+          <p class="text-[13px] text-steel mt-2 leading-[1.55]">Запуск системы пылеподавления для 2-х конвейерных эстакад.</p>
+        </div>
+      </article>
+      <article class="bg-white border hairline group photo-zoom">
+        <div class="aspect-[4/3] overflow-hidden"><img src="assets/index/molodech.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"/></div>
+        <div class="p-6">
+          <div class="flex items-center justify-between text-[11px] mono tracking-wider text-mute uppercase mb-3">
+            <span>· Молодечно, BY</span><span class="brand-text">Деревообработка</span>
+          </div>
+          <h4 class="display text-[20px] tracking-tighter">«Молодечномебель»</h4>
+          <p class="text-[13px] text-steel mt-2 leading-[1.55]">Форсуночная система над участками шлифовки. Снижение древесной пыли — критично для класса пожара.</p>
+        </div>
+      </article>
+      <article class="bg-white border hairline group photo-zoom">
+        <div class="aspect-[4/3] overflow-hidden"><img src="assets/pylepodavlenie/kazah.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"/></div>
+        <div class="p-6">
+          <div class="flex items-center justify-between text-[11px] mono tracking-wider text-mute uppercase mb-3">
+            <span>· Казахстан</span><span class="brand-text">Золотодобыча</span>
+          </div>
+          <h4 class="display text-[20px] tracking-tighter">АК «Алтыналмас»</h4>
+          <p class="text-[13px] text-steel mt-2 leading-[1.55]">Пушки T60 на участках открытых работ карьера. Удалённое управление, интеграция в АСУ.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="mt-10 flex items-center justify-between border-t hairline pt-6">
+      <span class="text-steel text-[14px]">Показано 6 из 35+. Подберём релевантные кейсы по вашей отрасли.</span>
+      <a href="index.html#projects" class="btn-secondary">Все проекты →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DOCS ===== -->
+<section class="s bg-card border-y hairline">
+  <div class="container-x">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">№ 08 / Документация</span>
+        </div>
+        <h2 class="display text-[40px] md:text-[56px] tracking-tighter">Сертификаты,<br/>паспорта,<br/>тендерный пакет</h2>
+        <p class="text-[15px] text-steel mt-6 max-w-[440px] leading-[1.6]">
+          Полный пакет документации для проектных организаций, тендерных процедур и согласований с надзорными органами.
+        </p>
+        <a href="#" class="btn-secondary mt-8">Запросить пакет в PDF →</a>
+      </div>
+      <div class="lg:col-span-7">
+        <ul class="bg-white border hairline-strong divide-y hairline">
+          <li class="p-5 flex items-center justify-between">
+            <div>
+              <div class="mono text-[10px] uppercase tracking-wider text-mute mb-1">EAC · ТР ТС</div>
+              <div class="display text-[18px] tracking-tighter">Сертификат соответствия ЕАС</div>
+            </div>
+            <span class="mono text-[12px] text-steel">PDF · 1.2 МБ</span>
+          </li>
+          <li class="p-5 flex items-center justify-between">
+            <div>
+              <div class="mono text-[10px] uppercase tracking-wider text-mute mb-1">РСТ</div>
+              <div class="display text-[18px] tracking-tighter">Декларация о соответствии РСТ</div>
+            </div>
+            <span class="mono text-[12px] text-steel">PDF · 0.8 МБ</span>
+          </li>
+          <li class="p-5 flex items-center justify-between">
+            <div>
+              <div class="mono text-[10px] uppercase tracking-wider text-mute mb-1">Роспотребнадзор</div>
+              <div class="display text-[18px] tracking-tighter">Санитарно-эпидемиологическое заключение</div>
+            </div>
+            <span class="mono text-[12px] text-steel">PDF · 0.6 МБ</span>
+          </li>
+          <li class="p-5 flex items-center justify-between">
+            <div>
+              <div class="mono text-[10px] uppercase tracking-wider text-mute mb-1">ТУ</div>
+              <div class="display text-[18px] tracking-tighter">Технические условия (ТУ BY)</div>
+            </div>
+            <span class="mono text-[12px] text-steel">PDF · 1.4 МБ</span>
+          </li>
+          <li class="p-5 flex items-center justify-between">
+            <div>
+              <div class="mono text-[10px] uppercase tracking-wider text-mute mb-1">Паспорта</div>
+              <div class="display text-[18px] tracking-tighter">Паспорта пушек VIRSTON S30 / S60 / T60</div>
+            </div>
+            <span class="mono text-[12px] text-steel">PDF · 3 файла</span>
+          </li>
+          <li class="p-5 flex items-center justify-between">
+            <div>
+              <div class="mono text-[10px] uppercase tracking-wider text-mute mb-1">Протоколы</div>
+              <div class="display text-[18px] tracking-tighter">Протоколы испытаний эффективности</div>
+            </div>
+            <span class="mono text-[12px] text-steel">PDF · 2.1 МБ</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="s bg-paper">
+  <div class="container-x">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-4">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">№ 09 / Частые вопросы</span>
+        </div>
+        <h2 class="display text-[40px] md:text-[56px] tracking-tighter">Что обычно<br/>спрашивают</h2>
+      </div>
+      <div class="lg:col-span-8">
+        <div class="border-t hairline-strong">
+          <details class="group border-b hairline-strong" open>
+            <summary class="flex items-center justify-between py-6">
+              <span class="display text-[20px] tracking-tighter pr-4">Сколько воды потребляет система?</span>
+              <span class="mono text-[20px] text-steel group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="text-[15px] text-steel pb-6 max-w-[640px] leading-[1.65]">
+              Зависит от типа: форсуночная система в цехе — от 0,1 до 0,5 л/мин на форсунку, обычно 5—50 л/мин на зону. Пушка S60 при максимальной нагрузке — около 60 л/мин. Расход в 5—10 раз ниже, чем у систем низкого давления, благодаря размеру капли.
+            </p>
+          </details>
+          <details class="group border-b hairline-strong">
+            <summary class="flex items-center justify-between py-6">
+              <span class="display text-[20px] tracking-tighter pr-4">Появятся ли лужи и подтёки в цехе?</span>
+              <span class="mono text-[20px] text-steel group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="text-[15px] text-steel pb-6 max-w-[640px] leading-[1.65]">
+              Нет. Капля 10—40 мкм при правильно подобранной системе после связывания с пылью испаряется или осаждается на конструкции вместе с частицей. Влажность в помещении не выходит за расчётные пределы — это контролируется датчиками RH.
+            </p>
+          </details>
+          <details class="group border-b hairline-strong">
+            <summary class="flex items-center justify-between py-6">
+              <span class="display text-[20px] tracking-tighter pr-4">Можно ли работать зимой на открытой площадке?</span>
+              <span class="mono text-[20px] text-steel group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="text-[15px] text-steel pb-6 max-w-[640px] leading-[1.65]">
+              Да. Зимнее исполнение включает греющий кабель магистрали, продувочный компрессор и автоматический сброс воды при минусовой температуре. Пушки работают до −25°C; при необходимости — комплектация утеплённым контейнером ёмкости.
+            </p>
+          </details>
+          <details class="group border-b hairline-strong">
+            <summary class="flex items-center justify-between py-6">
+              <span class="display text-[20px] tracking-tighter pr-4">Как интегрируется в существующую АСУ ТП?</span>
+              <span class="mono text-[20px] text-steel group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="text-[15px] text-steel pb-6 max-w-[640px] leading-[1.65]">
+              Шкаф управления VIRSTON поддерживает Modbus RTU и Modbus TCP «из коробки». При необходимости — добавляем шлюз для Profibus, OPC UA или интеграцию по сухим контактам. На объекте Volkswagen и ОТЭКО система выведена в существующую SCADA.
+            </p>
+          </details>
+          <details class="group border-b hairline-strong">
+            <summary class="flex items-center justify-between py-6">
+              <span class="display text-[20px] tracking-tighter pr-4">Сколько занимает монтаж и пусконаладка?</span>
+              <span class="mono text-[20px] text-steel group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="text-[15px] text-steel pb-6 max-w-[640px] leading-[1.65]">
+              Стационарная пушка — 1—3 дня (при готовом фундаменте). Форсуночная система в цехе площадью до 2000 м² — 1—2 недели вместе с пусконаладкой и обучением персонала. Сроки фиксируются в договоре.
+            </p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FORM ===== -->
+<section id="form" class="s bg-ink text-white">
+  <div class="container-x">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="mono text-[11px] tracking-[.2em] uppercase text-white/55">№ 10 / Заявка</span>
+        </div>
+        <h2 class="display text-[40px] md:text-[56px] tracking-tighter">Расчёт системы<br/>пылеподавления</h2>
+        <p class="text-[16px] text-white/70 mt-6 max-w-[440px] leading-[1.55]">
+          Опишите объект — выезд на обследование, ТЗ и предварительный расчёт бесплатно. Готовое предложение в течение одного рабочего дня.
+        </p>
+        <div class="mt-10 border-t border-white/15 pt-6">
+          <div class="mono text-[11px] tracking-[.2em] uppercase text-white/55 mb-3">Или напрямую</div>
+          <a href="tel:+74991100080" class="display text-[28px] tracking-tighter block">+7 (499) 110-00-80</a>
+          <a href="mailto:info@virston.ru" class="text-[14px] text-white/85 mt-2 inline-block underline underline-offset-4">info@virston.ru</a>
+        </div>
+      </div>
+      <div class="lg:col-span-7">
+        <form class="bg-white text-ink p-8 border-l-4" style="border-left-color: var(--brand)" id="quickForm">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 field">
+            <div class="md:col-span-2">
+              <label>Тип объекта</label>
+              <select name="object">
+                <option>Открытая площадка (склад, карьер, отсыпка)</option>
+                <option>Цех / производственное помещение</option>
+                <option>Конвейер · вагоноопрокидыватель · перегрузка</option>
+                <option>Не уверен — поможете определить</option>
+              </select>
+            </div>
+            <div class="md:col-span-2">
+              <label>Краткое описание</label>
+              <textarea rows="3" placeholder="Угольный склад ~3 га, открытая площадка, ветер до 12 м/с. Нужны мобильные пушки."></textarea>
+            </div>
+            <div>
+              <label>Имя</label>
+              <input type="text" placeholder="Иван Петров" />
+            </div>
+            <div>
+              <label>Компания</label>
+              <input type="text" placeholder="ООО «…»" />
+            </div>
+            <div>
+              <label>Телефон *</label>
+              <input type="tel" placeholder="+7 (___) ___-__-__" required />
+            </div>
+            <div>
+              <label>E-mail</label>
+              <input type="email" placeholder="i.petrov@company.ru" />
+            </div>
+          </div>
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mt-7 pt-6 border-t hairline">
+            <p class="text-[12px] text-mute leading-[1.55] max-w-[420px]">Нажимая «Отправить», вы соглашаетесь с политикой обработки персональных данных.</p>
+            <button type="submit" class="btn-primary self-start md:self-auto">Отправить заявку →</button>
+          </div>
+          <div id="thanks" class="hidden mt-5 p-4 bg-ink text-white">
+            <div class="display text-[18px] tracking-tighter">Принято. Спасибо.</div>
+            <p class="text-[13px] text-white/70 mt-1">Связь в течение рабочего дня.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-ink text-white border-t border-white/10">
+  <div class="container-x py-20">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <img src="assets/shared/logo.png" alt="VIRSTON" class="h-8 w-auto" style="mix-blend-mode:screen" />
+        <p class="text-white/70 text-[14px] mt-6 max-w-[320px] leading-[1.6]">
+          Российский производитель промышленных систем высокого давления. Производство — Минск. Работаем с 2008 года.
+        </p>
+      </div>
+      <div class="md:col-span-2">
+        <div class="mono text-[10px] tracking-[.2em] uppercase text-white/45 mb-4">Решения</div>
+        <ul class="space-y-2.5 text-[14px] text-white/85">
+          <li><a class="brand-text" href="pylepodavlenie.html">Пылеподавление</a></li>
+          <li><a class="hover:text-white" href="uvlazhnenie.html">Увлажнение</a></li>
+          <li><a class="hover:text-white" href="ohlazhdenie.html">Охлаждение</a></li>
+          <li><a class="hover:text-white" href="dezbariers.html">Дезбарьеры</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-3">
+        <div class="mono text-[10px] tracking-[.2em] uppercase text-white/45 mb-4">Компания</div>
+        <ul class="space-y-2.5 text-[14px] text-white/85">
+          <li><a class="hover:text-white" href="o-kompanii.html">О компании</a></li>
+          <li><a class="hover:text-white" href="proekty.html">Проекты</a></li>
+          <li><a class="hover:text-white" href="servis.html">Сервис</a></li>
+          <li><a class="hover:text-white" href="kontakty.html">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-3">
+        <div class="mono text-[10px] tracking-[.2em] uppercase text-white/45 mb-4">Контакты — Россия</div>
+        <ul class="space-y-2 text-[14px] text-white/85">
+          <li><a href="tel:+78005000403">+7 (800) 500-04-03</a></li>
+          <li><a href="tel:+74991100080">+7 (499) 110-00-80</a></li>
+          <li><a href="mailto:info@virston.ru" class="underline underline-offset-2">info@virston.ru</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-16 pt-6 border-t border-white/15 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div class="text-white/55 text-[12px] mono tracking-wide">© 2008—2026 VIRSTON · ООО «Инновации и Технологии»</div>
+      <div class="flex items-center gap-5 text-[12px] text-white/55">
+        <a href="politika.html" class="hover:text-white">Политика обработки данных</a>
+        <a href="karta-sayta.html" class="hover:text-white">Карта сайта</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script>
+  // model selector
+  const cards = document.querySelectorAll('.model-card');
+  const preview = document.getElementById('cannonPreview');
+  const idLabel = document.getElementById('cannonId');
+  cards.forEach(c => {
+    c.addEventListener('click', () => {
+      cards.forEach(x => x.classList.remove('is-active'));
+      c.classList.add('is-active');
+      preview.src = c.dataset.img;
+      idLabel.textContent = c.dataset.model;
+    });
+  });
+
+  document.getElementById('quickForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    document.getElementById('thanks').classList.remove('hidden');
+  });
+</script>
+
+<script>
+// Nav dropdown with delay
+(function(){
+  var DELAY = 300;
+  function initDropdown(wrap, menu) {
+    var timer = null;
+    function show() { clearTimeout(timer); menu.classList.add('open'); }
+    function hide() { timer = setTimeout(function(){ menu.classList.remove('open'); }, DELAY); }
+    wrap.addEventListener('mouseenter', show);
+    wrap.addEventListener('mouseleave', hide);
+    menu.addEventListener('mouseenter', show);
+    menu.addEventListener('mouseleave', hide);
+  }
+  document.querySelectorAll('.nav-dropdown').forEach(function(wrap){
+    var menu = wrap.querySelector('.nav-dropdown-menu');
+    if(menu) initDropdown(wrap, menu);
+  });
+  document.querySelectorAll('.nav-dropdown-single').forEach(function(wrap){
+    var menu = wrap.querySelector('.nav-dropdown-single-menu');
+    if(menu) initDropdown(wrap, menu);
+  });
+})();
+</script>
+<script>
+// Mobile menu
+(function(){
+  var btn = document.getElementById('mobMenuBtn');
+  var overlay = document.getElementById('mobMenuOverlay');
+  if (!btn || !overlay) return;
+  btn.addEventListener('click', function(){
+    btn.classList.toggle('is-open');
+    overlay.classList.toggle('is-open');
+    document.body.style.overflow = overlay.classList.contains('is-open') ? 'hidden' : '';
+  });
+  overlay.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      btn.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+</script>
+</body>
+</html>

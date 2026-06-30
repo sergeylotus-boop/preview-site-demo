@@ -1,0 +1,1021 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Системы увлажнения — VIRSTON</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    fontFamily: { sans:['Inter','sans-serif'], display:['Manrope','sans-serif'], mono:['"JetBrains Mono"','monospace'] },
+    colors: { ink:'#0E0E10', paper:'#FAFAF7', card:'#F2F1EC', steel:'#5B5C61', mute:'#8C8D92',
+      brand:{ DEFAULT:'#E62B53', deep:'#B81C3F' } },
+  }}};
+</script>
+<style>
+  :root { --brand:#E62B53; --brand-deep:#B81C3F; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Inter',sans-serif; background:#FAFAF7; color:#0E0E10; }
+  .display { font-family:'Manrope',sans-serif; letter-spacing:-0.03em; line-height:1; font-weight:700; }
+  .mono { font-family:'JetBrains Mono',monospace; }
+  .num { font-feature-settings:"tnum" 1,"lnum" 1; }
+  .grid-12 { display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:24px; }
+  .container-x { max-width:1440px; margin-inline:auto; padding-inline:32px; }
+  @media (max-width:768px){ .container-x{ padding-inline:20px; } }
+  .hairline { border-color:rgba(14,14,16,.12); }
+  .hairline-strong { border-color:rgba(14,14,16,.22); }
+  .label-eyebrow { font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#5B5C61; }
+  .brand-bar { background:var(--brand); }
+  .brand-text { color:var(--brand); }
+  .hero-shadow { background:linear-gradient(180deg, rgba(14,14,16,.55) 0%, rgba(14,14,16,.35) 40%, rgba(14,14,16,.7) 100%); }
+  .hero-grain { background-image: radial-gradient(rgba(255,255,255,.04) 1px, transparent 1px); background-size: 3px 3px; mix-blend-mode: overlay; }
+  section.s { padding-top:120px; padding-bottom:120px; }
+  @media (max-width:900px){ section.s { padding-top:72px; padding-bottom:72px; } }
+  .btn-primary { background:var(--brand); color:white; padding:14px 22px; font-weight:600; font-size:14px; display:inline-flex; align-items:center; gap:10px; border:1px solid var(--brand); }
+  .btn-primary:hover { background:var(--brand-deep); border-color:var(--brand-deep); }
+  .btn-secondary { background:transparent; color:#0E0E10; padding:13px 21px; font-weight:600; font-size:14px; display:inline-flex; align-items:center; gap:10px; border:1px solid rgba(14,14,16,.25); }
+  .btn-secondary:hover { background:#0E0E10; color:white; border-color:#0E0E10; }
+  .btn-on-dark { background:white; color:#0E0E10; padding:13px 21px; font-weight:600; font-size:14px; display:inline-flex; align-items:center; gap:10px; border:1px solid white; }
+  .stickychip { position:fixed; right:24px; bottom:24px; z-index:60; background:var(--brand); color:white; border-radius:999px; padding:12px 18px 12px 14px; font:600 14px Inter; box-shadow:0 12px 30px -10px rgba(230,43,83,.6), 0 2px 6px rgba(0,0,0,.18); display:inline-flex; align-items:center; gap:10px; }
+  .photo-zoom img { transition:transform .8s ease; }
+  .photo-zoom:hover img { transform:scale(1.04); }
+  .dot-rule { background-image:linear-gradient(90deg, rgba(14,14,16,.4) 0 4px, transparent 4px 10px); background-size:10px 1px; height:1px; }
+  details > summary { list-style:none; cursor:pointer; }
+  details > summary::-webkit-details-marker { display:none; }
+  /* RH gauge */
+  .rh-bar { position:relative; height:22px; background:#F2F1EC; border:1px solid rgba(14,14,16,.18); }
+  .rh-bar > .fill { position:absolute; top:0; bottom:0; left:0; background:var(--brand); }
+  .rh-bar > .mark { position:absolute; top:-6px; bottom:-6px; width:1px; background:#0E0E10; }
+  .rh-bar > .target { position:absolute; top:0; bottom:0; width:14%; background:rgba(230,43,83,.18); border-left:1px dashed var(--brand); border-right:1px dashed var(--brand); }
+  .tape { display:flex; gap:48px; animation:tape 50s linear infinite; }
+  @keyframes tape { from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
+  .ind-card { background:white; border:1px solid rgba(14,14,16,.12); transition:all .2s; }
+  .ind-card:hover { border-color:#0E0E10; }
+
+  /* ── Nav hover dropdown ─────────────────────────────── */
+  .nav-dropdown { position:relative; }
+  .nav-dropdown-toggle { display:flex; align-items:center; gap:5px; cursor:pointer; font-weight:500; font-size:14px; color:rgba(14,14,16,0.85); background:none; border:none; padding:0; font-family:inherit; position:relative; padding-bottom:2px; }
+  .nav-dropdown-toggle::after { content:''; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--brand,#E62B53); transition:width 0.25s ease; }
+  .nav-dropdown:hover .nav-dropdown-toggle::after { width:100%; }
+  .nav-dropdown-menu { display:none; position:absolute; left:0; top:calc(100% + 8px); z-index:50; background:white; border:0.5px solid rgba(14,14,16,0.12); box-shadow:0 12px 40px -8px rgba(14,14,16,0.18); padding:24px; min-width:460px; grid-template-columns:1fr 1fr; gap:16px 24px; }
+  .nav-dropdown-menu.open { display:grid; }
+  .nav-dropdown-menu a { display:block; text-decoration:none; }
+  .nav-dropdown-menu a:hover .dditem-title { color:var(--brand,#E62B53); }
+  .dditem-num { font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:#8C8D92; }
+  .dditem-title { font-weight:600; color:#0E0E10; margin-top:2px; font-size:14px; }
+  .dditem-sub { font-size:12px; color:#5B5C61; margin-top:2px; }
+  .nav-dropdown-single { position:relative; }
+  .nav-dropdown-single > a { position:relative; padding-bottom:2px; }
+  .nav-dropdown-single > a::after { content:''; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--brand,#E62B53); transition:width 0.25s ease; }
+  .nav-dropdown-single:hover > a::after { width:100%; }
+  .nav-dropdown-single-menu { display:none; position:absolute; left:0; top:calc(100% + 8px); z-index:50; background:white; border:0.5px solid rgba(14,14,16,0.12); box-shadow:0 12px 40px -8px rgba(14,14,16,0.18); padding:16px; min-width:300px; }
+  .nav-dropdown-single-menu.open { display:block; }
+  .nav-dropdown-single-menu a { display:flex; align-items:flex-start; gap:12px; padding:10px 12px; font-size:14px; color:#0E0E10; text-decoration:none; border-bottom:0.5px solid rgba(14,14,16,0.08); }
+  .nav-dropdown-single-menu a:last-child { border-bottom:none; }
+  .nav-dropdown-single-menu a:hover { background:#F2F1EC; }
+  .nav-dropdown-single-menu .ddi-num { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.15em; color:#8C8D92; flex-shrink:0; margin-top:2px; }
+  .nav-dropdown-single-menu .ddi-body .ddi-title { font-weight:600; color:#0E0E10; font-size:14px; }
+  .nav-dropdown-single-menu .ddi-body .ddi-sub { font-size:12px; color:#5B5C61; margin-top:1px; }
+  .nav-dropdown-single-menu a:hover .ddi-title { color:var(--brand); }
+  /* plain nav links */
+  .nav-plain-link { position:relative; text-decoration:none; color:rgba(14,14,16,0.85); font-weight:500; font-size:14px; padding-bottom:2px; }
+  .nav-plain-link::after { content:''; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--brand,#E62B53); transition:width 0.25s ease; }
+  .nav-plain-link:hover::after { width:100%; }
+  .nav-plain-link:hover { color:#0E0E10; }
+  .nav-plain-link.active::after { width:100%; }
+  .nav-dropdown-toggle::after { content:''; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--brand,#E62B53); transition:width 0.25s ease; }
+  .nav-dropdown:hover .nav-dropdown-toggle::after { width:100%; }
+  .nav-dropdown-toggle { position:relative; padding-bottom:2px; }
+  .nav-dropdown-single > a { position:relative; padding-bottom:2px; }
+  .nav-dropdown-single > a::after { content:''; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--brand,#E62B53); transition:width 0.25s ease; }
+  .nav-dropdown-single:hover > a::after { width:100%; }
+
+  /* ── Mobile menu ─────────────────────────────────── */
+  .mob-menu-btn { display:none; flex-direction:column; justify-content:center; gap:5px; width:40px; height:40px; background:none; border:none; cursor:pointer; padding:8px; }
+  .mob-menu-btn span { display:block; width:24px; height:2px; background:#0E0E10; transition:all .25s; border-radius:2px; }
+  .mob-menu-btn.is-open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+  .mob-menu-btn.is-open span:nth-child(2) { opacity:0; }
+  .mob-menu-btn.is-open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+  @media (max-width:1023px) {
+    .mob-menu-btn { display:flex; }
+    .btn-primary-header { display:none !important; }
+  }
+  .mob-menu-overlay {
+    display:none !important; position:fixed; inset:0; top:72px; background:white; z-index:49;
+    flex-direction:column; overflow-y:auto;
+    border-top:1px solid rgba(14,14,16,.12);
+  }
+  .mob-menu-overlay.is-open { display:flex !important; }
+  .mob-menu-overlay a {
+    display:block; padding:16px 24px; font-size:17px; font-weight:500; color:#0E0E10;
+    text-decoration:none; border-bottom:1px solid rgba(14,14,16,.08);
+  }
+  .mob-menu-overlay a:hover { background:#F2F1EC; }
+  .mob-menu-overlay .mob-section {
+    padding:12px 24px 6px; font-family:'JetBrains Mono',monospace;
+    font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#8C8D92;
+  }
+  .mob-menu-overlay .mob-cta {
+    margin:16px 24px; display:block; padding:14px 20px;
+    background:#E62B53; color:white !important; font-weight:600;
+    text-align:center; border-bottom:none !important;
+  }
+  .mob-menu-overlay .mob-cta:hover { background:#B81C3F !important; }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- Top utility -->
+<div class="bg-ink text-white text-[12px]">
+  <div class="container-x flex items-center justify-between py-2.5">
+    <div class="flex items-center gap-6 mono tracking-wider opacity-90">
+      <span class="hidden md:inline">RU · BY · KZ</span>
+      <span class="hidden md:inline">·</span>
+      <span>ПН—ПТ · 09:00—18:00 МСК</span>
+    </div>
+    <div class="flex items-center gap-5 mono opacity-90">
+      <a href="mailto:info@virston.ru">info@virston.ru</a>
+      <span class="hidden md:inline opacity-50">·</span>
+      <a href="tel:+74991100080" class="hidden md:inline">+7 (499) 110-00-80</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-paper/95 backdrop-blur border-b hairline">
+  <div class="container-x flex items-center justify-between h-[72px]">
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="assets/shared/logo.png" alt="VIRSTON" class="h-7 w-auto" />
+      <span class="hidden lg:block mono text-[11px] tracking-[0.18em] text-steel uppercase border-l hairline pl-3 ml-1">Системы высокого давления</span>
+    </a>
+        <nav class="hidden lg:flex items-center gap-7 text-[14px] font-medium text-ink/85">
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle">Решения <svg width="10" height="10" viewBox="0 0 10 10" class="opacity-60"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></button>
+        <div class="nav-dropdown-menu" style="min-width:560px;grid-template-columns:1fr 1fr;">
+          <a href="pylepodavlenie.html"><div class="dditem-num">01</div><div class="dditem-title">Системы пылеподавления</div><div class="dditem-sub">Форсуночные · пушки до 60 м</div></a>
+          <a href="uvlazhnenie.html"><div class="dditem-num">02</div><div class="dditem-title">Системы увлажнения</div><div class="dditem-sub">70–100 Бар, капля 5 мкм</div></a>
+          <a href="dezbariers.html"><div class="dditem-num">03</div><div class="dditem-title">Дезинфекционные барьеры</div><div class="dditem-sub">Арочные, 16 форсунок</div></a>
+          <a href="ohlazhdenie.html"><div class="dditem-num">04</div><div class="dditem-title">Системы охлаждения для автопрома</div><div class="dditem-sub">Адиабатическое, −5…−15 °C</div></a>
+          <a href="osushenie.html"><div class="dditem-num">05</div><div class="dditem-title">Системы осушения</div><div class="dditem-sub">Контроль влажности воздуха</div></a>
+          <a href="monitoring.html"><div class="dditem-num">06</div><div class="dditem-title">Автоматизированный мониторинг</div><div class="dditem-sub">АСУ ТП, SCADA интеграция</div></a>
+        </div>
+      </div>
+      <a href="proekty.html" class="nav-plain-link">Проекты</a>
+      <a href="o-kompanii.html" class="nav-plain-link">О компании</a>
+      <a href="servis.html" class="nav-plain-link">Сервис</a>
+      <a href="kontakty.html" class="nav-plain-link">Контакты</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      
+      <a href="index.html#form" class="btn-primary btn-primary-header text-[13px] !py-2.5 !px-4 btn-primary-header">
+        Получить расчёт
+        <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 6h8M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+      </a>
+    </div>
+    <!-- Hamburger button — mobile only -->
+    <button id="mobMenuBtn" class="mob-menu-btn lg:hidden" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu overlay -->
+<div id="mobMenuOverlay" class="mob-menu-overlay">
+  <div class="mob-section">Решения</div>
+  <a href="pylepodavlenie.html">Системы пылеподавления</a>
+  <a href="uvlazhnenie.html">Системы увлажнения</a>
+  <a href="dezbariers.html">Дезинфекционные барьеры</a>
+  <a href="ohlazhdenie.html">Системы охлаждения для автопрома</a>
+  <a href="osushenie.html">Системы осушения</a>
+  <a href="monitoring.html">Автоматизированный мониторинг</a>
+  <div class="mob-section">Компания</div>
+  <a href="o-kompanii.html">О компании</a>
+  <a href="proekty.html">Проекты</a>
+  <a href="servis.html">Сервис</a>
+  <a href="kontakty.html">Контакты</a>
+  <a href="index.html#form" class="mob-cta">Получить расчёт →</a>
+</div>
+
+<div class="bg-paper border-b hairline">
+  <div class="container-x py-3 flex items-center gap-2 mono text-[11px] tracking-[.15em] uppercase text-mute">
+    <a href="index.html" class="hover:text-ink">Главная</a>
+    <span>›</span>
+    <details class="relative group">
+        <summary class="flex items-center gap-1.5 cursor-pointer hover:text-ink font-medium text-[14px] text-ink/85">Решения <svg width="10" height="10" viewBox="0 0 10 10" class="opacity-60"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></summary>
+        <div class="absolute left-0 top-[34px] w-[460px] bg-white border hairline shadow-xl p-6 grid grid-cols-2 gap-x-6 gap-y-4 z-50">
+          <a href="pylepodavlenie.html"><div class="text-[12px] mono uppercase tracking-wider text-mute">01</div><div class="font-semibold text-ink mt-0.5">Пылеподавление</div><div class="text-[12px] text-steel mt-0.5">Форсуночные · пушки до 60 м</div></a>
+          <a href="uvlazhnenie.html"><div class="text-[12px] mono uppercase tracking-wider text-mute">02</div><div class="font-semibold text-ink mt-0.5">Увлажнение</div><div class="text-[12px] text-steel mt-0.5">70–100 Бар, капля 5 мкм</div></a>
+          <a href="ohlazhdenie.html"><div class="text-[12px] mono uppercase tracking-wider text-mute">03</div><div class="font-semibold text-ink mt-0.5">Охлаждение</div><div class="text-[12px] text-steel mt-0.5">Адиабатическое, −5…−15 °C</div></a>
+          <a href="dezbariers.html"><div class="text-[12px] mono uppercase tracking-wider text-mute">04</div><div class="font-semibold text-ink mt-0.5">Дезбарьеры</div><div class="text-[12px] text-steel mt-0.5">Арочные, 16 форсунок</div></a>
+        </div>
+      </details>
+    <span>›</span>
+    <span class="text-ink">Увлажнение</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="relative bg-ink text-white overflow-hidden">
+  <div class="absolute inset-0">
+    <img src="assets/index/molodech.png" class="w-full h-full object-cover object-center" style="opacity:0.4;" alt="" />
+    
+  </div>
+
+  <div class="relative container-x pt-8 pb-3 flex items-center justify-between text-white/70 mono text-[11px] tracking-[.2em] uppercase">
+    <span>RU / 04 ⟶ УВЛАЖНЕНИЕ</span>
+    <span class="hidden md:inline">SOLUTION · ADIABATIC HUMIDIFICATION</span>
+  </div>
+
+  <div class="relative container-x pt-16 pb-24 md:pt-24 md:pb-36">
+    <div class="grid-12 items-end">
+      <div class="col-span-12 md:col-span-8">
+        <div class="flex items-center gap-3 mb-7">
+          <span class="brand-bar w-9 h-[3px]"></span>
+          <span class="mono text-[11px] tracking-[.2em] uppercase text-white/85">Готовое решение · от 2008</span>
+        </div>
+        <h1 class="display text-white text-[52px] sm:text-[72px] md:text-[100px] lg:text-[120px]" style="font-size: 76px">
+          Системы<br/>промышленного<br/><span class="brand-text">увлажнения</span>
+        </h1>
+        <p class="mt-8 max-w-[600px] text-[17px] text-white/80 leading-[1.55]">
+          Адиабатическое увлажнение туманом высокого давления.
+          Удержание RH&nbsp;55—70% круглый год — без подтёков, без луж, без переувлажнения.
+          Энергопотребление в&nbsp;6—10 раз ниже паровых систем.
+        </p>
+        <div class="mt-10 flex flex-wrap items-center gap-3">
+          <a href="index.html#form" class="btn-primary !text-[14px]">
+            Запросить расчёт
+            <svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7h10M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.7" fill="none"/></svg>
+          </a>
+          <a href="#cases" class="btn-on-dark">8 отраслевых кейсов</a>
+        </div>
+      </div>
+      <div class="col-span-12 md:col-span-4 hidden md:block">
+        <div class="border border-white/15 bg-white/[.04] backdrop-blur-sm p-6">
+          <div class="mono text-[10px] uppercase tracking-[.2em] text-white/55 mb-4">Где применяется</div>
+          <ul class="text-[13px] space-y-3 text-white/80">
+            <li class="flex items-start gap-3"><span class="brand-text mono text-[11px] mt-0.5">01</span> Деревообработка, мебель</li>
+            <li class="flex items-start gap-3"><span class="brand-text mono text-[11px] mt-0.5">02</span> Текстиль, лён, бумага</li>
+            <li class="flex items-start gap-3"><span class="brand-text mono text-[11px] mt-0.5">03</span> Птицефабрики, тепличные хозяйства</li>
+            <li class="flex items-start gap-3"><span class="brand-text mono text-[11px] mt-0.5">04</span> Полиграфия, типографии</li>
+            <li class="flex items-start gap-3"><span class="brand-text mono text-[11px] mt-0.5">05</span> Серверные, ЦОД, музеи</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KPI strip -->
+  <div class="relative border-t border-white/15 bg-ink/85 backdrop-blur-sm">
+    <div class="container-x grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
+      <div class="py-5 md:py-7 pr-6">
+        <div class="mono text-[10px] uppercase tracking-[.2em] text-white/55">[01] RH в цехе</div>
+        <div class="display num text-[44px] md:text-[56px] mt-1 leading-none">55<span class="text-white/55">—</span>70<span class="brand-text text-[22px] align-top ml-1">%</span></div>
+        <div class="text-[12px] text-white/65 mt-1">круглый год · ±3%</div>
+      </div>
+      <div class="py-5 md:py-7 px-6">
+        <div class="mono text-[10px] uppercase tracking-[.2em] text-white/55">[02] Расход энергии</div>
+        <div class="display num text-[44px] md:text-[56px] mt-1 leading-none">×6<span class="text-white/55">—</span>10<span class="brand-text text-[22px] align-top ml-1">↓</span></div>
+        <div class="text-[12px] text-white/65 mt-1">по сравнению с паром</div>
+      </div>
+      <div class="py-5 md:py-7 px-6">
+        <div class="mono text-[10px] uppercase tracking-[.2em] text-white/55">[03] Капля</div>
+        <div class="display num text-[44px] md:text-[56px] mt-1 leading-none">10<span class="text-white/55">—</span>15<span class="text-[20px] text-white/65 ml-1">мкм</span></div>
+        <div class="text-[12px] text-white/65 mt-1">испаряется в воздухе</div>
+      </div>
+      <div class="py-5 md:py-7 px-6">
+        <div class="mono text-[10px] uppercase tracking-[.2em] text-white/55">[04] Зон</div>
+        <div class="display num text-[44px] md:text-[56px] mt-1 leading-none">до 16</div>
+        <div class="text-[12px] text-white/65 mt-1">независимое управление</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY HUMIDIFY ===== -->
+<section class="s bg-paper">
+  <div class="container-x">
+    <div class="grid-12 mb-14">
+      <div class="col-span-12 md:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">№ 01 / Зачем поддерживать RH</span>
+        </div>
+        <h2 class="display text-[44px] md:text-[64px] tracking-tighter">Сухой воздух —<br/>это убытки</h2>
+      </div>
+      <div class="col-span-12 md:col-span-6 md:col-start-7 self-end">
+        <p class="text-[17px] text-steel leading-[1.55] max-w-[540px]">
+          Зимой относительная влажность в производственных помещениях падает до 15—25%. Это пересушенный материал, статическое электричество, брак и преждевременный износ оборудования.
+        </p>
+      </div>
+    </div>
+
+    <!-- RH gauge -->
+    <div class="bg-white border hairline-strong p-8 md:p-10 mb-10">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <div class="md:col-span-3">
+          <div class="mono text-[10px] uppercase tracking-[.2em] text-mute">Цеховая норма RH</div>
+          <div class="display num text-[36px] tracking-tighter mt-2">55 — 70%</div>
+          <p class="text-[13px] text-steel mt-2 leading-[1.55]">Оптимум для древесины, текстиля, бумаги, плёнки и большинства промышленных материалов.</p>
+        </div>
+        <div class="md:col-span-9">
+          <div class="flex items-center justify-between mono text-[10px] uppercase tracking-wider text-mute mb-2">
+            <span>0%</span><span>25</span><span>50</span><span>75</span><span>100%</span>
+          </div>
+          <div class="rh-bar">
+            <div class="target" style="left:55%"></div>
+            <div class="fill" style="width:22%"></div>
+            <div class="mark" style="left:22%"></div>
+          </div>
+          <div class="grid grid-cols-3 gap-4 mt-4 text-[12px]">
+            <div><span class="brand-text mono">●</span> <span class="text-ink font-medium">Зима без увлажнения: 15—25%</span></div>
+            <div class="text-center"><span class="mono text-mute">●</span> <span class="text-steel">Цель: <span class="text-ink font-medium">55—70%</span></span></div>
+            <div class="text-right"><span class="mono text-mute">●</span> <span class="text-steel">Переувлажнение: &gt;80%</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 border hairline-strong divide-y md:divide-y-0 md:divide-x divide-[rgba(14,14,16,0.18)] bg-white">
+      <div class="p-8">
+        <div class="flex items-start justify-between mb-12">
+          <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">01</span>
+          <span class="display num text-[40px] brand-text">−8%</span>
+        </div>
+        <h3 class="display text-[22px] tracking-tighter">Усушка материалов</h3>
+        <p class="text-[14px] text-steel mt-3 leading-[1.6]">Древесина теряет до 8% массы за отопительный сезон. Появляются трещины, коробление, расхождение шипов. На отделке — отслоение лака и краски.</p>
+      </div>
+      <div class="p-8">
+        <div class="flex items-start justify-between mb-12">
+          <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">02</span>
+          <span class="display num text-[40px] brand-text">10⁴ В</span>
+        </div>
+        <h3 class="display text-[22px] tracking-tighter">Статическое электричество</h3>
+        <p class="text-[14px] text-steel mt-3 leading-[1.6]">При RH ниже 35% накопление заряда — до десятков киловольт. Брак на упаковочных линиях, прилипание полотна, искрение и риск возгорания пыли в воздухе.</p>
+      </div>
+      <div class="p-8">
+        <div class="flex items-start justify-between mb-12">
+          <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">03</span>
+          <span class="display num text-[40px] brand-text">+22%</span>
+        </div>
+        <h3 class="display text-[22px] tracking-tighter">Рост производительности</h3>
+        <p class="text-[14px] text-steel mt-3 leading-[1.6]">В нормированной RH-среде падает простой по браку, реже останавливаются линии для смены оснастки, на птицефабриках на 6—9% растёт сохранность поголовья.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="s bg-card border-y hairline">
+  <div class="container-x">
+    <div class="grid-12 mb-14">
+      <div class="col-span-12 md:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">№ 02 / Принцип работы</span>
+        </div>
+        <h2 class="display text-[44px] md:text-[64px] tracking-tighter">Адиабатическое<br/>распыление</h2>
+      </div>
+      <div class="col-span-12 md:col-span-6 md:col-start-7 self-end">
+        <p class="text-[17px] text-steel leading-[1.55] max-w-[540px]">
+          Вода под давлением 70—100 бар через форсунки превращается в туман с каплей 10—15 мкм. Капля испаряется в воздухе, отбирая тепло — естественное охлаждение бонусом. Никаких подтёков на полу.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div class="lg:col-span-7 bg-white border hairline-strong p-8 md:p-10 relative">
+        <div class="grid grid-cols-4 gap-4 mb-8">
+          <div class="text-center">
+            <div class="aspect-square bg-card rounded-full flex items-center justify-center mx-auto" style="max-width:120px">
+              <svg width="44" height="44" viewBox="0 0 44 44"><rect x="18" y="6" width="8" height="14" fill="none" stroke="#0E0E10" stroke-width="1.5"/><path d="M14 20 L22 38 L30 20Z" fill="var(--brand)" opacity=".25" stroke="var(--brand)" stroke-width="1.4"/></svg>
+            </div>
+            <div class="mono text-[10px] uppercase tracking-[.18em] text-mute mt-3">01 Вода ВД</div>
+            <div class="text-[12px] text-steel mt-1">70—100 бар</div>
+          </div>
+          <div class="text-center">
+            <div class="aspect-square bg-card rounded-full flex items-center justify-center mx-auto" style="max-width:120px">
+              <svg width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="3" fill="var(--brand)"/><circle cx="12" cy="14" r="2" fill="var(--brand)"/><circle cx="32" cy="14" r="2" fill="var(--brand)"/><circle cx="32" cy="32" r="2.4" fill="var(--brand)"/><circle cx="14" cy="32" r="2" fill="var(--brand)"/><circle cx="22" cy="8" r="1.5" fill="var(--brand)"/></svg>
+            </div>
+            <div class="mono text-[10px] uppercase tracking-[.18em] text-mute mt-3">02 Туман</div>
+            <div class="text-[12px] text-steel mt-1">10—15 мкм</div>
+          </div>
+          <div class="text-center">
+            <div class="aspect-square bg-card rounded-full flex items-center justify-center mx-auto" style="max-width:120px">
+              <svg width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="14" fill="none" stroke="#0E0E10" stroke-width="1.5"/><circle cx="22" cy="22" r="2" fill="var(--brand)"/><path d="M14 14 L30 30 M30 14 L14 30" stroke="var(--brand)" stroke-width="1" opacity=".5"/></svg>
+            </div>
+            <div class="mono text-[10px] uppercase tracking-[.18em] text-mute mt-3">03 Испарение</div>
+            <div class="text-[12px] text-steel mt-1">−2—3 °C</div>
+          </div>
+          <div class="text-center">
+            <div class="aspect-square bg-card rounded-full flex items-center justify-center mx-auto" style="max-width:120px">
+              <svg width="44" height="44" viewBox="0 0 44 44"><path d="M8 30c0 4 4 6 8 6h12c4 0 8-2 8-6" fill="none" stroke="#0E0E10" stroke-width="1.5"/><path d="M14 30v-6M22 30v-10M30 30v-6" stroke="var(--brand)" stroke-width="1.5"/><circle cx="14" cy="20" r="1.5" fill="var(--brand)"/><circle cx="22" cy="14" r="1.5" fill="var(--brand)"/><circle cx="30" cy="20" r="1.5" fill="var(--brand)"/></svg>
+            </div>
+            <div class="mono text-[10px] uppercase tracking-[.18em] text-mute mt-3">04 RH 55—70%</div>
+            <div class="text-[12px] text-steel mt-1">контроль датчиками</div>
+          </div>
+        </div>
+        <div class="dot-rule"></div>
+        <div class="mt-8 grid grid-cols-2 gap-6">
+          <div>
+            <div class="mono text-[10px] uppercase tracking-[.18em] text-mute mb-1">Энергия на 1 л воды</div>
+            <div class="display num text-[28px]">~4 Вт·ч</div>
+            <p class="text-[12px] text-steel mt-1">Пар: 30—50 Вт·ч / л на тот же объём</p>
+          </div>
+          <div>
+            <div class="mono text-[10px] uppercase tracking-[.18em] text-mute mb-1">Бонус — охлаждение</div>
+            <div class="display num text-[28px]">−2…−4 °C</div>
+            <p class="text-[12px] text-steel mt-1">Адиабатический эффект испарения в цехе</p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-5 bg-ink text-white p-8 md:p-10 flex flex-col justify-between">
+        <div>
+          <div class="mono text-[10px] uppercase tracking-[.2em] text-white/55 mb-4">Туман vs пар</div>
+          <h3 class="display text-[28px] tracking-tighter leading-[1.1]">Пар нагревает.<br/><span class="brand-text">Туман — охлаждает</span></h3>
+          <p class="text-[14px] text-white/70 mt-5 leading-[1.6]">
+            Паровое увлажнение тратит электричество на кипячение и греет помещение, увеличивая нагрузку на вентиляцию. Адиабатическая система отбирает тепло из воздуха при испарении — летом это уменьшает нагрузку на чиллеры.
+          </p>
+        </div>
+        <ul class="mt-8 space-y-3 text-[13px]">
+          <li class="flex items-start gap-3"><span class="brand-text mono">·</span><span class="text-white/85">В&nbsp;6—10 раз ниже энергопотребление</span></li>
+          <li class="flex items-start gap-3"><span class="brand-text mono">·</span><span class="text-white/85">Не требует подвода пара/тепла</span></li>
+          <li class="flex items-start gap-3"><span class="brand-text mono">·</span><span class="text-white/85">Не образует накипи на оборудовании в цехе</span></li>
+          <li class="flex items-start gap-3"><span class="brand-text mono">·</span><span class="text-white/85">Зональное управление через шкаф автоматики</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INDUSTRIES ===== -->
+<section class="s bg-paper">
+  <div class="container-x">
+    <div class="grid-12 mb-12">
+      <div class="col-span-12 md:col-span-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">№ 03 / Отрасли и режимы</span>
+        </div>
+        <h2 class="display text-[44px] md:text-[64px] tracking-tighter">Под каждый цех —<br/>свой режим RH</h2>
+      </div>
+      <div class="col-span-12 md:col-span-5 md:col-start-8 self-end">
+        <p class="text-[17px] text-steel leading-[1.55] max-w-[520px]">
+          У каждого материала свой технологический оптимум влажности.
+          Подбираем целевое значение и плотность форсунок под конкретный процесс — а не «по среднему».
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="ind-card p-7">
+        <div class="flex items-center justify-between mb-8">
+          <span class="mono text-[10px] uppercase tracking-[.2em] text-mute">01</span>
+          <span class="brand-bar w-4 h-[2px]"></span>
+        </div>
+        <h4 class="display text-[22px] tracking-tighter">Деревообработка</h4>
+        <div class="mt-4 grid grid-cols-2 gap-3 text-[13px]">
+          <div><div class="mono text-[10px] uppercase text-mute">Target RH</div><div class="display num text-[20px]">55—65%</div></div>
+          <div><div class="mono text-[10px] uppercase text-mute">Δ</div><div class="display num text-[20px]">±3%</div></div>
+        </div>
+        <p class="text-[13px] text-steel mt-4 leading-[1.6]">Сушильные камеры, столярные цеха, отделка. Стабильность размеров заготовки и качество лакокрасочного покрытия.</p>
+      </div>
+      <div class="ind-card p-7">
+        <div class="flex items-center justify-between mb-8">
+          <span class="mono text-[10px] uppercase tracking-[.2em] text-mute">02</span>
+          <span class="brand-bar w-4 h-[2px]"></span>
+        </div>
+        <h4 class="display text-[22px] tracking-tighter">Текстиль и лён</h4>
+        <div class="mt-4 grid grid-cols-2 gap-3 text-[13px]">
+          <div><div class="mono text-[10px] uppercase text-mute">Target RH</div><div class="display num text-[20px]">60—75%</div></div>
+          <div><div class="mono text-[10px] uppercase text-mute">Δ</div><div class="display num text-[20px]">±4%</div></div>
+        </div>
+        <p class="text-[13px] text-steel mt-4 leading-[1.6]">Прядильные и ткацкие цеха. Снижение обрывности нити, рост скорости станков, борьба со статикой и пухом.</p>
+      </div>
+      <div class="ind-card p-7">
+        <div class="flex items-center justify-between mb-8">
+          <span class="mono text-[10px] uppercase tracking-[.2em] text-mute">03</span>
+          <span class="brand-bar w-4 h-[2px]"></span>
+        </div>
+        <h4 class="display text-[22px] tracking-tighter">Полиграфия, бумага</h4>
+        <div class="mt-4 grid grid-cols-2 gap-3 text-[13px]">
+          <div><div class="mono text-[10px] uppercase text-mute">Target RH</div><div class="display num text-[20px]">50—60%</div></div>
+          <div><div class="mono text-[10px] uppercase text-mute">Δ</div><div class="display num text-[20px]">±3%</div></div>
+        </div>
+        <p class="text-[13px] text-steel mt-4 leading-[1.6]">Печатные станки, упаковка, картон. Без коробления листа, без статики на ламинации, стабильное совмещение красок.</p>
+      </div>
+      <div class="ind-card p-7">
+        <div class="flex items-center justify-between mb-8">
+          <span class="mono text-[10px] uppercase tracking-[.2em] text-mute">04</span>
+          <span class="brand-bar w-4 h-[2px]"></span>
+        </div>
+        <h4 class="display text-[22px] tracking-tighter">Птицефабрики</h4>
+        <div class="mt-4 grid grid-cols-2 gap-3 text-[13px]">
+          <div><div class="mono text-[10px] uppercase text-mute">Target RH</div><div class="display num text-[20px]">60—70%</div></div>
+          <div><div class="mono text-[10px] uppercase text-mute">Δ</div><div class="display num text-[20px]">±5%</div></div>
+        </div>
+        <p class="text-[13px] text-steel mt-4 leading-[1.6]">Птичники и инкубатории. Рост сохранности поголовья, снижение пылеобразования в подстилке и нагрузки на вентиляцию.</p>
+      </div>
+      <div class="ind-card p-7">
+        <div class="flex items-center justify-between mb-8">
+          <span class="mono text-[10px] uppercase tracking-[.2em] text-mute">05</span>
+          <span class="brand-bar w-4 h-[2px]"></span>
+        </div>
+        <h4 class="display text-[22px] tracking-tighter">Теплицы</h4>
+        <div class="mt-4 grid grid-cols-2 gap-3 text-[13px]">
+          <div><div class="mono text-[10px] uppercase text-mute">Target RH</div><div class="display num text-[20px]">70—85%</div></div>
+          <div><div class="mono text-[10px] uppercase text-mute">Δ</div><div class="display num text-[20px]">±5%</div></div>
+        </div>
+        <p class="text-[13px] text-steel mt-4 leading-[1.6]">Огурец, томат, зелень, рассада. Бонусом — снижение температуры под кровлей на 4—7 °C летом.</p>
+      </div>
+      <div class="ind-card p-7">
+        <div class="flex items-center justify-between mb-8">
+          <span class="mono text-[10px] uppercase tracking-[.2em] text-mute">06</span>
+          <span class="brand-bar w-4 h-[2px]"></span>
+        </div>
+        <h4 class="display text-[22px] tracking-tighter">Серверные и ЦОД</h4>
+        <div class="mt-4 grid grid-cols-2 gap-3 text-[13px]">
+          <div><div class="mono text-[10px] uppercase text-mute">Target RH</div><div class="display num text-[20px]">45—55%</div></div>
+          <div><div class="mono text-[10px] uppercase text-mute">Δ</div><div class="display num text-[20px]">±2%</div></div>
+        </div>
+        <p class="text-[13px] text-steel mt-4 leading-[1.6]">ASHRAE-стандарт для машинных залов. Защита от статики на платах, free-cooling эффект — снижение PUE.</p>
+      </div>
+      <div class="ind-card p-7">
+        <div class="flex items-center justify-between mb-8">
+          <span class="mono text-[10px] uppercase tracking-[.2em] text-mute">07</span>
+          <span class="brand-bar w-4 h-[2px]"></span>
+        </div>
+        <h4 class="display text-[22px] tracking-tighter">Музеи и архивы</h4>
+        <div class="mt-4 grid grid-cols-2 gap-3 text-[13px]">
+          <div><div class="mono text-[10px] uppercase text-mute">Target RH</div><div class="display num text-[20px]">45—55%</div></div>
+          <div><div class="mono text-[10px] uppercase text-mute">Δ</div><div class="display num text-[20px]">±2%</div></div>
+        </div>
+        <p class="text-[13px] text-steel mt-4 leading-[1.6]">Хранение и экспозиция. Точное удержание RH без аэрозоля на экспонатах — нормы для бумаги, дерева и текстиля.</p>
+      </div>
+      <div class="ind-card p-7">
+        <div class="flex items-center justify-between mb-8">
+          <span class="mono text-[10px] uppercase tracking-[.2em] text-mute">08</span>
+          <span class="brand-bar w-4 h-[2px]"></span>
+        </div>
+        <h4 class="display text-[22px] tracking-tighter">Пищепром</h4>
+        <div class="mt-4 grid grid-cols-2 gap-3 text-[13px]">
+          <div><div class="mono text-[10px] uppercase text-mute">Target RH</div><div class="display num text-[20px]">75—90%</div></div>
+          <div><div class="mono text-[10px] uppercase text-mute">Δ</div><div class="display num text-[20px]">±4%</div></div>
+        </div>
+        <p class="text-[13px] text-steel mt-4 leading-[1.6]">Камеры созревания сыра и мяса, овощные склады. Снижение усушки на 5—8% и сохранность товарного вида.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SYSTEM COMPOSITION ===== -->
+<section class="s bg-card border-y hairline">
+  <div class="container-x">
+    <div class="grid-12 mb-14">
+      <div class="col-span-12 md:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">№ 04 / Состав системы</span>
+        </div>
+        <h2 class="display text-[44px] md:text-[64px] tracking-tighter">Что входит<br/>в систему</h2>
+      </div>
+      <div class="col-span-12 md:col-span-6 md:col-start-7 self-end">
+        <p class="text-[17px] text-steel leading-[1.55] max-w-[520px]">
+          Поставляется как готовый модульный комплекс — без необходимости собирать узлы из разных каталогов. Все элементы согласованы по производительности и протоколам.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[rgba(14,14,16,0.18)] border hairline-strong">
+      <article class="bg-white p-6">
+        <div class="aspect-[5/4] mb-5 bg-card overflow-hidden"><img src="assets/index/pumps-workshop.png" class="w-full h-full object-cover"/></div>
+        <div class="mono text-[10px] uppercase tracking-[.18em] text-mute">01 / Насосная установка</div>
+        <h4 class="display text-[20px] tracking-tighter mt-1.5">VIRSTON Duplex / Basic</h4>
+        <p class="text-[13px] text-steel mt-2 leading-[1.55]">Speroni · Pratissoli. Двигатели Siemens / ABB. Резервируемая компоновка с автозапуском по аварии.</p>
+      </article>
+      <article class="bg-white p-6">
+        <div class="aspect-[5/4] mb-5 bg-card overflow-hidden"><img src="assets/ohlazhdenie/cabinet-control.jpg" class="w-full h-full object-cover"/></div>
+        <div class="mono text-[10px] uppercase tracking-[.18em] text-mute">02 / Шкаф автоматики</div>
+        <h4 class="display text-[20px] tracking-tighter mt-1.5">Сенсорная HMI · Modbus</h4>
+        <p class="text-[13px] text-steel mt-2 leading-[1.55]">Зональное управление, журнал событий, удалённая диагностика. Готов к интеграции в АСУ ТП цеха.</p>
+      </article>
+      <article class="bg-white p-6">
+        <div class="aspect-[5/4] mb-5 bg-card overflow-hidden"><img src="assets/pylepodavlenie/nozzle-virston.png" class="w-full h-full object-cover"/></div>
+        <div class="mono text-[10px] uppercase tracking-[.18em] text-mute">03 / Туманообразующие форсунки</div>
+        <h4 class="display text-[20px] tracking-tighter mt-1.5">70—100 бар · капля 10—15 мкм</h4>
+        <p class="text-[13px] text-steel mt-2 leading-[1.55]">Импульсные, с антикапельным клапаном. Латунный или керамический корпус. Самоочистка под давлением.</p>
+      </article>
+      <article class="bg-white p-6">
+        <div class="aspect-[5/4] mb-5 bg-card overflow-hidden"><img src="assets/pylepodavlenie/fittings.png" class="w-full h-full object-cover"/></div>
+        <div class="mono text-[10px] uppercase tracking-[.18em] text-mute">04 / Магистраль</div>
+        <h4 class="display text-[20px] tracking-tighter mt-1.5">Нержавейка / нейлон ВД</h4>
+        <p class="text-[13px] text-steel mt-2 leading-[1.55]">Прокладка скрытая или по конструкциям. Slip-lock или резьбовые фитинги. Зимний электрообогрев — опция.</p>
+      </article>
+      <article class="bg-white p-6">
+        <div class="aspect-[5/4] mb-5 bg-card overflow-hidden"><img src="assets/pylepodavlenie/datchiki.png" class="w-full h-full object-cover"/></div>
+        <div class="mono text-[10px] uppercase tracking-[.18em] text-mute">05 / Датчики RH/T</div>
+        <h4 class="display text-[20px] tracking-tighter mt-1.5">Прецизионные · ±2% RH</h4>
+        <p class="text-[13px] text-steel mt-2 leading-[1.55]">До 16 датчиков на объект, независимое управление зонами. Уставка, аларм и журнал — на сенсорной панели.</p>
+      </article>
+      <article class="bg-white p-6">
+        <div class="aspect-[5/4] mb-5 bg-card overflow-hidden"><img src="assets/uvlag/osmos.png" class="w-full h-full object-cover"/></div>
+        <div class="mono text-[10px] uppercase tracking-[.18em] text-mute">06 / Водоподготовка</div>
+        <h4 class="display text-[20px] tracking-tighter mt-1.5">Обратный осмос · УФ</h4>
+        <p class="text-[13px] text-steel mt-2 leading-[1.55]">Снижение жёсткости и солевого следа. Бактерицидная УФ-лампа. Защита форсунок и материала в цехе от налёта.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HUMIDIFICATION VIDEO ===== -->
+<section class="s bg-card border-y hairline">
+  <div class="container-x">
+    <div class="grid-12 mb-10">
+      <div class="col-span-12 md:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">№ 05 / Видео работы системы увлажнения</span>
+        </div>
+        <h2 class="display text-[44px] md:text-[64px] tracking-tighter">Система<br/>в работе<br/>на объекте</h2>
+      </div>
+      <div class="col-span-12 md:col-span-6 md:col-start-7 self-end">
+        <p class="text-[17px] text-steel leading-[1.55] max-w-[520px]">
+          Адиабатическое увлажнение с распылением тумана высокого давления — реальный объект, полевые условия.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-white border hairline-strong p-2 md:p-3">
+      <div class="aspect-video w-full overflow-hidden">
+        <iframe
+          class="w-full h-full"
+          src="https://vkvideo.ru/video_ext.php?oid=-239616698&id=456239019&hd=2"
+          title="VIRSTON — работа системы увлажнения"
+          frameborder="0"
+          allowfullscreen
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ANCHOR CASES ===== -->
+<section id="cases" class="s bg-paper">
+  <div class="container-x">
+    <div class="grid-12 mb-12">
+      <div class="col-span-12 md:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">№ 06 / Якорные кейсы</span>
+        </div>
+        <h2 class="display text-[44px] md:text-[64px] tracking-tighter">Где работает<br/>увлажнение<br/>VIRSTON</h2>
+      </div>
+      <div class="col-span-12 md:col-span-6 md:col-start-7 self-end">
+        <p class="text-[17px] text-steel leading-[1.55] max-w-[520px]">
+          Восемь отраслевых объектов — от мебельной фабрики до Окской птицефабрики и архивных хранилищ. Подборка ниже — самые показательные.
+        </p>
+      </div>
+    </div>
+
+    <!-- Featured -->
+    <a href="proekty.html" class="block bg-ink text-white relative overflow-hidden mb-6 photo-zoom">
+      <div class="grid grid-cols-12">
+        <div class="col-span-12 md:col-span-7 relative">
+          <div class="aspect-[16/10] md:aspect-auto md:h-[520px] overflow-hidden">
+            <img src="assets/index/molodech.png" class="w-full h-full object-cover"/>
+          </div>
+          <div class="absolute top-5 left-5 flex items-center gap-2">
+            <span class="brand-bar text-white px-2.5 py-1 mono text-[10px] tracking-[.18em] uppercase">Деревообработка · якорный</span>
+          </div>
+        </div>
+        <div class="col-span-12 md:col-span-5 p-8 md:p-12 flex flex-col justify-between">
+          <div>
+            <div class="mono text-[11px] tracking-[.2em] uppercase text-white/55 mb-6">«Молодечномебель» · Беларусь</div>
+            <h3 class="display text-[32px] md:text-[42px] tracking-tighter leading-[1.05]">Мебельная фабрика.<br/>RH 60% · 4 цеха · 24/7</h3>
+            <p class="text-[15px] text-white/70 mt-5 leading-[1.6]">
+              Стационарная форсуночная система с зональным управлением. Удержание RH 58—62% в столярных и отделочных цехах круглый год. Брак по короблению сократился, лак ложится ровно и сохнет предсказуемо.
+            </p>
+            <div class="grid grid-cols-3 gap-4 mt-8">
+              <div><div class="mono text-[10px] uppercase tracking-wider text-white/55">Зон</div><div class="display num text-[24px] mt-1">4</div></div>
+              <div><div class="mono text-[10px] uppercase tracking-wider text-white/55">RH</div><div class="display num text-[24px] mt-1">60% ±3</div></div>
+              <div><div class="mono text-[10px] uppercase tracking-wider text-white/55">Брак</div><div class="display num text-[24px] mt-1">−18%</div></div>
+            </div>
+          </div>
+          <div class="mt-10 flex items-center justify-between border-t border-white/15 pt-5">
+            <span class="text-white/55 text-[12px] mono">ДЕРЕВООБРАБОТКА · BY</span>
+            <span class="inline-flex items-center gap-2 text-[13px] font-semibold">Подробнее →</span>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Smaller cases -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <article class="bg-white border hairline group photo-zoom">
+        <div class="aspect-[4/3] overflow-hidden bg-card"><img src="assets/ohlazhdenie/ptitsa.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"/></div>
+        <div class="p-6">
+          <div class="flex items-center justify-between text-[11px] mono tracking-wider text-mute uppercase mb-3">
+            <span>· Окская обл.</span><span class="brand-text">Птицефабрика</span>
+          </div>
+          <h4 class="display text-[20px] tracking-tighter">Окская птицефабрика</h4>
+          <p class="text-[13px] text-steel mt-2 leading-[1.55]">RH 65% в птичниках. Снижение запылённости подстилки и нагрузки на вентиляцию. Прирост сохранности поголовья.</p>
+        </div>
+      </article>
+      <article class="bg-white border hairline group photo-zoom">
+        <div class="aspect-[4/3] overflow-hidden bg-card"><img src="assets/uvlag/tkach.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"/></div>
+        <div class="p-6">
+          <div class="flex items-center justify-between text-[11px] mono tracking-wider text-mute uppercase mb-3">
+            <span>· Витебск, BY</span><span class="brand-text">Текстиль</span>
+          </div>
+          <h4 class="display text-[20px] tracking-tighter">Льнокомбинат</h4>
+          <p class="text-[13px] text-steel mt-2 leading-[1.55]">Прядильно-ткацкое производство. RH 65—70%, снижение обрывности нити, контроль статики.</p>
+        </div>
+      </article>
+      <article class="bg-white border hairline group photo-zoom">
+        <div class="aspect-[4/3] overflow-hidden bg-card"><img src="assets/uvlag/print.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"/></div>
+        <div class="p-6">
+          <div class="flex items-center justify-between text-[11px] mono tracking-wider text-mute uppercase mb-3">
+            <span>· Москва</span><span class="brand-text">Полиграфия</span>
+          </div>
+          <h4 class="display text-[20px] tracking-tighter">Типография «Аякс»</h4>
+          <p class="text-[13px] text-steel mt-2 leading-[1.55]">Печатный цех и упаковка. RH 55% круглый год, борьба со статикой на ламинации, стабильное совмещение красок.</p>
+        </div>
+      </article>
+      <article class="bg-white border hairline group photo-zoom">
+        <div class="aspect-[4/3] overflow-hidden bg-card"><img src="assets/index/warehouse.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"/></div>
+        <div class="p-6">
+          <div class="flex items-center justify-between text-[11px] mono tracking-wider text-mute uppercase mb-3">
+            <span>· Краснодарский край</span><span class="brand-text">Теплицы</span>
+          </div>
+          <h4 class="display text-[20px] tracking-tighter">Тепличный комплекс «Зелёная линия»</h4>
+          <p class="text-[13px] text-steel mt-2 leading-[1.55]">RH 80% в зоне рассады, −5 °C под кровлей летом. Совмещённое увлажнение и охлаждение, экономия на чиллерах.</p>
+        </div>
+      </article>
+      <article class="bg-white border hairline group photo-zoom">
+        <div class="aspect-[4/3] overflow-hidden bg-card"><img src="assets/produktsiya-shkafy/black-cabinets.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"/></div>
+        <div class="p-6">
+          <div class="flex items-center justify-between text-[11px] mono tracking-wider text-mute uppercase mb-3">
+            <span>· Минск, BY</span><span class="brand-text">ЦОД</span>
+          </div>
+          <h4 class="display text-[20px] tracking-tighter">Корпоративный ЦОД банка</h4>
+          <p class="text-[13px] text-steel mt-2 leading-[1.55]">Зал на 120 стоек. ASHRAE-режим RH 45—55%, снижение PUE за счёт free-cooling эффекта.</p>
+        </div>
+      </article>
+      <article class="bg-white border hairline group photo-zoom">
+        <div class="aspect-[4/3] overflow-hidden bg-card"><img src="assets/uvlag/syry.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"/></div>
+        <div class="p-6">
+          <div class="flex items-center justify-between text-[11px] mono tracking-wider text-mute uppercase mb-3">
+            <span>· Калужская обл.</span><span class="brand-text">Пищепром</span>
+          </div>
+          <h4 class="display text-[20px] tracking-tighter">Сыродельный завод</h4>
+          <p class="text-[13px] text-steel mt-2 leading-[1.55]">Камеры созревания. RH 85% при 12 °C. Снижение усушки головок на 6%, ровная корка без трещин.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="mt-10 flex items-center justify-between border-t hairline pt-6">
+      <span class="text-steel text-[14px]">Показано 6 из 25+. Подберём релевантные кейсы по вашей отрасли.</span>
+      <a href="proekty.html" class="btn-secondary">Все проекты →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="s bg-card border-y hairline">
+  <div class="container-x">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-4">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">№ 07 / Частые вопросы</span>
+        </div>
+        <h2 class="display text-[40px] md:text-[56px] tracking-tighter">Что обычно<br/>спрашивают</h2>
+      </div>
+      <div class="lg:col-span-8">
+        <div class="border-t hairline-strong">
+          <details class="group border-b hairline-strong" open>
+            <summary class="flex items-center justify-between py-6">
+              <span class="display text-[20px] tracking-tighter pr-4">Будут ли лужи на полу?</span>
+              <span class="mono text-[20px] text-steel group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="text-[15px] text-steel pb-6 max-w-[640px] leading-[1.65]">
+              Нет. Капля 10—15 мкм испаряется в воздухе за доли секунды — на пол не долетает. Это и есть отличие тумана высокого давления от спрея низкого давления, где капля 200—500 мкм оседает на горизонтальные поверхности.
+            </p>
+          </details>
+          <details class="group border-b hairline-strong">
+            <summary class="flex items-center justify-between py-6">
+              <span class="display text-[20px] tracking-tighter pr-4">Какая вода подходит?</span>
+              <span class="mono text-[20px] text-steel group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="text-[15px] text-steel pb-6 max-w-[640px] leading-[1.65]">
+              Городская водопроводная вода после водоподготовки (обратный осмос + УФ). Это входит в стандартный комплект. На жёсткой воде без подготовки форсунки и сам цех быстро покрываются солевым налётом.
+            </p>
+          </details>
+          <details class="group border-b hairline-strong">
+            <summary class="flex items-center justify-between py-6">
+              <span class="display text-[20px] tracking-tighter pr-4">Сколько стоит увлажнение цеха 1500 м²?</span>
+              <span class="mono text-[20px] text-steel group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="text-[15px] text-steel pb-6 max-w-[640px] leading-[1.65]">
+              Ориентир — от 1.8 до 3.5 млн руб. за «коробку» (насос, шкаф, магистраль, форсунки, водоподготовка). Точная сумма — после обследования объекта: важны высоты, кратность воздухообмена, целевая RH, наличие пара, тип материала.
+            </p>
+          </details>
+          <details class="group border-b hairline-strong">
+            <summary class="flex items-center justify-between py-6">
+              <span class="display text-[20px] tracking-tighter pr-4">Как часто менять форсунки?</span>
+              <span class="mono text-[20px] text-steel group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="text-[15px] text-steel pb-6 max-w-[640px] leading-[1.65]">
+              При наличии водоподготовки — ресурс форсунки 18—36 месяцев. На сервисном обслуживании ведём журнал ресурса по каждой зоне, плановая замена — в составе ТО без остановки производства.
+            </p>
+          </details>
+          <details class="group border-b hairline-strong">
+            <summary class="flex items-center justify-between py-6">
+              <span class="display text-[20px] tracking-tighter pr-4">А если уже есть приточка с пароувлажнением?</span>
+              <span class="mono text-[20px] text-steel group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="text-[15px] text-steel pb-6 max-w-[640px] leading-[1.65]">
+              Систему адиабатического увлажнения VIRSTON можно встроить в существующий канал приточки или работать «в объём» цеха параллельно. Часто это позволяет вывести из эксплуатации энергоёмкий парогенератор и сэкономить на счёте за электричество.
+            </p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FORM ===== -->
+<section id="form" class="s bg-ink text-white">
+  <div class="container-x">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="mono text-[11px] tracking-[.2em] uppercase text-white/55">№ 08 / Заявка</span>
+        </div>
+        <h2 class="display text-[40px] md:text-[56px] tracking-tighter">Расчёт системы<br/>увлажнения</h2>
+        <p class="text-[16px] text-white/70 mt-6 max-w-[440px] leading-[1.55]">
+          Опишите цех и материал — подберём целевую RH, плотность форсунок и предложим спецификацию с предварительной стоимостью в течение одного рабочего дня.
+        </p>
+        <div class="mt-10 border-t border-white/15 pt-6">
+          <div class="mono text-[11px] tracking-[.2em] uppercase text-white/55 mb-3">Или напрямую</div>
+          <a href="tel:+74991100080" class="display text-[28px] tracking-tighter block">+7 (499) 110-00-80</a>
+          <a href="mailto:info@virston.ru" class="text-[14px] text-white/85 mt-2 inline-block underline underline-offset-4">info@virston.ru</a>
+        </div>
+      </div>
+      <div class="lg:col-span-7">
+        <form id="quickForm" class="bg-white text-ink p-8 border-l-4" style="border-left-color:var(--brand)">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div class="md:col-span-2">
+              <label class="block mono text-[11px] uppercase tracking-wider text-mute mb-2">Тип цеха / процесса</label>
+              <select class="w-full p-3.5 border hairline-strong bg-white text-[15px]">
+                <option>Деревообработка / отделка</option>
+                <option>Текстиль, лён, бумага</option>
+                <option>Полиграфия, упаковка</option>
+                <option>Птицефабрика / теплица</option>
+                <option>ЦОД, серверная, музей</option>
+                <option>Пищепром (камеры созревания, склады)</option>
+                <option>Другое — опишу ниже</option>
+              </select>
+            </div>
+            <div class="md:col-span-2">
+              <label class="block mono text-[11px] uppercase tracking-wider text-mute mb-2">Описание объекта</label>
+              <textarea rows="3" class="w-full p-3.5 border hairline-strong text-[15px]" placeholder="Столярный цех 1800 м², h=6м, нужна RH ≈ 60% круглый год. Есть приточная вентиляция."></textarea>
+            </div>
+            <div>
+              <label class="block mono text-[11px] uppercase tracking-wider text-mute mb-2">Имя</label>
+              <input type="text" class="w-full p-3.5 border hairline-strong text-[15px]" placeholder="Иван Петров" />
+            </div>
+            <div>
+              <label class="block mono text-[11px] uppercase tracking-wider text-mute mb-2">Компания</label>
+              <input type="text" class="w-full p-3.5 border hairline-strong text-[15px]" placeholder="ООО «…»" />
+            </div>
+            <div>
+              <label class="block mono text-[11px] uppercase tracking-wider text-mute mb-2">Телефон *</label>
+              <input type="tel" class="w-full p-3.5 border hairline-strong text-[15px]" placeholder="+7 (___) ___-__-__" required />
+            </div>
+            <div>
+              <label class="block mono text-[11px] uppercase tracking-wider text-mute mb-2">E-mail</label>
+              <input type="email" class="w-full p-3.5 border hairline-strong text-[15px]" placeholder="i.petrov@company.ru" />
+            </div>
+          </div>
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mt-7 pt-6 border-t hairline">
+            <p class="text-[12px] text-mute leading-[1.55] max-w-[420px]">Нажимая «Отправить», вы соглашаетесь с политикой обработки персональных данных.</p>
+            <button type="submit" class="btn-primary self-start md:self-auto">Отправить заявку →</button>
+          </div>
+          <div id="thanks" class="hidden mt-5 p-4 bg-ink text-white">
+            <div class="display text-[18px] tracking-tighter">Принято. Спасибо.</div>
+            <p class="text-[13px] text-white/70 mt-1">Связь в течение рабочего дня.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-ink text-white border-t border-white/10">
+  <div class="container-x py-20">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <img src="assets/shared/logo.png" alt="VIRSTON" class="h-8 w-auto" style="mix-blend-mode:screen" />
+        <p class="text-white/70 text-[14px] mt-6 max-w-[320px] leading-[1.6]">
+          Российский производитель промышленных систем высокого давления. Производство — Минск. Работаем с 2008 года.
+        </p>
+      </div>
+      <div class="md:col-span-2">
+        <div class="mono text-[10px] tracking-[.2em] uppercase text-white/45 mb-4">Решения</div>
+        <ul class="space-y-2.5 text-[14px] text-white/85">
+          <li><a class="hover:text-white" href="pylepodavlenie.html">Пылеподавление</a></li>
+          <li><a class="brand-text" href="uvlazhnenie.html">Увлажнение</a></li>
+          <li><a class="hover:text-white" href="ohlazhdenie.html">Охлаждение</a></li>
+          <li><a class="hover:text-white" href="dezbariers.html">Дезбарьеры</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-3">
+        <div class="mono text-[10px] tracking-[.2em] uppercase text-white/45 mb-4">Компания</div>
+        <ul class="space-y-2.5 text-[14px] text-white/85">
+          <li><a class="hover:text-white" href="o-kompanii.html">О компании</a></li>
+          <li><a class="hover:text-white" href="proekty.html">Проекты</a></li>
+          <li><a class="hover:text-white" href="servis.html">Сервис</a></li>
+          <li><a class="hover:text-white" href="kontakty.html">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-3">
+        <div class="mono text-[10px] tracking-[.2em] uppercase text-white/45 mb-4">Контакты — Россия</div>
+        <ul class="space-y-2 text-[14px] text-white/85">
+          <li><a href="tel:+78005000403">+7 (800) 500-04-03</a></li>
+          <li><a href="tel:+74991100080">+7 (499) 110-00-80</a></li>
+          <li><a href="mailto:info@virston.ru" class="underline underline-offset-2">info@virston.ru</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-16 pt-6 border-t border-white/15 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div class="text-white/55 text-[12px] mono tracking-wide">© 2008—2026 VIRSTON · ООО «Инновации и Технологии»</div>
+      <div class="flex items-center gap-5 text-[12px] text-white/55">
+        <a href="politika.html" class="hover:text-white">Политика обработки данных</a>
+        <a href="karta-sayta.html" class="hover:text-white">Карта сайта</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script>
+  document.getElementById('quickForm').addEventListener('submit', e => {
+    e.preventDefault();
+    document.getElementById('thanks').classList.remove('hidden');
+  });
+</script>
+
+<script>
+// Nav dropdown with delay
+(function(){
+  var DELAY = 300;
+  function initDropdown(wrap, menu) {
+    var timer = null;
+    function show() { clearTimeout(timer); menu.classList.add('open'); }
+    function hide() { timer = setTimeout(function(){ menu.classList.remove('open'); }, DELAY); }
+    wrap.addEventListener('mouseenter', show);
+    wrap.addEventListener('mouseleave', hide);
+    menu.addEventListener('mouseenter', show);
+    menu.addEventListener('mouseleave', hide);
+  }
+  document.querySelectorAll('.nav-dropdown').forEach(function(wrap){
+    var menu = wrap.querySelector('.nav-dropdown-menu');
+    if(menu) initDropdown(wrap, menu);
+  });
+  document.querySelectorAll('.nav-dropdown-single').forEach(function(wrap){
+    var menu = wrap.querySelector('.nav-dropdown-single-menu');
+    if(menu) initDropdown(wrap, menu);
+  });
+})();
+</script>
+<script>
+// Mobile menu
+(function(){
+  var btn = document.getElementById('mobMenuBtn');
+  var overlay = document.getElementById('mobMenuOverlay');
+  if (!btn || !overlay) return;
+  btn.addEventListener('click', function(){
+    btn.classList.toggle('is-open');
+    overlay.classList.toggle('is-open');
+    document.body.style.overflow = overlay.classList.contains('is-open') ? 'hidden' : '';
+  });
+  overlay.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      btn.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+</script>
+</body>
+</html>

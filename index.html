@@ -1,0 +1,1269 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>VIRSTON — производство и монтаж систем высокого давления</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter','-apple-system','sans-serif'],
+          display: ['Manrope','Inter','sans-serif'],
+          mono: ['"JetBrains Mono"','ui-monospace','monospace'],
+        },
+        colors: {
+          ink: '#0E0E10',
+          paper: '#FAFAF7',
+          card: '#F2F1EC',
+          line: '#1F1F22',
+          steel: '#5B5C61',
+          mute: '#8C8D92',
+          brand: { DEFAULT: '#E62B53', deep: '#B81C3F', ink: '#220A11' },
+        },
+        letterSpacing: { tightest: '-0.04em', tighter: '-0.025em' },
+      },
+    },
+  };
+</script>
+<style>
+  :root { color-scheme: light; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: #FAFAF7; color: #0E0E10; }
+  .display { font-family: 'Manrope', sans-serif; letter-spacing: -0.03em; line-height: 1; font-weight: 700; }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  .num { font-feature-settings: "tnum" 1, "lnum" 1; }
+  .grid-12 { display: grid; grid-template-columns: repeat(12, minmax(0,1fr)); gap: 24px; }
+  .container-x { max-width: 1440px; margin-inline: auto; padding-inline: 32px; }
+  @media (max-width: 768px) { .container-x { padding-inline: 20px; } }
+  .hairline { border-color: rgba(14,14,16,.12); }
+  .hairline-strong { border-color: rgba(14,14,16,.22); }
+  .label-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--eyebrow, #5B5C61);
+  }
+
+  /* Brand red bar / badge primitives */
+  .brand-bar { background: var(--brand, #E62B53); }
+  .brand-text { color: var(--brand, #E62B53); }
+  .brand-border { border-color: var(--brand, #E62B53); }
+
+  /* Hero overlay */
+  .hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease; }
+  .hero-slide.is-active { opacity: var(--hero-photo-opacity, 0.9); }
+  .hero-shadow {
+    background: linear-gradient(90deg, rgba(14,14,16,.78) 0%, rgba(14,14,16,.55) 40%, rgba(14,14,16,.18) 80%, rgba(14,14,16,.05) 100%);
+  }
+  .hero-grain {
+    background-image: radial-gradient(rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 3px 3px;
+    mix-blend-mode: overlay;
+  }
+
+  /* tape/marquee */
+  .tape { display: flex; gap: 56px; animation: tape 60s linear infinite; }
+  @keyframes tape { from { transform: translateX(0);} to { transform: translateX(-50%);} }
+
+  /* Skewed industrial divider */
+  .chev { clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 100%, 0 100%); }
+
+  /* Card photo zoom */
+  .photo-zoom img { transition: transform .8s ease; }
+  .photo-zoom:hover img { transform: scale(1.04); }
+
+  /* Process step number rules */
+  .step-rule { background: linear-gradient(90deg, #0E0E10 0 60%, transparent 60% 100%); background-size: 8px 1px; background-repeat: repeat-x; height: 1px; }
+
+  /* Counter pop animation */
+  @keyframes pop { 0% { opacity:0; transform: translateY(8px);} 100%{opacity:1;transform:none;}}
+  .pop { animation: pop .6s ease both; }
+
+  /* Form wizard */
+  .step-dot { width: 28px; height: 28px; border-radius: 999px; display:inline-flex; align-items:center; justify-content:center; font: 600 13px 'JetBrains Mono', monospace; }
+
+  /* Subtle dotted bg for hero slab */
+  .dotgrid {
+    background-image:
+      linear-gradient(rgba(14,14,16,.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(14,14,16,.06) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  /* Density modes */
+  body.density-compact section.s { padding-top: 72px; padding-bottom: 72px; }
+  body.density-compact .display-xl { font-size: 64px !important; }
+  section.s { padding-top: 120px; padding-bottom: 120px; }
+  @media (max-width: 900px) { section.s { padding-top: 72px; padding-bottom: 72px; } }
+
+  /* Sticky CTA chip */
+  .stickychip {
+    position: fixed; right: 24px; bottom: 24px; z-index: 60;
+    background: var(--brand, #E62B53); color: white;
+    border-radius: 999px; padding: 12px 18px 12px 14px;
+    font: 600 14px 'Inter';
+    box-shadow: 0 12px 30px -10px rgba(230,43,83,.6), 0 2px 6px rgba(0,0,0,.18);
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+
+  .btn-primary {
+    background: var(--brand, #E62B53); color: white;
+    padding: 14px 22px; font-weight: 600; font-size: 14px;
+    display: inline-flex; align-items: center; gap: 10px;
+    border: 1px solid var(--brand, #E62B53);
+    transition: background .15s, transform .15s;
+  }
+  .btn-primary:hover { background: var(--brand-deep, #B81C3F); border-color: var(--brand-deep,#B81C3F); }
+  .btn-secondary {
+    background: transparent; color: #0E0E10;
+    padding: 13px 21px; font-weight: 600; font-size: 14px;
+    display: inline-flex; align-items: center; gap: 10px;
+    border: 1px solid rgba(14,14,16,.25);
+  }
+  .btn-secondary:hover { background: #0E0E10; color: white; border-color:#0E0E10; }
+  .btn-on-dark {
+    background: white; color: #0E0E10;
+    padding: 13px 21px; font-weight: 600; font-size: 14px;
+    display: inline-flex; align-items: center; gap: 10px;
+    border: 1px solid white;
+  }
+
+  /* Solution card — large photo with overlay and side data */
+  .sol-card { background: white; border: 1px solid rgba(14,14,16,.1); }
+  .sol-card .photo { aspect-ratio: 4/3; overflow:hidden; background:#15151a; }
+
+  /* Client logo box */
+  .client-cell { aspect-ratio: 16/9; display:flex; align-items:center; justify-content:center; border:1px solid rgba(14,14,16,.1); background:white; padding:18px; }
+  .client-cell:hover { background:#fff; border-color: rgba(14,14,16,.3); }
+
+  /* Form */
+  .field input, .field select, .field textarea {
+    width:100%; padding: 14px 16px; background:white;
+    border: 1px solid rgba(14,14,16,.18); font: 400 15px 'Inter';
+    transition: border-color .15s;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: #0E0E10; }
+  .field label { font: 500 12px 'Inter'; letter-spacing: .04em; text-transform: uppercase; color: #5B5C61; display:block; margin-bottom: 8px; }
+
+  /* Tweaks panel */
+  .tw-panel {
+    position: fixed; right: 24px; bottom: 24px; z-index: 70;
+    width: 320px; background:#0E0E10; color:white;
+    border:1px solid rgba(255,255,255,.12);
+    box-shadow: 0 30px 80px -20px rgba(0,0,0,.5);
+    padding: 18px;
+  }
+  .tw-panel .row { display:flex; flex-direction:column; gap:6px; padding: 10px 0; border-top: 1px solid rgba(255,255,255,.08); }
+  .tw-panel .row:first-child { border-top: 0; padding-top:0; }
+  .tw-panel .seg { display:flex; gap:6px; }
+  .tw-panel .seg button {
+    flex:1; padding:8px 10px; background: rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1);
+    color:#cbcbd0; font: 500 12px 'Inter';
+  }
+  .tw-panel .seg button.active { background:white; color:#0E0E10; border-color: white; }
+  .tw-swatch { width:24px; height:24px; border-radius: 4px; border:1px solid rgba(255,255,255,.2); cursor:pointer; }
+  .tw-swatch.active { outline: 2px solid white; outline-offset: 2px; }
+
+  /* Photo placeholders with diagonal stripes */
+  .placeholder {
+    background:
+      repeating-linear-gradient(135deg, #ECEAE3 0 18px, #E4E2DA 18px 36px);
+    color:#5B5C61; font: 500 12px 'JetBrains Mono', monospace;
+    display:flex; align-items:center; justify-content:center;
+    text-transform: uppercase; letter-spacing: .12em;
+  }
+
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+
+  /* fade in on scroll */
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+
+  /* ── Nav hover dropdown ─────────────────────────────── */
+  .nav-dropdown { position:relative; }
+  .nav-dropdown-toggle { display:flex; align-items:center; gap:5px; cursor:pointer; font-weight:500; font-size:14px; color:rgba(14,14,16,0.85); background:none; border:none; padding:0; font-family:inherit; position:relative; padding-bottom:2px; }
+  .nav-dropdown-toggle::after { content:''; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--brand,#E62B53); transition:width 0.25s ease; }
+  .nav-dropdown:hover .nav-dropdown-toggle::after { width:100%; }
+  .nav-dropdown-menu { display:none; position:absolute; left:0; top:calc(100% + 8px); z-index:50; background:white; border:0.5px solid rgba(14,14,16,0.12); box-shadow:0 12px 40px -8px rgba(14,14,16,0.18); padding:24px; min-width:460px; grid-template-columns:1fr 1fr; gap:16px 24px; }
+  .nav-dropdown-menu.open { display:grid; }
+  .nav-dropdown-menu a { display:block; text-decoration:none; }
+  .nav-dropdown-menu a:hover .dditem-title { color:var(--brand,#E62B53); }
+  .dditem-num { font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:#8C8D92; }
+  .dditem-title { font-weight:600; color:#0E0E10; margin-top:2px; font-size:14px; }
+  .dditem-sub { font-size:12px; color:#5B5C61; margin-top:2px; }
+  .nav-dropdown-single { position:relative; }
+  .nav-dropdown-single > a { position:relative; padding-bottom:2px; }
+  .nav-dropdown-single > a::after { content:''; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--brand,#E62B53); transition:width 0.25s ease; }
+  .nav-dropdown-single:hover > a::after { width:100%; }
+  .nav-dropdown-single-menu { display:none; position:absolute; left:0; top:calc(100% + 8px); z-index:50; background:white; border:0.5px solid rgba(14,14,16,0.12); box-shadow:0 12px 40px -8px rgba(14,14,16,0.18); padding:16px; min-width:300px; }
+  .nav-dropdown-single-menu.open { display:block; }
+  .nav-dropdown-single-menu a { display:flex; align-items:flex-start; gap:12px; padding:10px 12px; font-size:14px; color:#0E0E10; text-decoration:none; border-bottom:0.5px solid rgba(14,14,16,0.08); }
+  .nav-dropdown-single-menu a:last-child { border-bottom:none; }
+  .nav-dropdown-single-menu a:hover { background:#F2F1EC; }
+  .nav-dropdown-single-menu .ddi-num { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.15em; color:#8C8D92; flex-shrink:0; margin-top:2px; }
+  .nav-dropdown-single-menu .ddi-body .ddi-title { font-weight:600; color:#0E0E10; font-size:14px; }
+  .nav-dropdown-single-menu .ddi-body .ddi-sub { font-size:12px; color:#5B5C61; margin-top:1px; }
+  .nav-dropdown-single-menu a:hover .ddi-title { color:var(--brand); }
+  /* plain nav links */
+  .nav-plain-link { position:relative; text-decoration:none; color:rgba(14,14,16,0.85); font-weight:500; font-size:14px; padding-bottom:2px; }
+  .nav-plain-link::after { content:''; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--brand,#E62B53); transition:width 0.25s ease; }
+  .nav-plain-link:hover::after { width:100%; }
+  .nav-plain-link:hover { color:#0E0E10; }
+  .nav-plain-link.active::after { width:100%; }
+  .nav-dropdown-toggle::after { content:''; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--brand,#E62B53); transition:width 0.25s ease; }
+  .nav-dropdown:hover .nav-dropdown-toggle::after { width:100%; }
+  .nav-dropdown-toggle { position:relative; padding-bottom:2px; }
+  .nav-dropdown-single > a { position:relative; padding-bottom:2px; }
+  .nav-dropdown-single > a::after { content:''; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--brand,#E62B53); transition:width 0.25s ease; }
+  .nav-dropdown-single:hover > a::after { width:100%; }
+
+  /* ── Mobile menu ─────────────────────────────────── */
+  .mob-menu-btn { display:none; flex-direction:column; justify-content:center; gap:5px; width:40px; height:40px; background:none; border:none; cursor:pointer; padding:8px; }
+  .mob-menu-btn span { display:block; width:24px; height:2px; background:#0E0E10; transition:all .25s; border-radius:2px; }
+  .mob-menu-btn.is-open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+  .mob-menu-btn.is-open span:nth-child(2) { opacity:0; }
+  .mob-menu-btn.is-open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+  @media (max-width:1023px) {
+    .mob-menu-btn { display:flex; }
+    .btn-primary-header { display:none !important; }
+  }
+  .mob-menu-overlay {
+    display:none !important; position:fixed; inset:0; top:72px; background:white; z-index:49;
+    flex-direction:column; overflow-y:auto;
+    border-top:1px solid rgba(14,14,16,.12);
+  }
+  .mob-menu-overlay.is-open { display:flex !important; }
+  .mob-menu-overlay a {
+    display:block; padding:16px 24px; font-size:17px; font-weight:500; color:#0E0E10;
+    text-decoration:none; border-bottom:1px solid rgba(14,14,16,.08);
+  }
+  .mob-menu-overlay a:hover { background:#F2F1EC; }
+  .mob-menu-overlay .mob-section {
+    padding:12px 24px 6px; font-family:'JetBrains Mono',monospace;
+    font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#8C8D92;
+  }
+  .mob-menu-overlay .mob-cta {
+    margin:16px 24px; display:block; padding:14px 20px;
+    background:#E62B53; color:white !important; font-weight:600;
+    text-align:center; border-bottom:none !important;
+  }
+  .mob-menu-overlay .mob-cta:hover { background:#B81C3F !important; }
+</style>
+</head>
+<body class="density-spacious antialiased">
+
+<!-- ===== UTILITY TOP STRIP ===== -->
+<div class="bg-ink text-white text-[12px]">
+  <div class="container-x flex items-center justify-between py-2.5">
+    <div class="flex items-center gap-6 mono tracking-wider opacity-90">
+      <span class="hidden md:inline">RU · BY · KZ</span>
+      <span class="hidden md:inline">·</span>
+      <span>ПН—ПТ · 09:00—18:00 МСК</span>
+    </div>
+    <div class="flex items-center gap-5 mono opacity-90">
+      <a href="mailto:info@virston.ru" class="hover:text-white/100">info@virston.ru</a>
+      <span class="hidden md:inline opacity-50">·</span>
+      <a href="tel:+74991100080" class="hidden md:inline">+7 (499) 110-00-80</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header id="hdr" class="sticky top-0 z-50 bg-paper border-b hairline transition-colors">
+  <div class="container-x flex items-center justify-between h-[72px]">
+    <a href="#" class="flex items-center gap-3">
+      <img src="assets/shared/logo.png" alt="VIRSTON" class="h-7 w-auto" />
+      <span class="hidden lg:block mono text-[11px] tracking-[0.18em] text-steel uppercase border-l hairline pl-3 ml-1">Системы высокого давления</span>
+    </a>
+        <nav class="hidden lg:flex items-center gap-7 text-[14px] font-medium text-ink/85">
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle">Решения <svg width="10" height="10" viewBox="0 0 10 10" class="opacity-60"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></button>
+        <div class="nav-dropdown-menu" style="min-width:560px;grid-template-columns:1fr 1fr;">
+          <a href="pylepodavlenie.html"><div class="dditem-num">01</div><div class="dditem-title">Системы пылеподавления</div><div class="dditem-sub">Форсуночные · пушки до 60 м</div></a>
+          <a href="uvlazhnenie.html"><div class="dditem-num">02</div><div class="dditem-title">Системы увлажнения</div><div class="dditem-sub">70–100 Бар, капля 5 мкм</div></a>
+          <a href="dezbariers.html"><div class="dditem-num">03</div><div class="dditem-title">Дезинфекционные барьеры</div><div class="dditem-sub">Арочные, 16 форсунок</div></a>
+          <a href="ohlazhdenie.html"><div class="dditem-num">04</div><div class="dditem-title">Системы охлаждения для автопрома</div><div class="dditem-sub">Адиабатическое, −5…−15 °C</div></a>
+          <a href="osushenie.html"><div class="dditem-num">05</div><div class="dditem-title">Системы осушения</div><div class="dditem-sub">Контроль влажности воздуха</div></a>
+          <a href="monitoring.html"><div class="dditem-num">06</div><div class="dditem-title">Автоматизированный мониторинг</div><div class="dditem-sub">АСУ ТП, SCADA интеграция</div></a>
+        </div>
+      </div>
+      <a href="proekty.html" class="nav-plain-link">Проекты</a>
+      <a href="o-kompanii.html" class="nav-plain-link">О компании</a>
+      <a href="servis.html" class="nav-plain-link">Сервис</a>
+      <a href="kontakty.html" class="nav-plain-link">Контакты</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      
+      <a href="index.html#form" class="btn-primary btn-primary-header text-[13px] !py-2.5 !px-4 btn-primary-header">
+        Получить расчёт
+        <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 6h8M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+      </a>
+    </div>
+    <!-- Hamburger button — mobile only -->
+    <button id="mobMenuBtn" class="mob-menu-btn lg:hidden" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu overlay -->
+<div id="mobMenuOverlay" class="mob-menu-overlay">
+  <div class="mob-section">Решения</div>
+  <a href="pylepodavlenie.html">Системы пылеподавления</a>
+  <a href="uvlazhnenie.html">Системы увлажнения</a>
+  <a href="dezbariers.html">Дезинфекционные барьеры</a>
+  <a href="ohlazhdenie.html">Системы охлаждения для автопрома</a>
+  <a href="osushenie.html">Системы осушения</a>
+  <a href="monitoring.html">Автоматизированный мониторинг</a>
+  <div class="mob-section">Компания</div>
+  <a href="o-kompanii.html">О компании</a>
+  <a href="proekty.html">Проекты</a>
+  <a href="servis.html">Сервис</a>
+  <a href="kontakty.html">Контакты</a>
+  <a href="index.html#form" class="mob-cta">Получить расчёт →</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="relative bg-ink text-white overflow-hidden">
+  <div class="absolute inset-0">
+    <div id="heroCarousel" class="absolute inset-0">
+      <img src="assets/index/spray-mine.png"      alt="" class="hero-slide w-full h-full object-cover object-center is-active" />
+      <img src="assets/index/dezbarrier.png"      alt="" class="hero-slide w-full h-full object-cover object-center" />
+      <img src="assets/index/auto-paint.png"      alt="" class="hero-slide w-full h-full object-cover object-center" />
+      <img src="assets/index/warehouse.png"       alt="" class="hero-slide w-full h-full object-cover object-center" />
+      <img src="assets/index/pumps-workshop.png"  alt="" class="hero-slide w-full h-full object-cover object-center" />
+      <img src="assets/index/cannon-spray-1.png"  alt="" class="hero-slide w-full h-full object-cover object-center" />
+      <img src="assets/index/cannon-spray-2.png"  alt="" class="hero-slide w-full h-full object-cover object-center" />
+    </div>
+    <div class="absolute inset-0 hero-shadow"></div>
+    <div class="absolute inset-0 hero-grain"></div>
+  </div>
+
+  <!-- Top index strip -->
+  <div class="relative container-x pt-8 pb-3 flex items-center justify-between text-white/70 mono text-[11px] tracking-[.2em] uppercase">
+    <div class="flex items-center gap-6">
+      <span>RU / 01 ⟶ ИНДУСТРИАЛЬНЫЕ СИСТЕМЫ</span>
+    </div>
+    <div class="hidden md:flex items-center gap-4">
+      <span id="heroSlideLabel">Пылеподавление · РАЗРЕЗ «ЧЕРНОГОРСКИЙ»</span>
+    </div>
+  </div>
+
+  <div class="relative container-x pt-16 pb-28 md:pt-28 md:pb-44">
+    <div class="">
+      <div class="max-w-[580px] w-full">
+      <div class="flex items-center gap-3 mb-7">
+        <span class="brand-bar w-9 h-[3px]"></span>
+        <span class="mono text-[11px] tracking-[.2em] uppercase text-white/85">Производитель · С 2008 года</span>
+      </div>
+      <h1 class="display display-xl text-white text-[56px] sm:text-[72px] md:text-[96px] lg:text-[112px]" style="font-size: 76px">
+        Системы<br />высокого<br />давления<br /><span class="brand-text" style="font-family: Manrope; font-weight: 700; font-size: 70px; color: rgb(224, 92, 120)">под ключ</span>
+      </h1>
+      <p class="mt-8 max-w-[540px] text-[17px] text-white/80 leading-[1.55]">
+        Проектируем, изготавливаем и вводим в эксплуатацию системы пылеподавления, увлажнения, охлаждения и дезинфекции для промышленных объектов в России, Беларуси и Казахстане.
+      </p>
+      <div class="mt-10 flex flex-wrap items-center gap-3">
+        <a href="index.html#form" class="btn-primary !text-[14px]">
+          Получить расчёт бесплатно
+          <svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7h10M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.7" fill="none"/></svg>
+        </a>
+        <a href="proekty.html" class="btn-on-dark">Смотреть проекты</a>
+      </div>
+
+      <!-- Slide controls -->
+      <div class="flex items-center gap-4 mt-10">
+        <button id="heroPrev" aria-label="Предыдущий слайд" class="w-10 h-10 border border-white/30 flex items-center justify-center hover:bg-white/10 transition">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8L10 13" stroke="white" stroke-width="1.6"/></svg>
+        </button>
+        <div class="flex items-center gap-2" id="heroDots">
+          <span class="hero-dot w-6 h-[2px] bg-white transition-all"></span>
+          <span class="hero-dot w-2 h-[2px] bg-white/35 transition-all"></span>
+          <span class="hero-dot w-2 h-[2px] bg-white/35 transition-all"></span>
+          <span class="hero-dot w-2 h-[2px] bg-white/35 transition-all"></span>
+          <span class="hero-dot w-2 h-[2px] bg-white/35 transition-all"></span>
+          <span class="hero-dot w-2 h-[2px] bg-white/35 transition-all"></span>
+          <span class="hero-dot w-2 h-[2px] bg-white/35 transition-all"></span>
+        </div>
+        <button id="heroNext" aria-label="Следующий слайд" class="w-10 h-10 border border-white/30 flex items-center justify-center hover:bg-white/10 transition">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3L11 8L6 13" stroke="white" stroke-width="1.6"/></svg>
+        </button>
+        <span class="mono text-[11px] text-white/40 tracking-[.2em] ml-2" id="heroCounter">01 / 07</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero footer strip with metrics -->
+  <div class="relative border-t border-white/15 bg-ink/85 backdrop-blur-sm">
+    <div class="container-x grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
+      <div class="py-5 md:py-7 pr-6">
+        <div class="mono text-[10px] uppercase tracking-[.2em] text-white/55">[01] Опыт</div>
+        <div class="display num text-[44px] md:text-[56px] mt-1 leading-none">17<span class="brand-text text-[22px] align-top ml-1">+</span></div>
+        <div class="text-[12px] text-white/65 mt-1">лет с водой и давлением</div>
+      </div>
+      <div class="py-5 md:py-7 px-6">
+        <div class="mono text-[10px] uppercase tracking-[.2em] text-white/55">[02] Объекты</div>
+        <div class="display num text-[44px] md:text-[56px] mt-1 leading-none">120<span class="brand-text text-[22px] align-top ml-1">+</span></div>
+        <div class="text-[12px] text-white/65 mt-1">в трёх странах</div>
+      </div>
+      <div class="py-5 md:py-7 px-6">
+        <div class="mono text-[10px] uppercase tracking-[.2em] text-white/55">[03] Команда</div>
+        <div class="display num text-[44px] md:text-[56px] mt-1 leading-none">30<span class="brand-text text-[22px] align-top ml-1">+</span></div>
+        <div class="text-[12px] text-white/65 mt-1">инженеры, монтажники, сервис</div>
+      </div>
+      <div class="py-5 md:py-7 px-6">
+        <div class="mono text-[10px] uppercase tracking-[.2em] text-white/55">[04] Гарантия</div>
+        <div class="display num text-[44px] md:text-[56px] mt-1 leading-none">18<span class="text-[18px] text-white/65 ml-2">мес.</span></div>
+        <div class="text-[12px] text-white/65 mt-1">на оборудование TM VIRSTON</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CLIENT MARQUEE ===== -->
+<section class="bg-paper border-b hairline">
+  <div class="py-7">
+    <div class="container-x flex items-center gap-6 mb-4">
+      <span class="brand-bar w-6 h-[2px]"></span>
+      <span class="mono text-[11px] tracking-[.2em] uppercase text-steel">Доверяют</span>
+      <span class="text-steel text-[12px] hidden md:inline">— оборудование VIRSTON работает на объектах:</span>
+    </div>
+    <div class="overflow-hidden relative">
+      <div class="tape whitespace-nowrap text-[18px] md:text-[22px] display tracking-tighter text-ink/85">
+        <!-- repeated for seamless loop -->
+        <span>Volkswagen Group Rus</span><span class="brand-text">●</span>
+        <span>Hyundai Motor Manufacturing</span><span class="brand-text">●</span>
+        <span>ММК · Магнитогорск</span><span class="brand-text">●</span>
+        <span>Металлоинвест ГОК</span><span class="brand-text">●</span>
+        <span>Аккерман Цемент</span><span class="brand-text">●</span>
+        <span>ОТЭКО-Портсервис</span><span class="brand-text">●</span>
+        <span>КПП «Хоргос»</span><span class="brand-text">●</span>
+        <span>Черкизово</span><span class="brand-text">●</span>
+        <span>ТехноНиколь</span><span class="brand-text">●</span>
+        <span>IKEA Могилёв</span><span class="brand-text">●</span>
+        <span>АК «Алтыналмас»</span><span class="brand-text">●</span>
+        <span>Брестэнерго</span><span class="brand-text">●</span>
+        <!-- duplicate -->
+        <span>Volkswagen Group Rus</span><span class="brand-text">●</span>
+        <span>Hyundai Motor Manufacturing</span><span class="brand-text">●</span>
+        <span>ММК · Магнитогорск</span><span class="brand-text">●</span>
+        <span>Металлоинвест ГОК</span><span class="brand-text">●</span>
+        <span>Аккерман Цемент</span><span class="brand-text">●</span>
+        <span>ОТЭКО-Портсервис</span><span class="brand-text">●</span>
+        <span>КПП «Хоргос»</span><span class="brand-text">●</span>
+        <span>Черкизово</span><span class="brand-text">●</span>
+        <span>ТехноНиколь</span><span class="brand-text">●</span>
+        <span>IKEA Могилёв</span><span class="brand-text">●</span>
+        <span>АК «Алтыналмас»</span><span class="brand-text">●</span>
+        <span>Брестэнерго</span><span class="brand-text">●</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== УТП — WHY VIRSTON ===== -->
+<section id="about" class="s bg-paper">
+  <div class="container-x">
+    <div class="grid-12 mb-16">
+      <div class="col-span-12 md:col-span-4">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">№ 02 / Почему VIRSTON</span>
+        </div>
+        <h2 class="display text-[44px] md:text-[64px] tracking-tighter">Производитель,<br/>не посредник</h2>
+      </div>
+      <div class="col-span-12 md:col-span-7 md:col-start-6 self-end">
+        <p class="text-[18px] text-steel leading-[1.55] max-w-[560px]">Конструкторско-технологический отдел разрабатывает оборудование под параметры конкретного объекта. Производство — на собственных мощностях. Заказчик получает единого подрядчика на весь жизненный цикл.</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border hairline-strong divide-y md:divide-y-0 md:divide-x divide-[rgba(14,14,16,0.18)] bg-white">
+      <!-- card -->
+      <div class="p-8 group relative">
+        <div class="flex items-start justify-between mb-12">
+          <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">01</span>
+          <svg width="40" height="40" viewBox="0 0 40 40" class="text-ink"><rect x="6" y="14" width="28" height="20" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M6 22h28M14 14V6h12v8" stroke="currentColor" stroke-width="1.4" fill="none"/></svg>
+        </div>
+        <h3 class="display text-[22px] tracking-tighter">Производство полного цикла</h3>
+        <p class="text-[14px] text-steel mt-3 leading-[1.6]">Контроль качества на каждом этапе — от КД и проектирования до монтажа и пусконаладки. Цены без посреднической наценки.</p>
+        <div class="absolute left-0 bottom-0 brand-bar h-[3px] w-0 group-hover:w-full transition-all duration-500"></div>
+      </div>
+      <div class="p-8 group relative">
+        <div class="flex items-start justify-between mb-12">
+          <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">02</span>
+          <svg width="40" height="40" viewBox="0 0 40 40" class="text-ink"><circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M14 20l4 4 8-8" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+        </div>
+        <h3 class="display text-[22px] tracking-tighter">Комплекс под ключ</h3>
+        <p class="text-[14px] text-steel mt-3 leading-[1.6]">Проектирование → производство → монтаж → обучение персонала → гарантийное и постгарантийное ТО. Один договор — одна ответственность.</p>
+        <div class="absolute left-0 bottom-0 brand-bar h-[3px] w-0 group-hover:w-full transition-all duration-500"></div>
+      </div>
+      <div class="p-8 group relative">
+        <div class="flex items-start justify-between mb-12">
+          <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">03</span>
+          <svg width="40" height="40" viewBox="0 0 40 40" class="text-ink"><path d="M8 8h10v10H8zM22 8h10v10H22zM8 22h10v10H8zM22 22h10v10H22z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M14 18v4M28 18v4M18 14h4M18 28h4" stroke="currentColor" stroke-width="1.4" fill="none"/></svg>
+        </div>
+        <h3 class="display text-[22px] tracking-tighter">Нестандартные решения</h3>
+        <p class="text-[14px] text-steel mt-3 leading-[1.6]">Нестандартные габариты, специфика технологического процесса, интеграция в существующие АСУ ТП и SCADA — разрабатываем под конкретный объект.</p>
+        <div class="absolute left-0 bottom-0 brand-bar h-[3px] w-0 group-hover:w-full transition-all duration-500"></div>
+      </div>
+      <div class="p-8 group relative">
+        <div class="flex items-start justify-between mb-12">
+          <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">04</span>
+          <svg width="40" height="40" viewBox="0 0 40 40" class="text-ink"><path d="M20 4l13 6v10c0 8-5.5 14-13 16-7.5-2-13-8-13-16V10l13-6z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M14 20l4 4 8-8" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+        </div>
+        <h3 class="display text-[22px] tracking-tighter">Документация ЕАС, РСТ</h3>
+        <p class="text-[14px] text-steel mt-3 leading-[1.6]">Сертификаты соответствия ЕАС и РСТ, протоколы испытаний, СЭЗ. Полный пакет для проектных организаций и тендерных процедур.</p>
+        <div class="absolute left-0 bottom-0 brand-bar h-[3px] w-0 group-hover:w-full transition-all duration-500"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOLUTIONS ===== -->
+<section id="solutions" class="s bg-card border-y hairline">
+  <div class="container-x">
+    <div class="grid-12 mb-14">
+      <div class="col-span-12 md:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">№ 03 / Готовые решения</span>
+        </div>
+        <h2 class="display text-[44px] md:text-[64px] tracking-tighter">Системы для<br/>промышленных объектов</h2>
+      </div>
+      <div class="col-span-12 md:col-span-6 md:col-start-7 self-end">
+        <p class="text-[17px] text-steel leading-[1.55] max-w-[520px]">
+          Подбираем решение под задачу: от форсуночной системы в цехе до 5-портального дезбарьера на КПП. Предпроектный расчёт — бесплатно.
+        </p>
+      </div>
+    </div>
+
+    <!-- Featured Pylepodavlenie - large card -->
+    <a href="pylepodavlenie.html" class="block bg-ink text-white relative overflow-hidden mb-6 photo-zoom" id="solFeatured">
+      <div class="grid grid-cols-12">
+        <div class="col-span-12 md:col-span-7 relative">
+          <div class="aspect-[16/10] md:aspect-auto md:h-[560px] overflow-hidden">
+            <img src="assets/index/pushka-karier.png" alt="Пылеподавление в карьере" class="w-full h-full object-cover" />
+          </div>
+          <div class="absolute top-5 left-5 flex items-center gap-2">
+            <span class="brand-bar text-white px-2.5 py-1 mono text-[10px] tracking-[.18em] uppercase">P0 · приоритет</span>
+          </div>
+        </div>
+        <div class="col-span-12 md:col-span-5 p-8 md:p-12 flex flex-col justify-between">
+          <div>
+            <div class="mono text-[11px] tracking-[.2em] uppercase text-white/55 mb-6">01 / Системы пылеподавления</div>
+            <h3 class="display text-[36px] md:text-[44px] tracking-tighter leading-[1.05]">До 90% запылённости — в воду</h3>
+            <p class="text-[15px] text-white/70 mt-5 leading-[1.6]">
+              Эффект агломерации: капли аэрозоля связывают пылевые частицы и осаждают их.
+              Форсуночные системы для цехов и пушки VIRSTON собственной разработки с радиусом до 60 м.
+            </p>
+            <div class="grid grid-cols-3 gap-4 mt-8">
+              <div><div class="mono text-[10px] uppercase tracking-wider text-white/55">Снижение</div><div class="display text-[28px] mt-1 num">80—90%</div></div>
+              <div><div class="mono text-[10px] uppercase tracking-wider text-white/55">Радиус</div><div class="display text-[28px] mt-1 num">до 60м</div></div>
+              <div><div class="mono text-[10px] uppercase tracking-wider text-white/55">ПАВ</div><div class="display text-[28px] mt-1">опция</div></div>
+            </div>
+          </div>
+          <div class="mt-10 flex items-center justify-between border-t border-white/15 pt-5">
+            <span class="text-white/55 text-[12px] mono">УГОЛЬ · ЦЕМЕНТ · МЕТАЛЛУРГИЯ · ДЕРЕВО</span>
+            <span class="inline-flex items-center gap-2 text-[13px] font-semibold">Подробнее <svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7h10M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.7" fill="none"/></svg></span>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 5 secondary solutions in grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <a class="sol-card group photo-zoom" href="uvlazhnenie.html">
+        <div class="photo"><img src="assets/index/warehouse.png" alt="" class="w-full h-full object-cover" /></div>
+        <div class="p-6 md:p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">02 / Увлажнение</span>
+            <span class="text-[11px] mono text-steel">70—100 Бар</span>
+          </div>
+          <h3 class="display text-[26px] tracking-tighter">Системы<br/>увлажнения</h3>
+          <p class="text-[14px] text-steel mt-3 leading-[1.6]">Капля ~5 микрон — полное испарение в воздухе, без луж и подтёков. Снижает брак на гигроскопичных материалах, убирает статику и попутно охлаждает на 5—8 °C.</p>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="text-[11px] mono px-2 py-1 bg-card text-ink/80">ДЕРЕВО</span>
+            <span class="text-[11px] mono px-2 py-1 bg-card text-ink/80">ТИПОГРАФИИ</span>
+            <span class="text-[11px] mono px-2 py-1 bg-card text-ink/80">ТЕКСТИЛЬ</span>
+            <span class="text-[11px] mono px-2 py-1 bg-card text-ink/80">ФАРМА</span>
+          </div>
+        </div>
+      </a>
+      <a class="sol-card group photo-zoom" href="ohlazhdenie.html">
+        <div class="photo"><img src="assets/index/auto-paint.png" alt="" class="w-full h-full object-cover" /></div>
+        <div class="p-6 md:p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">03 / Охлаждение</span>
+            <span class="text-[11px] mono text-steel">−5…−15 °C</span>
+          </div>
+          <h3 class="display text-[26px] tracking-tighter">Системы охлаждения<br/>для автопрома</h3>
+          <p class="text-[14px] text-steel mt-3 leading-[1.6]">100 Вт против 700 Вт у изотермических систем на 1 кг/час. Монтаж в воздухопроводы, на чиллеры, на открытые площадки. Автоматика по датчикам T° и RH.</p>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="text-[11px] mono px-2 py-1 bg-card text-ink/80">АВТОПРОМ</span>
+            <span class="text-[11px] mono px-2 py-1 bg-card text-ink/80">ЖИВОТНОВОДСТВО</span>
+            <span class="text-[11px] mono px-2 py-1 bg-card text-ink/80">ХОРЕКА</span>
+          </div>
+        </div>
+      </a>
+      <a class="sol-card group photo-zoom" href="dezbariers.html">
+        <div class="photo"><img src="assets/index/dezbarrier.png" alt="" class="w-full h-full object-cover" /></div>
+        <div class="p-6 md:p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">04 / Дезбарьеры</span>
+            <span class="text-[11px] mono text-steel">16 форсунок</span>
+          </div>
+          <h3 class="display text-[26px] tracking-tighter">Дезинфекционные<br/>барьеры для транспорта</h3>
+          <p class="text-[14px] text-steel mt-3 leading-[1.6]">Арочный барьер — замена наливным дезваннам. 4-сторонняя автоматическая обработка кузова и шасси. Каркас горячего цинкования. Монтаж 1—5 дней.</p>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="text-[11px] mono px-2 py-1 bg-card text-ink/80">СВИНОКОМПЛЕКСЫ</span>
+            <span class="text-[11px] mono px-2 py-1 bg-card text-ink/80">МЯСОКОМБИНАТЫ</span>
+            <span class="text-[11px] mono px-2 py-1 bg-card text-ink/80">КПП</span>
+          </div>
+        </div>
+      </a>
+      <a class="sol-card group photo-zoom" href="osushenie.html">
+        <div class="photo"><img src="assets/osushit/osushit-hero.png" alt="" class="w-full h-full object-cover" /></div>
+        <div class="p-6 md:p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">05 / Осушение</span>
+            <span class="text-[11px] mono text-steel">40—60% RH</span>
+          </div>
+          <h3 class="display text-[26px] tracking-tighter">Системы<br/>осушения</h3>
+          <p class="text-[14px] text-steel mt-3 leading-[1.6]">Промышленные системы осушения воздуха для производств с повышенной влажностью. Индивидуальное проектирование под параметры объекта.</p>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="text-[11px] mono px-2 py-1 bg-card text-ink/80">СКЛАДЫ</span>
+            <span class="text-[11px] mono px-2 py-1 bg-card text-ink/80">ПРОИЗВОДСТВО</span>
+            <span class="text-[11px] mono px-2 py-1 bg-card text-ink/80">АРХИВЫ</span>
+          </div>
+        </div>
+      </a>
+      <a class="sol-card group photo-zoom" href="monitoring.html">
+        <div class="photo"><img src="assets/monitor/monitor-hero.png" alt="" class="w-full h-full object-cover" /></div>
+        <div class="p-6 md:p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">06 / Мониторинг</span>
+            <span class="text-[11px] mono text-steel">АСУ ТП</span>
+          </div>
+          <h3 class="display text-[26px] tracking-tighter">Автоматизированный<br/>мониторинг</h3>
+          <p class="text-[14px] text-steel mt-3 leading-[1.6]">Интеграция в существующие АСУ ТП и SCADA. Управление по датчикам T°, RH, давления. Дистанционный мониторинг и управление системой через облачный интерфейс.</p>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="text-[11px] mono px-2 py-1 bg-card text-ink/80">SCADA</span>
+            <span class="text-[11px] mono px-2 py-1 bg-card text-ink/80">АСУ ТП</span>
+            <span class="text-[11px] mono px-2 py-1 bg-card text-ink/80">SIEMENS</span>
+            <span class="text-[11px] mono px-2 py-1 bg-card text-ink/80">ABB</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUCTS BAR ===== -->
+<section id="products" class="s bg-paper">
+  <div class="container-x">
+    <div class="grid-12 mb-12">
+      <div class="col-span-12 md:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">№ 04 / Продукция TM VIRSTON</span>
+        </div>
+        <h2 class="display text-[44px] md:text-[64px] tracking-tighter">Оборудование<br/>собственного<br/>производства</h2>
+      </div>
+      <div class="col-span-12 md:col-span-6 md:col-start-7 self-end">
+        <p class="text-[17px] text-steel leading-[1.55] max-w-[520px]">
+          Speroni · Pratissoli · Siemens · ABB. Собственная разработка плюс проверенная компонентная база
+          обеспечивают предсказуемый ресурс оборудования в эксплуатации.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border-l border-t hairline-strong">
+      <article class="border-r border-b hairline-strong p-8 bg-white">
+        <div class="aspect-[5/4] mb-6 overflow-hidden bg-card relative">
+          <img src="assets/index/pumps-workshop.png" alt="" class="w-full h-full object-cover" />
+          <span class="absolute left-3 top-3 brand-bar text-white px-2 py-0.5 mono text-[10px] tracking-wider">VD-01</span>
+        </div>
+        <div class="mono text-[11px] tracking-[.2em] uppercase text-mute mb-2">Серия Duplex / Basic</div>
+        <h3 class="display text-[26px] tracking-tighter">Насосные установки<br/>высокого давления</h3>
+        <p class="text-[13px] text-steel mt-3 leading-[1.6]">Давление 70—100 Бар. Резервируемая компоновка Duplex или одиночная Basic. Насосные агрегаты Speroni и Pratissoli.</p>
+        <dl class="grid grid-cols-2 gap-y-2 gap-x-4 mt-6 text-[13px]">
+          <dt class="text-mute">Давление</dt><dd class="num">70—100 бар</dd>
+          <dt class="text-mute">Двигатель</dt><dd>Siemens · ABB</dd>
+          <dt class="text-mute">Управление</dt><dd>ШУ VIRSTON</dd>
+        </dl>
+      </article>
+      <article class="border-r border-b hairline-strong p-8 bg-white">
+        <div class="aspect-[5/4] mb-6 overflow-hidden bg-card relative">
+          <img src="assets/produktsiya-shkafy/cabinet-electrical.png" alt="" class="w-full h-full object-cover" />
+          <span class="absolute left-3 top-3 brand-bar text-white px-2 py-0.5 mono text-[10px] tracking-wider">SU-04</span>
+        </div>
+        <div class="mono text-[11px] tracking-[.2em] uppercase text-mute mb-2">Сенсорная панель оператора</div>
+        <h3 class="display text-[26px] tracking-tighter">Шкафы управления<br/>и автоматика</h3>
+        <p class="text-[13px] text-steel mt-3 leading-[1.6]">Зональное управление, контроль по датчикам RH/T°/движения. Готовы к интеграции в существующие АСУ ТП и SCADA по Modbus.</p>
+        <dl class="grid grid-cols-2 gap-y-2 gap-x-4 mt-6 text-[13px]">
+          <dt class="text-mute">Зон / каналов</dt><dd class="num">до 16</dd>
+          <dt class="text-mute">Протоколы</dt><dd>Modbus RTU/TCP</dd>
+          <dt class="text-mute">Диагностика</dt><dd>HMI · удалённо</dd>
+        </dl>
+      </article>
+      <article class="border-r border-b hairline-strong p-8 bg-white">
+        <div class="aspect-[5/4] mb-6 overflow-hidden bg-card relative">
+          <img src="assets/produktsiya-pushki/cannon-t60.png" alt="" class="w-full h-full object-cover" />
+          <span class="absolute left-3 top-3 brand-bar text-white px-2 py-0.5 mono text-[10px] tracking-wider">T60</span>
+        </div>
+        <div class="mono text-[11px] tracking-[.2em] uppercase text-mute mb-2">Собственная разработка с 2019</div>
+        <h3 class="display text-[26px] tracking-tighter">Пушки пылеподавления<br/>VIRSTON T-серии</h3>
+        <p class="text-[13px] text-steel mt-3 leading-[1.6]">Радиус действия до 60 м. Стационарное, прицепное и мобильное исполнение. Опция дозирования ПАВ для угольных и торфяных складов.</p>
+        <dl class="grid grid-cols-2 gap-y-2 gap-x-4 mt-6 text-[13px]">
+          <dt class="text-mute">Дальность</dt><dd class="num">до 60 м</dd>
+          <dt class="text-mute">Поворот</dt><dd>340° · ±45°</dd>
+          <dt class="text-mute">Исполнение</dt><dd>S30 · S60 · T60</dd>
+        </dl>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS / 5 STEPS ===== -->
+<section id="process" class="s bg-ink text-white relative overflow-hidden">
+  <!-- diagonal red corner -->
+  <div class="absolute top-0 right-0 brand-bar w-[200px] h-[6px]"></div>
+  <div class="container-x">
+    <div class="grid-12 mb-16">
+      <div class="col-span-12 md:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="mono text-[11px] tracking-[.2em] uppercase text-white/55">№ 05 / Как мы работаем</span>
+        </div>
+        <h2 class="display text-[44px] md:text-[64px] tracking-tighter text-white">От заявки —<br/>до сервиса</h2>
+      </div>
+      <div class="col-span-12 md:col-span-6 md:col-start-7 self-end">
+        <p class="text-[17px] text-white/70 leading-[1.55] max-w-[520px]">
+          5 этапов под одним договором. Без передачи объекта между подрядчиками — все компетенции в одной команде.
+        </p>
+      </div>
+    </div>
+
+    <ol class="grid grid-cols-1 md:grid-cols-5 gap-px bg-white/10 border border-white/10">
+      <li class="bg-ink p-7 relative">
+        <div class="display text-[64px] num leading-none brand-text">01</div>
+        <div class="mono text-[10px] tracking-[.2em] uppercase text-white/55 mt-2">Сегодня</div>
+        <h4 class="display text-[20px] tracking-tighter mt-5">Заявка</h4>
+        <p class="text-[13px] text-white/65 mt-2 leading-[1.55]">Запрос с сайта или звонок. Связываемся в течение рабочего дня.</p>
+      </li>
+      <li class="bg-ink p-7 relative">
+        <div class="display text-[64px] num leading-none brand-text">02</div>
+        <div class="mono text-[10px] tracking-[.2em] uppercase text-white/55 mt-2">+ 1—5 дней</div>
+        <h4 class="display text-[20px] tracking-tighter mt-5">Обследование</h4>
+        <p class="text-[13px] text-white/65 mt-2 leading-[1.55]">Выезд на объект, замеры, ТЗ и предпроектный расчёт. Бесплатно.</p>
+      </li>
+      <li class="bg-ink p-7 relative">
+        <div class="display text-[64px] num leading-none brand-text">03</div>
+        <div class="mono text-[10px] tracking-[.2em] uppercase text-white/55 mt-2">+ 3—8 нед.</div>
+        <h4 class="display text-[20px] tracking-tighter mt-5">Производство</h4>
+        <p class="text-[13px] text-white/65 mt-2 leading-[1.55]">Изготовление в цехах в Смоленске. Сроки и стоимость зафиксированы в договоре.</p>
+      </li>
+      <li class="bg-ink p-7 relative">
+        <div class="display text-[64px] num leading-none brand-text">04</div>
+        <div class="mono text-[10px] tracking-[.2em] uppercase text-white/55 mt-2">+ 1—4 нед.</div>
+        <h4 class="display text-[20px] tracking-tighter mt-5">Монтаж и пуск</h4>
+        <p class="text-[13px] text-white/65 mt-2 leading-[1.55]">Аттестованные специалисты. Пусконаладка и обучение персонала заказчика.</p>
+      </li>
+      <li class="bg-ink p-7 relative">
+        <div class="display text-[64px] num leading-none brand-text">05</div>
+        <div class="mono text-[10px] tracking-[.2em] uppercase text-white/55 mt-2">18 мес. + далее</div>
+        <h4 class="display text-[20px] tracking-tighter mt-5">Сервис</h4>
+        <p class="text-[13px] text-white/65 mt-2 leading-[1.55]">Гарантийное обслуживание, постгарантийный ремонт, ТО и поставка комплектующих.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== PROJECT SHOWCASE ===== -->
+<section id="projects" class="s bg-paper">
+  <div class="container-x">
+    <div class="grid-12 mb-12">
+      <div class="col-span-12 md:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">№ 06 / Реализованные объекты</span>
+        </div>
+        <h2 class="display text-[44px] md:text-[64px] tracking-tighter">120+ объектов<br/>в трёх странах</h2>
+      </div>
+      <div class="col-span-12 md:col-span-6 md:col-start-7 self-end">
+        <div class="flex flex-wrap items-center gap-2" id="filters">
+          <button data-f="all" class="filter-btn active mono text-[11px] tracking-[.18em] uppercase px-3 py-2 border hairline-strong">Все · 120+</button>
+          <button data-f="dust" class="filter-btn mono text-[11px] tracking-[.18em] uppercase px-3 py-2 border hairline">Пылеподавление</button>
+          <button data-f="hum" class="filter-btn mono text-[11px] tracking-[.18em] uppercase px-3 py-2 border hairline">Увлажнение</button>
+          <button data-f="cool" class="filter-btn mono text-[11px] tracking-[.18em] uppercase px-3 py-2 border hairline">Охлаждение</button>
+          <button data-f="bar" class="filter-btn mono text-[11px] tracking-[.18em] uppercase px-3 py-2 border hairline">Дезбарьеры</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="projectGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Project cards -->
+      <article class="proj group bg-white border hairline" data-tag="bar">
+        <div class="aspect-[4/3] overflow-hidden"><img src="assets/index/NurGoly.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"/></div>
+        <div class="p-6">
+          <div class="flex items-center justify-between text-[11px] mono tracking-wider text-mute uppercase mb-3">
+            <span>2018 · Казахстан</span><span class="brand-text">Дезбарьеры</span>
+          </div>
+          <h4 class="display text-[20px] tracking-tighter">КПП «Нур Жолы» — «Хоргос»</h4>
+          <p class="text-[13px] text-steel mt-2 leading-[1.55]">5-портальная система дезинфекции на крупнейшем сухопутном КПП на границе Казахстана и Китая.</p>
+        </div>
+      </article>
+      <article class="proj group bg-white border hairline" data-tag="cool">
+        <div class="aspect-[4/3] overflow-hidden"><img src="assets/index/auto-paint.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"/></div>
+        <div class="p-6">
+          <div class="flex items-center justify-between text-[11px] mono tracking-wider text-mute uppercase mb-3">
+            <span>2015 · Калуга</span><span class="brand-text">Охлаждение</span>
+          </div>
+          <h4 class="display text-[20px] tracking-tighter">Volkswagen Group Rus</h4>
+          <p class="text-[13px] text-steel mt-2 leading-[1.55]">Адиабатическая система охлаждения кузовов перед окраской. Автоматика по датчикам T°/RH.</p>
+        </div>
+      </article>
+      <article class="proj group bg-white border hairline" data-tag="dust">
+        <div class="aspect-[4/3] overflow-hidden"><img src="assets/index/spray-mine.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"/></div>
+        <div class="p-6">
+          <div class="flex items-center justify-between text-[11px] mono tracking-wider text-mute uppercase mb-3">
+            <span>2022 · Магнитогорск</span><span class="brand-text">Пылеподавление</span>
+          </div>
+          <h4 class="display text-[20px] tracking-tighter">ММК · Магнитогорский МК</h4>
+          <p class="text-[13px] text-steel mt-2 leading-[1.55]">Пушки пылеподавления VIRSTON на участках металлургического передела. Снижение запылённости — до 85%.</p>
+        </div>
+      </article>
+      <article class="proj group bg-white border hairline" data-tag="dust">
+        <div class="aspect-[4/3] overflow-hidden"><img src="assets/index/Novotroick.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"/></div>
+        <div class="p-6">
+          <div class="flex items-center justify-between text-[11px] mono tracking-wider text-mute uppercase mb-3">
+            <span>2023 · Тамань</span><span class="brand-text">Пылеподавление</span>
+          </div>
+          <h4 class="display text-[20px] tracking-tighter">ООО «АККЕРМАНН ЦЕМЕНТ»</h4>
+          <p class="text-[13px] text-steel mt-2 leading-[1.55]">Пылеподавление для шлакоперерабатывающей установки АМКОМ отвалы Мартен и Северный.</p>
+        </div>
+      </article>
+      <article class="proj group bg-white border hairline" data-tag="hum">
+        <div class="aspect-[4/3] overflow-hidden"><img src="assets/index/warehouse.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"/></div>
+        <div class="p-6">
+          <div class="flex items-center justify-between text-[11px] mono tracking-wider text-mute uppercase mb-3">
+            <span>· Беларусь</span><span class="brand-text">Увлажнение</span>
+          </div>
+          <h4 class="display text-[20px] tracking-tighter">УП «Минский парниково-тепличный комбинат»</h4>
+          <p class="text-[13px] text-steel mt-2 leading-[1.55]">Система увлажнения в теплице с автоматической поддержанием влажности в заданных пределах (45—85% RH).</p>
+        </div>
+      </article>
+      <article class="proj group bg-white border hairline" data-tag="bar">
+        <div class="aspect-[4/3] overflow-hidden"><img src="assets/index/dezbarrier2.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"/></div>
+        <div class="p-6">
+          <div class="flex items-center justify-between text-[11px] mono tracking-wider text-mute uppercase mb-3">
+            <span>· Топканово</span><span class="brand-text">Дезбарьеры</span>
+          </div>
+          <h4 class="display text-[20px] tracking-tighter">Мясокомбинат «Черкизово»</h4>
+          <p class="text-[13px] text-steel mt-2 leading-[1.55]">Арочный дезбарьер для транспорта на въезде в производственный контур. Зимнее исполнение.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="mt-10 flex items-center justify-between border-t hairline pt-6">
+      <span class="text-steel text-[14px]">Показано 6 из 120+. Отрасли: автопром, металлургия, цемент, пищепром, деревообработка, фарма, логистика.</span>
+      <a href="#" class="btn-secondary">Все проекты →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CLIENT WALL ===== -->
+<section class="s bg-card border-y hairline">
+  <div class="container-x">
+    <div class="flex items-center gap-3 mb-10">
+      <span class="brand-bar w-6 h-[2px]"></span>
+      <span class="label-eyebrow">№ 07 / Якорные клиенты</span>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-px bg-[rgba(14,14,16,0.1)] border hairline">
+      <!-- Client text logos -->
+      <div class="client-cell"><span class="display text-[18px] tracking-tighter text-ink">Volkswagen</span></div>
+      <div class="client-cell"><span class="display text-[18px] tracking-tighter text-ink">Hyundai</span></div>
+      <div class="client-cell"><span class="display text-[18px] tracking-tighter text-ink">ММК</span></div>
+      <div class="client-cell"><span class="display text-[18px] tracking-tighter text-ink">Металлоинвест</span></div>
+      <div class="client-cell"><span class="display text-[18px] tracking-tighter text-ink">ОТЭКО</span></div>
+      <div class="client-cell"><span class="display text-[18px] tracking-tighter text-ink">Аккерман</span></div>
+      <div class="client-cell"><span class="display text-[18px] tracking-tighter text-ink">Черкизово</span></div>
+      <div class="client-cell"><span class="display text-[18px] tracking-tighter text-ink">ТехноНиколь</span></div>
+      <div class="client-cell"><span class="display text-[18px] tracking-tighter text-ink">IKEA</span></div>
+      <div class="client-cell"><span class="display text-[18px] tracking-tighter text-ink">Алтыналмас</span></div>
+      <div class="client-cell"><span class="display text-[18px] tracking-tighter text-ink">КПП Хоргос</span></div>
+      <div class="client-cell"><span class="display text-[18px] tracking-tighter text-ink">Брестэнерго</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FORM / WIZARD ===== -->
+<section id="form" class="s bg-paper">
+  <div class="container-x">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="brand-bar w-6 h-[2px]"></span>
+          <span class="label-eyebrow">№ 08 / Заявка на расчёт</span>
+        </div>
+        <h2 class="display text-[44px] md:text-[64px] tracking-tighter">Расчёт системы<br/>под вашу задачу</h2>
+        <p class="text-[16px] text-steel mt-6 max-w-[440px] leading-[1.55]">
+          Опишите объект и задачу — подготовим техническое решение и предварительную стоимость в течение одного рабочего дня.
+        </p>
+
+        <div class="mt-10 border-t hairline pt-6" style="width: 600px">
+          <div class="mono text-[11px] tracking-[.2em] uppercase text-mute mb-3">Или напрямую</div>
+          <a href="tel:+74991100080" class="display text-[28px] tracking-tighter block" style="font-size: 28px; width: 327px">+7 (499) 110-00-80</a>
+          <a href="tel:+79253010555" class="display mt-3 text-[28px] tracking-tighter block text-steel">+7 (925) 301-05-55</a>
+          <a href="mailto:info@virston.ru" class="text-[14px] text-ink mt-2 inline-block underline underline-offset-4">info@virston.ru</a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <form class="bg-white border hairline-strong p-8 border-l-4" style="border-left-color:var(--brand)" id="contactForm">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 field">
+            <div class="md:col-span-2">
+              <label>Тип системы</label>
+              <select name="task">
+                <option value="Пылеподавление">Пылеподавление</option>
+                <option value="Увлажнение">Увлажнение</option>
+                <option value="Охлаждение">Охлаждение</option>
+                <option value="Дезбарьер">Дезбарьер</option>
+                <option value="Сервис/ТО">Сервис / ТО</option>
+                <option value="Другое">Другое / не уверен</option>
+              </select>
+            </div>
+            <div class="md:col-span-2">
+              <label>Опишите объект и задачу</label>
+              <textarea rows="4" name="message" placeholder="Тип объекта, площадь, регион, сроки."></textarea>
+            </div>
+            <div>
+              <label>Имя и должность</label>
+              <input type="text" name="name" placeholder="Иван Петров, главный инженер" />
+            </div>
+            <div>
+              <label>Компания</label>
+              <input type="text" name="company" placeholder="ООО «…»" />
+            </div>
+            <div>
+              <label>Телефон *</label>
+              <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required />
+            </div>
+            <div>
+              <label>E-mail</label>
+              <input type="email" name="email" placeholder="i.petrov@company.ru" />
+            </div>
+          </div>
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mt-7 pt-6 border-t hairline">
+            <p class="text-[12px] text-mute leading-[1.55] max-w-[440px]">Нажимая «Отправить», вы соглашаетесь с политикой обработки персональных данных. ООО «Инновации и Технологии» — резидент РФ.</p>
+            <button type="submit" class="btn-primary self-start md:self-auto">Отправить заявку →</button>
+          </div>
+          <div id="thanks" class="hidden mt-5 p-4 bg-ink text-white">
+            <div class="display text-[18px] tracking-tighter">Принято. Спасибо.</div>
+            <p class="text-[13px] text-white/70 mt-1">Связь в течение рабочего дня. Если задача срочная — позвоните +7 (499) 110-00-80.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-ink text-white border-t border-white/10">
+  <div class="container-x py-20">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <img src="assets/shared/logo.png" alt="VIRSTON" class="h-8 w-auto" style="mix-blend-mode:screen" />
+        <p class="text-white/70 text-[14px] mt-6 max-w-[320px] leading-[1.6]">
+          Российский производитель промышленных систем высокого давления. Производство — Минск. Работаем с 2008 года.
+        </p>
+      </div>
+      <div class="md:col-span-2">
+        <div class="mono text-[10px] tracking-[.2em] uppercase text-white/45 mb-4">Решения</div>
+        <ul class="space-y-2.5 text-[14px] text-white/85">
+          <li><a class="hover:text-white" href="pylepodavlenie.html">Пылеподавление</a></li>
+          <li><a class="hover:text-white" href="uvlazhnenie.html">Увлажнение</a></li>
+          <li><a class="hover:text-white" href="ohlazhdenie.html">Охлаждение</a></li>
+          <li><a class="hover:text-white" href="dezbariers.html">Дезбарьеры</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-3">
+        <div class="mono text-[10px] tracking-[.2em] uppercase text-white/45 mb-4">Компания</div>
+        <ul class="space-y-2.5 text-[14px] text-white/85">
+          <li><a class="hover:text-white" href="o-kompanii.html">О компании</a></li>
+          <li><a class="hover:text-white" href="proekty.html">Проекты</a></li>
+          <li><a class="hover:text-white" href="servis.html">Сервис</a></li>
+          <li><a class="hover:text-white" href="kontakty.html">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-3">
+        <div class="mono text-[10px] tracking-[.2em] uppercase text-white/45 mb-4">Контакты — Россия</div>
+        <ul class="space-y-2 text-[14px] text-white/85">
+          <li><a href="tel:+78005000403">+7 (800) 500-04-03</a></li>
+          <li><a href="tel:+74991100080">+7 (499) 110-00-80</a></li>
+          <li><a href="mailto:info@virston.ru" class="underline underline-offset-2">info@virston.ru</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-16 pt-6 border-t border-white/15 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div class="text-white/55 text-[12px] mono tracking-wide">© 2008—2026 VIRSTON · ООО «Инновации и Технологии»</div>
+      <div class="flex items-center gap-5 text-[12px] text-white/55">
+        <a href="politika.html" class="hover:text-white">Политика обработки данных</a>
+        <a href="karta-sayta.html" class="hover:text-white">Карта сайта</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Sticky CTA chip -->
+
+
+<!-- Tweaks panel root -->
+<div id="tweaksRoot"></div>
+
+<!-- Scripts -->
+<script>
+  // === Tweak defaults ===
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "accent": "#E62B53",
+    "hero": "photo",
+    "density": "spacious",
+    "showSticky": true
+  }/*EDITMODE-END*/;
+  let tweaks = { ...TWEAK_DEFAULTS };
+
+  function applyTweaks() {
+    document.documentElement.style.setProperty('--brand', tweaks.accent);
+    document.documentElement.style.setProperty('--brand-deep', shade(tweaks.accent, -0.18));
+    document.body.classList.toggle('density-compact', tweaks.density === 'compact');
+    document.body.classList.toggle('density-spacious', tweaks.density === 'spacious');
+    document.getElementById('stickyChip').style.display = tweaks.showSticky ? '' : 'none';
+
+    // hero variant
+    const hero = document.querySelector('section.relative.bg-ink.text-white.overflow-hidden');
+    const photo = document.getElementById('heroPhoto');
+    let op = 0.9;
+    if (tweaks.hero === 'typography') op = 0.18;
+    else if (tweaks.hero === 'overlay') op = 0.55;
+    document.documentElement.style.setProperty('--hero-photo-opacity', op);
+    if (photo) photo.style.opacity = op;
+  }
+
+  // Hero carousel — 5 слайдов с подписями и кнопками
+  (function heroCarousel(){
+    const slides = document.querySelectorAll('#heroCarousel .hero-slide');
+    if (slides.length < 2) return;
+    const labels = [
+      'Пылеподавление · РАЗРЕЗ «ЧЕРНОГОРСКИЙ»',
+      'Дезинфекция · КПП «СЛОНИМСКИЙ МЯСОКОМБИНАТ»',
+      'Охлаждение кузовов · ФОЛЬКСВАГЕН ГРУП РУС',
+      'Увлажнение · ТЕПЛИЧНЫЙ КОМБИНАТ',
+      'Производство · УЧАСТОК СБОРКИ',
+      'Пылеподавление · ПУШКА НА МОБИЛЬНОЙ ПЛАТФОРМЕ',
+      'Пылеподавление · ОБСЛУЖИВАНИЕ ПУШЕК'
+    ];
+    const labelEl  = document.getElementById('heroSlideLabel');
+    const counterEl= document.getElementById('heroCounter');
+    const dots     = document.querySelectorAll('#heroDots .hero-dot');
+    const prevBtn  = document.getElementById('heroPrev');
+    const nextBtn  = document.getElementById('heroNext');
+    let i = 0;
+    let timer;
+
+    function goTo(n) {
+      slides[i].classList.remove('is-active');
+      if (dots[i]) { dots[i].style.width = '8px'; dots[i].style.background = 'rgba(255,255,255,0.35)'; }
+      i = (n + slides.length) % slides.length;
+      slides[i].classList.add('is-active');
+      if (dots[i]) { dots[i].style.width = '24px'; dots[i].style.background = 'white'; }
+      if (labelEl)   labelEl.textContent  = labels[i];
+      if (counterEl) counterEl.textContent = String(i+1).padStart(2,'0') + ' / 07';
+    }
+
+    function autoplay() {
+      timer = setInterval(() => goTo(i + 1), 4500);
+    }
+
+    function resetAuto() {
+      clearInterval(timer);
+      autoplay();
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', () => { goTo(i - 1); resetAuto(); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { goTo(i + 1); resetAuto(); });
+
+    autoplay();
+  })();
+  function shade(hex, p) {
+    const c = hex.replace('#',''); const r=parseInt(c.substr(0,2),16),g=parseInt(c.substr(2,2),16),b=parseInt(c.substr(4,2),16);
+    const m = v => Math.max(0, Math.min(255, Math.round(v + (p<0 ? v*p : (255-v)*p))));
+    return '#'+[m(r),m(g),m(b)].map(v=>v.toString(16).padStart(2,'0')).join('');
+  }
+
+  // === Tweaks panel ===
+  function renderTweaks() {
+    const accents = ['#E62B53','#0E0E10','#0066FF','#E68A00'];
+    const root = document.getElementById('tweaksRoot');
+    root.innerHTML = `
+      <aside class="tw-panel" style="display:none" id="twPanel">
+        <div class="flex items-center justify-between mb-3">
+          <div class="mono text-[11px] tracking-[.18em] uppercase text-white/70">Tweaks · VIRSTON</div>
+          <button id="twClose" class="text-white/50 hover:text-white text-lg leading-none">×</button>
+        </div>
+        <div class="row">
+          <div class="text-[11px] text-white/50 mono uppercase tracking-wider">Цвет акцента</div>
+          <div class="flex gap-2 mt-1" id="twAccent">
+            ${accents.map(a => `<div class="tw-swatch ${a===tweaks.accent?'active':''}" data-a="${a}" style="background:${a}"></div>`).join('')}
+          </div>
+        </div>
+        <div class="row">
+          <div class="text-[11px] text-white/50 mono uppercase tracking-wider">Hero</div>
+          <div class="seg" id="twHero">
+            <button data-h="photo" class="${tweaks.hero==='photo'?'active':''}">Фото</button>
+            <button data-h="overlay" class="${tweaks.hero==='overlay'?'active':''}">Затемнение</button>
+            <button data-h="typography" class="${tweaks.hero==='typography'?'active':''}">Типографика</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="text-[11px] text-white/50 mono uppercase tracking-wider">Плотность</div>
+          <div class="seg" id="twDensity">
+            <button data-d="compact" class="${tweaks.density==='compact'?'active':''}">Компактно</button>
+            <button data-d="spacious" class="${tweaks.density==='spacious'?'active':''}">Просторно</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="text-[11px] text-white/50 mono uppercase tracking-wider">Sticky CTA</div>
+          <div class="seg" id="twSticky">
+            <button data-s="true" class="${tweaks.showSticky?'active':''}">Показать</button>
+            <button data-s="false" class="${!tweaks.showSticky?'active':''}">Скрыть</button>
+          </div>
+        </div>
+      </aside>`;
+    root.querySelector('#twClose').onclick = () => {
+      document.getElementById('twPanel').style.display = 'none';
+      window.parent.postMessage({type: '__edit_mode_dismissed'}, '*');
+    };
+    root.querySelectorAll('#twAccent .tw-swatch').forEach(el => el.onclick = () => setTweak('accent', el.dataset.a));
+    root.querySelectorAll('#twHero button').forEach(el => el.onclick = () => setTweak('hero', el.dataset.h));
+    root.querySelectorAll('#twDensity button').forEach(el => el.onclick = () => setTweak('density', el.dataset.d));
+    root.querySelectorAll('#twSticky button').forEach(el => el.onclick = () => setTweak('showSticky', el.dataset.s === 'true'));
+  }
+  function setTweak(k, v) {
+    tweaks[k] = v;
+    applyTweaks(); renderTweaks();
+    document.getElementById('twPanel').style.display = '';
+    window.parent.postMessage({type:'__edit_mode_set_keys', edits:{[k]:v}}, '*');
+  }
+
+  // Listen first, then announce
+  window.addEventListener('message', (e) => {
+    const d = e.data || {};
+    if (d.type === '__activate_edit_mode') {
+      document.getElementById('twPanel').style.display = '';
+    } else if (d.type === '__deactivate_edit_mode') {
+      document.getElementById('twPanel').style.display = 'none';
+    }
+  });
+  renderTweaks();
+  applyTweaks();
+  window.parent.postMessage({type:'__edit_mode_available'}, '*');
+
+  // === Sticky header background after scroll ===
+  const hdr = document.getElementById('hdr');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      hdr.classList.add('shadow-sm');
+      hdr.style.backgroundColor = 'rgba(250, 250, 247, 0.92)';
+      hdr.style.backdropFilter = 'blur(8px)';
+    } else {
+      hdr.style.backgroundColor = '';
+      hdr.style.backdropFilter = '';
+      hdr.classList.remove('shadow-sm');
+    }
+  });
+
+  // === Project filters ===
+  document.querySelectorAll('#filters .filter-btn').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('#filters .filter-btn').forEach(x => {
+        x.classList.remove('active','bg-ink','text-white','border-ink','hairline-strong');
+        x.classList.add('hairline');
+      });
+      b.classList.add('active','bg-ink','text-white','border-ink');
+      const f = b.dataset.f;
+      document.querySelectorAll('.proj').forEach(c => {
+        c.style.display = (f === 'all' || c.dataset.tag === f) ? '' : 'none';
+      });
+    });
+  });
+
+  // === Contact form ===
+  const cf = document.getElementById('contactForm');
+  if (cf) {
+    cf.addEventListener('submit', (e) => {
+      e.preventDefault();
+      document.getElementById('thanks').classList.remove('hidden');
+    });
+  }
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.05 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+<script>
+// Nav dropdown with delay
+(function(){
+  var DELAY = 300;
+  function initDropdown(wrap, menu) {
+    var timer = null;
+    function show() { clearTimeout(timer); menu.classList.add('open'); }
+    function hide() { timer = setTimeout(function(){ menu.classList.remove('open'); }, DELAY); }
+    wrap.addEventListener('mouseenter', show);
+    wrap.addEventListener('mouseleave', hide);
+    menu.addEventListener('mouseenter', show);
+    menu.addEventListener('mouseleave', hide);
+  }
+  document.querySelectorAll('.nav-dropdown').forEach(function(wrap){
+    var menu = wrap.querySelector('.nav-dropdown-menu');
+    if(menu) initDropdown(wrap, menu);
+  });
+  document.querySelectorAll('.nav-dropdown-single').forEach(function(wrap){
+    var menu = wrap.querySelector('.nav-dropdown-single-menu');
+    if(menu) initDropdown(wrap, menu);
+  });
+})();
+</script>
+<script>
+// Mobile menu
+(function(){
+  var btn = document.getElementById('mobMenuBtn');
+  var overlay = document.getElementById('mobMenuOverlay');
+  if (!btn || !overlay) return;
+  btn.addEventListener('click', function(){
+    btn.classList.toggle('is-open');
+    overlay.classList.toggle('is-open');
+    document.body.style.overflow = overlay.classList.contains('is-open') ? 'hidden' : '';
+  });
+  overlay.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      btn.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+</script>
+</body>
+</html>
