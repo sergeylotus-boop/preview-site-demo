@@ -302,7 +302,7 @@
 <!-- ===== FILTERS + GRID ===== -->
 <section class="s pt-0 bg-paper">
   <div class="container-x">
-    <div class="border-t hairline-strong pt-10">
+    <div class="border-t hairline-strong pt-10" id="filters-anchor">
 
       <!-- Filters -->
       <div class="flex flex-col gap-5 mb-10">
@@ -694,7 +694,11 @@
     var hash = window.location.hash.replace('#','');
     if(hash && hash !== 'all'){
       var btn = document.querySelector('#catFilters .chip[data-cat="' + hash + '"]');
-      if(btn){ btn.click(); }
+      if(btn){
+        btn.click();
+        var anchor = document.getElementById('filters-anchor');
+        if(anchor){ anchor.scrollIntoView({behavior:'smooth', block:'start'}); }
+      }
     }
   }, 0);
 
