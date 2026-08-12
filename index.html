@@ -135,8 +135,8 @@
   }
 
   /* Solution card — large photo with overlay and side data */
-  .sol-card { background: white; border: 1px solid rgba(14,14,16,.1); }
-  .sol-card .photo { aspect-ratio: 4/3; overflow:hidden; background:#15151a; }
+  .sol-card { background: white; border: 1px solid rgba(14,14,16,.1); display:flex; flex-direction:column; }
+  .sol-card .photo { aspect-ratio: 4/3; overflow:hidden; background:#15151a; flex-shrink:0; }
 
   /* Client logo box */
   .client-cell { aspect-ratio: 16/9; display:flex; align-items:center; justify-content:center; border:1px solid rgba(14,14,16,.1); background:white; padding:18px; }
@@ -482,77 +482,77 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <div class="sol-card">
         <div class="photo"><img src="assets/index/pushka-karier.png" alt="" class="w-full h-full object-cover" /></div>
-        <div class="p-6 md:p-8">
+        <div class="p-6 md:p-8 flex flex-col flex-grow">
           <div class="flex items-center justify-between mb-4">
             <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">01</span>
             <span class="text-[11px] mono text-steel">до 60 м</span>
           </div>
           <h3 class="display text-[26px] tracking-tighter">Системы<br/>пылеподавления</h3>
           <p class="text-[14px] text-steel mt-3 leading-[1.6]">Решения для осаждения пылевых частиц, нейтрализации загрязнений и очистки воздуха с помощью форсуночных систем и пушек ТМ VIRSTON на промышленных объектах.</p>
-          <a href="proekty.html" class="btn-primary mt-5">Проекты →</a>
+          <a href="proekty.html" class="btn-primary mt-auto pt-4 self-start">Проекты →</a>
         </div>
       </a>
       <div class="sol-card">
         <div class="photo"><img src="assets/index/warehouse.png" alt="" class="w-full h-full object-cover" /></div>
-        <div class="p-6 md:p-8">
+        <div class="p-6 md:p-8 flex flex-col flex-grow">
           <div class="flex items-center justify-between mb-4">
             <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">02</span>
             <span class="text-[11px] mono text-steel">70—100 Бар</span>
           </div>
           <h3 class="display text-[26px] tracking-tighter">Системы<br/>увлажнения</h3>
           <p class="text-[14px] text-steel mt-3 leading-[1.6]">Решения для поддержания микроклимата, устранения статического электричества, подавления пыли и охлаждения воздуха в производственных цехах.</p>
-          <a href="proekty.html" class="btn-primary mt-5">Проекты →</a>
+          <a href="proekty.html" class="btn-primary mt-auto pt-4 self-start">Проекты →</a>
         </div>
       </a>
       <div class="sol-card">
         <div class="photo"><img src="assets/index/dezbarrier.png" alt="" class="w-full h-full object-cover" /></div>
-        <div class="p-6 md:p-8">
+        <div class="p-6 md:p-8 flex flex-col flex-grow">
           <div class="flex items-center justify-between mb-4">
             <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">03</span>
             <span class="text-[11px] mono text-steel">16 форсунок</span>
           </div>
           <h3 class="display text-[26px] tracking-tighter">Дезбарьеры</h3>
           <p class="text-[14px] text-steel mt-3 leading-[1.6]">Решения для высококачественной обработки автотранспорта направленным аэрозолем с целью предотвращения заноса инфекций на предприятия.</p>
-          <a href="proekty.html" class="btn-primary mt-5">Проекты →</a>
+          <a href="proekty.html" class="btn-primary mt-auto pt-4 self-start">Проекты →</a>
         </div>
       </a>
       <div class="sol-card">
         <div class="photo"><img src="assets/osushit/osushit-hero.png" alt="" class="w-full h-full object-cover" /></div>
-        <div class="p-6 md:p-8">
+        <div class="p-6 md:p-8 flex flex-col flex-grow">
           <div class="flex items-center justify-between mb-4">
             <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">04</span>
             <span class="text-[11px] mono text-steel">адиабатика</span>
           </div>
           <h3 class="display text-[26px] tracking-tighter">Системы форсированного<br/>испарения</h3>
           <p class="text-[14px] text-steel mt-3 leading-[1.6]">Решения для управления водными рисками, мониторинга и контроля уровня воды, предотвращения аварийных сбросов и переливов на промышленных предприятиях.</p>
-          <a href="proekty.html" class="btn-primary mt-5">Проекты →</a>
+          <a href="proekty.html" class="btn-primary mt-auto pt-4 self-start">Проекты →</a>
         </div>
       </a>
       <div class="sol-card">
         <div class="photo"><img src="assets/index/auto-paint.png" alt="" class="w-full h-full object-cover" /></div>
-        <div class="p-6 md:p-8">
+        <div class="p-6 md:p-8 flex flex-col flex-grow">
           <div class="flex items-center justify-between mb-4">
             <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">05</span>
             <span class="text-[11px] mono text-steel">−5…−15 °C</span>
           </div>
           <h3 class="display text-[26px] tracking-tighter">Системы охлаждения<br/>для автопрома</h3>
           <p class="text-[14px] text-steel mt-3 leading-[1.6]">Решения для охлаждения кузовных деталей с целью минимизации образования кратеров при последующей окраске.</p>
-          <a href="proekty.html" class="btn-primary mt-5">Проекты →</a>
+          <a href="proekty.html" class="btn-primary mt-auto pt-4 self-start">Проекты →</a>
         </div>
       </a>
       <div class="sol-card">
         <div class="photo"><img src="assets/monitor/monitor-hero.png" alt="" class="w-full h-full object-cover" /></div>
-        <div class="p-6 md:p-8">
+        <div class="p-6 md:p-8 flex flex-col flex-grow">
           <div class="flex items-center justify-between mb-4">
             <span class="mono text-[11px] tracking-[.2em] uppercase text-mute">06</span>
             <span class="text-[11px] mono text-steel">АСУ ТП</span>
           </div>
           <h3 class="display text-[26px] tracking-tighter">Автоматизированный<br/>мониторинг</h3>
           <p class="text-[14px] text-steel mt-3 leading-[1.6]">Решения для непрерывного контроля параметров технологических процессов на промышленных объектах.</p>
-          <a href="proekty.html" class="btn-primary mt-5">Проекты →</a>
+          <a href="proekty.html" class="btn-primary mt-auto pt-4 self-start">Проекты →</a>
         </div>
       </a>
     </div>
