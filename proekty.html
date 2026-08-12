@@ -688,6 +688,15 @@
   }
   bindFilters('catFilters', (b)=>activeCat = b.dataset.cat);
   bindFilters('geoFilters', (b)=>activeGeo = b.dataset.geo);
+  // Auto-activate filter from URL hash
+  (function(){
+    var hash = window.location.hash.replace('#','');
+    if(hash && hash !== 'all'){
+      var btn = document.querySelector('#catFilters .chip[data-cat="' + hash + '"]');
+      if(btn){ btn.click(); }
+    }
+  })();
+
 
   function resetFilters(){
     activeCat='all'; activeGeo='all';
