@@ -56,8 +56,12 @@
   .brand-border { border-color: var(--brand, #E62B53); }
 
   /* Hero overlay */
-  .hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease; }
-  .hero-slide.is-active { opacity: var(--hero-photo-opacity, 0.9); }
+  /* Mobile hero images */
+  .hero-slide-mob { display: none; }
+  @media (max-width: 767px) {
+    .hero-slide-desk { display: none !important; }
+    .hero-slide-mob  { display: block; }
+  }
   .hero-shadow {
     background: linear-gradient(90deg, rgba(14,14,16,.78) 0%, rgba(14,14,16,.55) 40%, rgba(14,14,16,.18) 80%, rgba(14,14,16,.05) 100%);
   }
@@ -345,13 +349,20 @@
 <section class="relative bg-ink text-white overflow-hidden">
   <div class="absolute inset-0">
     <div id="heroCarousel" class="absolute inset-0">
-      <img src="assets/index/spray-mine.png"      alt="" class="hero-slide w-full h-full object-cover object-center is-active" />
-      <img src="assets/index/dezbarrier.png"      alt="" class="hero-slide w-full h-full object-cover object-center" />
-      <img src="assets/index/auto-paint.png"      alt="" class="hero-slide w-full h-full object-cover object-center" />
-      <img src="assets/index/warehouse.png"       alt="" class="hero-slide w-full h-full object-cover object-center" />
-      <img src="assets/index/pumps-workshop.png"  alt="" class="hero-slide w-full h-full object-cover object-center" />
-      <img src="assets/index/cannon-spray-1.png"  alt="" class="hero-slide w-full h-full object-cover object-center" />
-      <img src="assets/index/cannon-spray-2.png"  alt="" class="hero-slide w-full h-full object-cover object-center" />
+      <img src="assets/index/spray-mine.png"      alt="" class="hero-slide hero-slide-desk w-full h-full object-cover object-center is-active" />
+      <img src="assets/index/dezbarrier.png"      alt="" class="hero-slide hero-slide-desk w-full h-full object-cover object-center" />
+      <img src="assets/index/auto-paint.png"      alt="" class="hero-slide hero-slide-desk w-full h-full object-cover object-center" />
+      <img src="assets/index/warehouse.png"       alt="" class="hero-slide hero-slide-desk w-full h-full object-cover object-center" />
+      <img src="assets/index/pumps-workshop.png"  alt="" class="hero-slide hero-slide-desk w-full h-full object-cover object-center" />
+      <img src="assets/index/cannon-spray-1.png"  alt="" class="hero-slide hero-slide-desk w-full h-full object-cover object-center" />
+      <img src="assets/index/cannon-spray-2.png"  alt="" class="hero-slide hero-slide-desk w-full h-full object-cover object-center" />
+      <img src="assets/mobile/spray-mine.png"      alt="" class="hero-slide hero-slide-mob w-full h-full object-cover object-center is-active" />
+      <img src="assets/mobile/dezbarrier.png"      alt="" class="hero-slide hero-slide-mob w-full h-full object-cover object-center" />
+      <img src="assets/mobile/auto-paint.png"      alt="" class="hero-slide hero-slide-mob w-full h-full object-cover object-center" />
+      <img src="assets/mobile/warehouse.png"       alt="" class="hero-slide hero-slide-mob w-full h-full object-cover object-center" />
+      <img src="assets/mobile/pumps-workshop.png"  alt="" class="hero-slide hero-slide-mob w-full h-full object-cover object-center" />
+      <img src="assets/mobile/cannon-spray-1.png"  alt="" class="hero-slide hero-slide-mob w-full h-full object-cover object-center" />
+      <img src="assets/mobile/cannon-spray-2.png"  alt="" class="hero-slide hero-slide-mob w-full h-full object-cover object-center" />
     </div>
     <div class="absolute inset-0 hero-shadow"></div>
     <div class="absolute inset-0 hero-grain"></div>
@@ -858,7 +869,15 @@
     let i = 0;
     let timer;
 
+    function getSlides() {
+      const isMob = window.innerWidth < 768;
+      return document.querySelectorAll(isMob
+        ? '#heroCarousel .hero-slide-mob'
+        : '#heroCarousel .hero-slide-desk');
+    }
+
     function goTo(n) {
+      const slides = getSlides();
       slides[i].classList.remove('is-active');
       if (dots[i]) { dots[i].style.width = '8px'; dots[i].style.background = 'rgba(255,255,255,0.35)'; }
       i = (n + slides.length) % slides.length;
