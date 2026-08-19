@@ -256,6 +256,11 @@
     text-align:center; border-bottom:none !important;
   }
   .mob-menu-overlay .mob-cta:hover { background:#B81C3F !important; }
+  /* Hero title lines: wrap on mobile, nowrap on desktop */
+  .hero-line { display: block; }
+  @media (min-width: 768px) {
+    .hero-line { white-space: nowrap; }
+  }
 </style>
 </head>
 <body class="density-spacious antialiased">
@@ -365,10 +370,10 @@
         <span class="mono text-[11px] tracking-[.2em] uppercase text-white/85">Производитель · С 2008 года</span>
       </div>
       <h1 class="display text-white" style="font-size: 42px; line-height: 1.2; font-weight: 700">
-        <span style="display:block; white-space:nowrap">Комплексные</span>
-        <span style="display:block; white-space:nowrap">инновационные решения</span>
-        <span style="display:block; white-space:nowrap">для Вашего производства</span>
-        <span style="display:block; white-space:nowrap; color: rgb(224, 92, 120)">под ключ</span>
+        <span class="hero-line">Комплексные</span>
+        <span class="hero-line">инновационные решения</span>
+        <span class="hero-line">для Вашего производства</span>
+        <span class="hero-line" style="color: rgb(224, 92, 120)">под ключ</span>
       </h1>
       <p class="mt-8 max-w-[540px] text-[17px] text-white/80 leading-[1.55]">
         Проектируем, изготавливаем и вводим в эксплуатацию системы пылеподавления, увлажнения, охлаждения и дезинфекции для промышленных объектов в России, Беларуси и Казахстане.
