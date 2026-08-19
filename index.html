@@ -258,8 +258,13 @@
   .mob-menu-overlay .mob-cta:hover { background:#B81C3F !important; }
   /* Hero title lines: wrap on mobile, nowrap on desktop */
   .hero-line { display: block; }
+  .hero-h1 { font-size: 28px; }
+  @media (min-width: 480px) {
+    .hero-h1 { font-size: 34px; }
+  }
   @media (min-width: 768px) {
     .hero-line { white-space: nowrap; }
+    .hero-h1 { font-size: 42px; }
   }
 </style>
 </head>
@@ -369,7 +374,7 @@
         <span class="brand-bar w-9 h-[3px]"></span>
         <span class="mono text-[11px] tracking-[.2em] uppercase text-white/85">Производитель · С 2008 года</span>
       </div>
-      <h1 class="display text-white" style="font-size: 42px; line-height: 1.2; font-weight: 700">
+      <h1 class="display text-white hero-h1" style="line-height: 1.2; font-weight: 700">
         <span class="hero-line">Комплексные</span>
         <span class="hero-line">инновационные решения</span>
         <span class="hero-line">для Вашего производства</span>
