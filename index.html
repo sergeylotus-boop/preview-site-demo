@@ -349,20 +349,34 @@
 <section class="relative bg-ink text-white overflow-hidden">
   <div class="absolute inset-0">
     <div id="heroCarousel" class="absolute inset-0">
-      <img src="assets/index/spray-mine.png"      alt="" class="hero-slide hero-slide-desk w-full h-full object-cover object-center is-active" />
-      <img src="assets/index/dezbarrier.png"      alt="" class="hero-slide hero-slide-desk w-full h-full object-cover object-center" />
-      <img src="assets/index/auto-paint.png"      alt="" class="hero-slide hero-slide-desk w-full h-full object-cover object-center" />
-      <img src="assets/index/warehouse.png"       alt="" class="hero-slide hero-slide-desk w-full h-full object-cover object-center" />
-      <img src="assets/index/pumps-workshop.png"  alt="" class="hero-slide hero-slide-desk w-full h-full object-cover object-center" />
-      <img src="assets/index/cannon-spray-1.png"  alt="" class="hero-slide hero-slide-desk w-full h-full object-cover object-center" />
-      <img src="assets/index/cannon-spray-2.png"  alt="" class="hero-slide hero-slide-desk w-full h-full object-cover object-center" />
-      <img src="assets/mobile/spray-mine.png"      alt="" class="hero-slide hero-slide-mob w-full h-full object-cover object-center is-active" />
-      <img src="assets/mobile/dezbarrier.png"      alt="" class="hero-slide hero-slide-mob w-full h-full object-cover object-center" />
-      <img src="assets/mobile/auto-paint.png"      alt="" class="hero-slide hero-slide-mob w-full h-full object-cover object-center" />
-      <img src="assets/mobile/warehouse.png"       alt="" class="hero-slide hero-slide-mob w-full h-full object-cover object-center" />
-      <img src="assets/mobile/pumps-workshop.png"  alt="" class="hero-slide hero-slide-mob w-full h-full object-cover object-center" />
-      <img src="assets/mobile/cannon-spray-1.png"  alt="" class="hero-slide hero-slide-mob w-full h-full object-cover object-center" />
-      <img src="assets/mobile/cannon-spray-2.png"  alt="" class="hero-slide hero-slide-mob w-full h-full object-cover object-center" />
+      <picture class="hero-slide w-full h-full is-active" style="position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease">
+        <source media="(max-width:767px)" srcset="assets/mobile/spray-mine.png">
+        <img src="assets/index/spray-mine.png" alt="" class="w-full h-full object-cover object-center" style="display:block" />
+      </picture>
+      <picture class="hero-slide w-full h-full" style="position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease">
+        <source media="(max-width:767px)" srcset="assets/mobile/dezbarrier.png">
+        <img src="assets/index/dezbarrier.png" alt="" class="w-full h-full object-cover object-center" style="display:block" />
+      </picture>
+      <picture class="hero-slide w-full h-full" style="position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease">
+        <source media="(max-width:767px)" srcset="assets/mobile/auto-paint.png">
+        <img src="assets/index/auto-paint.png" alt="" class="w-full h-full object-cover object-center" style="display:block" />
+      </picture>
+      <picture class="hero-slide w-full h-full" style="position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease">
+        <source media="(max-width:767px)" srcset="assets/mobile/warehouse.png">
+        <img src="assets/index/warehouse.png" alt="" class="w-full h-full object-cover object-center" style="display:block" />
+      </picture>
+      <picture class="hero-slide w-full h-full" style="position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease">
+        <source media="(max-width:767px)" srcset="assets/mobile/pumps-workshop.png">
+        <img src="assets/index/pumps-workshop.png" alt="" class="w-full h-full object-cover object-center" style="display:block" />
+      </picture>
+      <picture class="hero-slide w-full h-full" style="position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease">
+        <source media="(max-width:767px)" srcset="assets/mobile/cannon-spray-1.png">
+        <img src="assets/index/cannon-spray-1.png" alt="" class="w-full h-full object-cover object-center" style="display:block" />
+      </picture>
+      <picture class="hero-slide w-full h-full" style="position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease">
+        <source media="(max-width:767px)" srcset="assets/mobile/cannon-spray-2.png">
+        <img src="assets/index/cannon-spray-2.png" alt="" class="w-full h-full object-cover object-center" style="display:block" />
+      </picture>
     </div>
     <div class="absolute inset-0 hero-shadow"></div>
     <div class="absolute inset-0 hero-grain"></div>
@@ -427,23 +441,23 @@
 
   <!-- Hero footer strip with metrics -->
   <div class="relative border-t border-white/15 bg-ink/85 backdrop-blur-sm">
-    <div class="container-x grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
-      <div class="py-5 md:py-7 pr-6">
+    <div class="container-x grid grid-cols-2 md:grid-cols-4">
+      <div class="py-5 md:py-7 pr-6 border-r border-white/10">
         <div class="mono text-[10px] uppercase tracking-[.2em] text-white/55">[01] Опыт</div>
         <div class="display num text-[44px] md:text-[56px] mt-1 leading-none">17<span class="brand-text text-[22px] align-top ml-1">+</span></div>
         <div class="text-[12px] text-white/65 mt-1">лет с водой и давлением</div>
       </div>
-      <div class="py-5 md:py-7 px-6">
+      <div class="py-5 md:py-7 px-6 md:border-r border-white/10">
         <div class="mono text-[10px] uppercase tracking-[.2em] text-white/55">[02] Объекты</div>
         <div class="display num text-[44px] md:text-[56px] mt-1 leading-none">120<span class="brand-text text-[22px] align-top ml-1">+</span></div>
         <div class="text-[12px] text-white/65 mt-1">в трёх странах</div>
       </div>
-      <div class="py-5 md:py-7 px-6">
+      <div class="py-5 md:py-7 pr-6 border-t border-white/10 md:border-t-0 border-r md:border-r border-white/10">
         <div class="mono text-[10px] uppercase tracking-[.2em] text-white/55">[03] Команда</div>
         <div class="display num text-[44px] md:text-[56px] mt-1 leading-none">30<span class="brand-text text-[22px] align-top ml-1">+</span></div>
         <div class="text-[12px] text-white/65 mt-1">инженеры, монтажники, сервис</div>
       </div>
-      <div class="py-5 md:py-7 px-6">
+      <div class="py-5 md:py-7 px-6 border-t border-white/10 md:border-t-0">
         <div class="mono text-[10px] uppercase tracking-[.2em] text-white/55">[04] Гарантия</div>
         <div class="display num text-[44px] md:text-[56px] mt-1 leading-none">18<span class="text-[18px] text-white/65 ml-2">мес.</span></div>
         <div class="text-[12px] text-white/65 mt-1">на оборудование TM VIRSTON</div>
@@ -869,15 +883,7 @@
     let i = 0;
     let timer;
 
-    function getSlides() {
-      const isMob = window.innerWidth < 768;
-      return document.querySelectorAll(isMob
-        ? '#heroCarousel .hero-slide-mob'
-        : '#heroCarousel .hero-slide-desk');
-    }
-
     function goTo(n) {
-      const slides = getSlides();
       slides[i].classList.remove('is-active');
       if (dots[i]) { dots[i].style.width = '8px'; dots[i].style.background = 'rgba(255,255,255,0.35)'; }
       i = (n + slides.length) % slides.length;
