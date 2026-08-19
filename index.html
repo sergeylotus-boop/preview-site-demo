@@ -349,34 +349,13 @@
 <section class="relative bg-ink text-white overflow-hidden">
   <div class="absolute inset-0">
     <div id="heroCarousel" class="absolute inset-0">
-      <picture class="hero-slide w-full h-full is-active">
-        <source media="(max-width:767px)" srcset="assets/mobile/spray-mine.png">
-        <img src="assets/index/spray-mine.png" alt="" class="w-full h-full object-cover object-center" style="display:block" />
-      </picture>
-      <picture class="hero-slide w-full h-full">
-        <source media="(max-width:767px)" srcset="assets/mobile/dezbarrier.png">
-        <img src="assets/index/dezbarrier.png" alt="" class="w-full h-full object-cover object-center" style="display:block" />
-      </picture>
-      <picture class="hero-slide w-full h-full">
-        <source media="(max-width:767px)" srcset="assets/mobile/auto-paint.png">
-        <img src="assets/index/auto-paint.png" alt="" class="w-full h-full object-cover object-center" style="display:block" />
-      </picture>
-      <picture class="hero-slide w-full h-full">
-        <source media="(max-width:767px)" srcset="assets/mobile/warehouse.png">
-        <img src="assets/index/warehouse.png" alt="" class="w-full h-full object-cover object-center" style="display:block" />
-      </picture>
-      <picture class="hero-slide w-full h-full">
-        <source media="(max-width:767px)" srcset="assets/mobile/pumps-workshop.png">
-        <img src="assets/index/pumps-workshop.png" alt="" class="w-full h-full object-cover object-center" style="display:block" />
-      </picture>
-      <picture class="hero-slide w-full h-full">
-        <source media="(max-width:767px)" srcset="assets/mobile/cannon-spray-1.png">
-        <img src="assets/index/cannon-spray-1.png" alt="" class="w-full h-full object-cover object-center" style="display:block" />
-      </picture>
-      <picture class="hero-slide w-full h-full">
-        <source media="(max-width:767px)" srcset="assets/mobile/cannon-spray-2.png">
-        <img src="assets/index/cannon-spray-2.png" alt="" class="w-full h-full object-cover object-center" style="display:block" />
-      </picture>
+      <img src="assets/index/spray-mine.png"     data-desktop-src="assets/index/spray-mine.png"     data-mobile-src="assets/mobile/spray-mine.png"     alt="" class="hero-slide w-full h-full object-cover object-center is-active" />
+      <img src="assets/index/dezbarrier.png"     data-desktop-src="assets/index/dezbarrier.png"     data-mobile-src="assets/mobile/dezbarrier.png"     alt="" class="hero-slide w-full h-full object-cover object-center" />
+      <img src="assets/index/auto-paint.png"     data-desktop-src="assets/index/auto-paint.png"     data-mobile-src="assets/mobile/auto-paint.png"     alt="" class="hero-slide w-full h-full object-cover object-center" />
+      <img src="assets/index/warehouse.png"      data-desktop-src="assets/index/warehouse.png"      data-mobile-src="assets/mobile/warehouse.png"      alt="" class="hero-slide w-full h-full object-cover object-center" />
+      <img src="assets/index/pumps-workshop.png" data-desktop-src="assets/index/pumps-workshop.png" data-mobile-src="assets/mobile/pumps-workshop.png" alt="" class="hero-slide w-full h-full object-cover object-center" />
+      <img src="assets/index/cannon-spray-1.png" data-desktop-src="assets/index/cannon-spray-1.png" data-mobile-src="assets/mobile/cannon-spray-1.png" alt="" class="hero-slide w-full h-full object-cover object-center" />
+      <img src="assets/index/cannon-spray-2.png" data-desktop-src="assets/index/cannon-spray-2.png" data-mobile-src="assets/mobile/cannon-spray-2.png" alt="" class="hero-slide w-full h-full object-cover object-center" />
     </div>
     <div class="absolute inset-0 hero-shadow"></div>
     <div class="absolute inset-0 hero-grain"></div>
@@ -904,6 +883,16 @@
 
     if (prevBtn) prevBtn.addEventListener('click', () => { goTo(i - 1); resetAuto(); });
     if (nextBtn) nextBtn.addEventListener('click', () => { goTo(i + 1); resetAuto(); });
+
+    // Swap image src for mobile/desktop
+    function updateHeroSrcs() {
+      const isMob = window.innerWidth < 768;
+      slides.forEach(img => {
+        img.src = isMob ? img.dataset.mobileSrc : img.dataset.desktopSrc;
+      });
+    }
+    updateHeroSrcs();
+    window.addEventListener('resize', updateHeroSrcs);
 
     autoplay();
   })();
