@@ -56,12 +56,8 @@
   .brand-border { border-color: var(--brand, #E62B53); }
 
   /* Hero overlay */
-  /* Mobile hero images */
-  .hero-slide-mob { display: none; }
-  @media (max-width: 767px) {
-    .hero-slide-desk { display: none !important; }
-    .hero-slide-mob  { display: block; }
-  }
+  .hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease; }
+  .hero-slide.is-active { opacity: var(--hero-photo-opacity, 0.9); }
   .hero-shadow {
     background: linear-gradient(90deg, rgba(14,14,16,.78) 0%, rgba(14,14,16,.55) 40%, rgba(14,14,16,.18) 80%, rgba(14,14,16,.05) 100%);
   }
@@ -883,16 +879,6 @@
 
     if (prevBtn) prevBtn.addEventListener('click', () => { goTo(i - 1); resetAuto(); });
     if (nextBtn) nextBtn.addEventListener('click', () => { goTo(i + 1); resetAuto(); });
-
-    // Swap image src for mobile/desktop
-    function updateHeroSrcs() {
-      const isMob = window.innerWidth < 768;
-      slides.forEach(img => {
-        img.src = isMob ? img.dataset.mobileSrc : img.dataset.desktopSrc;
-      });
-    }
-    updateHeroSrcs();
-    window.addEventListener('resize', updateHeroSrcs);
 
     autoplay();
   })();
