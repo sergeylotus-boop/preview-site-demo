@@ -880,6 +880,13 @@
     if (prevBtn) prevBtn.addEventListener('click', () => { goTo(i - 1); resetAuto(); });
     if (nextBtn) nextBtn.addEventListener('click', () => { goTo(i + 1); resetAuto(); });
 
+    // Один раз до старта — выбрать нужный src (мобильный или десктопный)
+    if (window.innerWidth < 768) {
+      slides.forEach(img => {
+        if (img.dataset.mobileSrc) img.src = img.dataset.mobileSrc;
+      });
+    }
+
     autoplay();
   })();
   function shade(hex, p) {
